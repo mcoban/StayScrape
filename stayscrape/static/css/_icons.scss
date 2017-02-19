@@ -1,0 +1,38 @@
+.icon {
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	margin-top: 8px;
+
+	&.left {
+		left: 10px;
+	}
+	&.right {
+		right: 10px;
+	}
+
+	&.search {
+		position: absolute;
+		background: url(../img/icons/search.svg) no-repeat;
+		background-size: cover;
+	}
+	&.calendar {
+		background: url(../img/icons/calendar.svg) no-repeat;
+		background-size: cover;
+		position: absolute;
+	}
+	&.right-arrow {
+		background: url(../img/icons/right-arrow.svg) no-repeat;
+		width: 18px;
+		height: 12px;
+		top: 3px;
+		position: absolute;
+		background-size: cover;
+	}
+	&.guest {
+		background: url(../img/icons/guest.svg) no-repeat;
+		background-size: cover;
+		width: 20px;
+		position: absolute;
+	}
+}

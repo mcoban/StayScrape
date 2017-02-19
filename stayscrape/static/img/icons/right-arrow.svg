@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="12px" viewBox="0 0 18 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-pointing-to-right</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="desktop" transform="translate(-797.000000, -106.000000)" fill="#000000">
+            <g id="header">
+                <g id="searchBar" transform="translate(0.000000, 80.000000)">
+                    <g id="dateBox" transform="translate(686.000000, 13.000000)">
+                        <g id="arrow-pointing-to-right" transform="translate(111.000000, 13.000000)">
+                            <g id="Capa_1">
+                                <path d="M17.1078065,5.45658065 L11.9465161,0.295290323 C11.6316129,-0.0196129032 11.1209032,-0.0196129032 10.806,0.295290323 C10.4910323,0.610258065 10.4910323,1.12083871 10.806,1.43580645 L14.5905806,5.2203871 L0.806451613,5.2203871 C0.361096774,5.2203871 0,5.58148387 0,6.02683871 C0,6.47212903 0.361096774,6.83329032 0.806451613,6.83329032 L14.5905806,6.83329032 L10.806129,10.617871 C10.4911613,10.9328387 10.4911613,11.4434194 10.806129,11.7583871 C10.9635484,11.9157419 11.17,11.9945806 11.3763871,11.9945806 C11.5827742,11.9945806 11.7891613,11.9157419 11.9466452,11.7583871 L17.1078065,6.59709677 C17.4227742,6.28212903 17.4227742,5.77154839 17.1078065,5.45658065 L17.1078065,5.45658065 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

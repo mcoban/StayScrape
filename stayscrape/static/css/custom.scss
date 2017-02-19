@@ -1,0 +1,22 @@
+@import "colors";
+@import "icons";
+@import "buttons";
+@import "_sections";
+
+
+/*for disable scrolling while clicking fixed filterbar input*/
+html, body{
+    -webkit-overflow-scrolling : touch;
+    overflow: auto;
+    height: 100%;
+}
+
+
+body {
+	background: #fff;
+	color: $main-color;
+	padding-top: 140px;
+	font-family: Avenir-Medium;
+	font-size: 14px;
+	-webkit-font-smoothing: antialiased;
+}
