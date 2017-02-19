@@ -5,7 +5,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
 
 	<title>Rental {{ json.propertyType }} {{ rental.headline|rental_title }}</title>
 
@@ -14,6 +15,7 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="{% static "img/favicon.png" %}">
 
 	<link rel="canonical" href="{{ rental.detailPageUrl }}">
+
 </head>
 <body>
 	
@@ -105,7 +107,48 @@
 					<div id="rental-pictures"></div>
 					<div id="details">
 						<div class="row">
-							
+							<div class="col-md-3">
+								<span class="details">Details:</span>
+							</div>
+							<div class="col-md-15">
+								<div class="row">
+									<div class="col-md-3 item">
+										<img src="{% static "img/icons/property.svg" %}" alt="{{ json.propertyType }}">
+										<span>Property</span>
+										<p>{{ json.propertyType }}</p>
+									</div>
+									<div class="col-md-3 item">
+										<img src="{% static "img/icons/sleeps.svg" %}" alt="{{ rental.sleeps }} People">
+										<span>People</span>
+										<p>{{ rental.sleeps }}</p>
+									</div>
+									<div class="col-md-3 item">
+										<img src="{% static "img/icons/bed.svg" %}" alt="{{ rental.bedrooms }} bedrooms">
+										<span>Bedrooms</span>
+										<p>{{ rental.bedrooms }}</p>
+									</div>
+									<div class="col-md-3 item">
+										<img src="{% static "img/icons/shower.svg" %}" alt="{{ rental.bathrooms }} Bahtrooms">
+										<span>Bahtrooms</span>
+										<p>{{ rental.bathrooms }}</p>
+									</div>
+									<div class="col-md-4 item">
+										<img src="{% static "img/icons/moon.svg" %}" alt="Minimum Stay">
+										<span>Minimum Stay</span>
+										<p>{{ json.minStayRange.minStayLow }} Nights</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-18">
+								<h3>Location</h3>
+							</div>
+							<div class="col-xs-18">
+								<div id="map-container">
+									<div id="map"></div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -137,6 +180,15 @@
 		</div>
 	</footer>
 
+<script>
+mapboxgl.accessToken = 'pk.eyJ1Ijoic3RheXNjcmFwZSIsImEiOiJjaXpjdzVpdDIxbmhtMzJxb3FzeW10d2JrIn0.CV-uNOleGhjFI01yRCaxaw';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/mapbox/streets-v9', //stylesheet location
+    center: [{{ json.geoCode.longitude }}, {{ json.geoCode.latitude }}], // starting position
+    zoom: 13 // starting zoom
+});
+</script>
 
 </body>
 </html>
