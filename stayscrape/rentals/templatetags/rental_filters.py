@@ -18,3 +18,11 @@ def rating_stars(value):
 @register.filter
 def rental_title(title):
 	return title.strip().title()
+
+
+@register.filter
+def rental_breadcrumb(location):
+	li = ""
+	for l in location.split(":"):
+		li += "<li><a href='#'>%s</a></li>" % l.title()
+	return li
