@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index),
-    url(r'^(?P<type>[-\w]+)', views.showRentals)
+    url(r'^(?P<type>[-\w]+)/(?P<id>[0-9]+)$', views.showRental)
 ]

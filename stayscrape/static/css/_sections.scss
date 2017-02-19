@@ -8,6 +8,8 @@ $break-tablet: 768px;
 $break-laptop: 1024px;
 $break-laptop: 1440px;
 
+@import "detail-page";
+
 
 .navbar-stayScrape {
 	background: $navbar-bg;

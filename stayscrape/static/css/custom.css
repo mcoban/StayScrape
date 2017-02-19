@@ -27,6 +27,36 @@
     background-size: cover;
     width: 20px;
     position: absolute; }
+  .icon.home {
+    background: url(../img/icons/home.svg) no-repeat;
+    background-size: cover;
+    width: 14px;
+    height: 14px; }
+  .icon.pin {
+    background: url(../img/icons/pin.svg) no-repeat;
+    background-size: cover;
+    width: 14px;
+    height: 14px; }
+  .icon.photos {
+    background: url(../img/icons/photos.svg) no-repeat;
+    background-size: cover;
+    width: 14px;
+    height: 14px; }
+  .icon.credit-card {
+    background: url(../img/icons/credit-card.svg) no-repeat;
+    background-size: cover;
+    width: 14px;
+    height: 14px; }
+  .icon.availability {
+    background: url(../img/icons/availability.svg) no-repeat;
+    background-size: cover;
+    width: 14px;
+    height: 14px; }
+  .icon.list {
+    background: url(../img/icons/list.svg) no-repeat;
+    background-size: cover;
+    width: 14px;
+    height: 14px; }
 
 .btn {
   border-radius: 0;
@@ -45,6 +75,39 @@
   padding: 0 10px;
   text-transform: uppercase;
   color: #383742; }
+
+#rental-detail .breadcrumb {
+  background: #fff;
+  margin-top: 20px;
+  padding: 0;
+  font-size: 18px;
+  color: #383742; }
+  #rental-detail .breadcrumb a {
+    color: #3731BF; }
+#rental-detail #rates {
+  list-style: none;
+  font-size: 18px;
+  margin-bottom: 20px; }
+  #rental-detail #rates li {
+    display: inline-block;
+    width: 18px;
+    height: 18px; }
+  #rental-detail #rates .full {
+    background: url("../img/star-full.svg") no-repeat;
+    background-size: cover; }
+  #rental-detail #rates .half {
+    background: url("../img/star-half.svg") no-repeat;
+    background-size: cover; }
+  #rental-detail #rates .empty {
+    background: url("../img/star-empty.svg") no-repeat;
+    background-size: cover; }
+#rental-detail h1 {
+  font-size: 32px; }
+#rental-detail .btn-group {
+  margin-bottom: 20px; }
+  #rental-detail .btn-group .btn-lg {
+    padding: 8px 15px;
+    font-size: 18px; }
 
 .navbar-stayScrape {
   background: #3731BF;

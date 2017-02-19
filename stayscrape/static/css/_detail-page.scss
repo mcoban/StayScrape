@@ -1,0 +1,60 @@
+@mixin breadcrumb {
+	background: #fff;
+	margin-top: 20px;
+	padding: 0;
+	font-size: 18px;
+	color: $main-color;
+
+	a {
+		color: $navbar-bg;
+	}
+}
+
+@mixin rates {
+	list-style: none;
+	font-size: 18px;
+	
+	li {
+		display: inline-block;
+		width: 18px;
+		height: 18px;
+	}
+	.full {
+		background: url("../img/star-full.svg") no-repeat;
+		background-size: cover;
+	}
+	.half {
+		background: url("../img/star-half.svg") no-repeat;
+		background-size: cover;
+	}
+	.empty {
+		background: url("../img/star-empty.svg") no-repeat;
+		background-size: cover;
+	}
+}
+
+#rental-detail {
+
+	.breadcrumb {
+		@include breadcrumb;
+	}
+
+	#rates {
+		@include rates;
+		margin-bottom: 20px;
+	}
+
+	h1 {
+		font-size: 32px;
+	}
+
+	.btn-group {
+		margin-bottom: 20px;
+		.btn-lg {
+			padding: 8px 15px;
+			font-size: 18px;
+		}
+	}
+
+
+}

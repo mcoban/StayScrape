@@ -35,4 +35,40 @@
 		width: 20px;
 		position: absolute;
 	}
+	&.home {
+		background: url(../img/icons/home.svg) no-repeat;
+		background-size: cover;
+		width: 14px;
+		height: 14px;
+	}
+	&.pin {
+		background: url(../img/icons/pin.svg) no-repeat;
+		background-size: cover;
+		width: 14px;
+		height: 14px;
+	}
+	&.photos {
+		background: url(../img/icons/photos.svg) no-repeat;
+		background-size: cover;
+		width: 14px;
+		height: 14px;
+	}
+	&.credit-card {
+		background: url(../img/icons/credit-card.svg) no-repeat;
+		background-size: cover;
+		width: 14px;
+		height: 14px;
+	}
+	&.availability {
+		background: url(../img/icons/availability.svg) no-repeat;
+		background-size: cover;
+		width: 14px;
+		height: 14px;
+	}
+	&.list {
+		background: url(../img/icons/list.svg) no-repeat;
+		background-size: cover;
+		width: 14px;
+		height: 14px;
+	}
 }
