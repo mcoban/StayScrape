@@ -108,10 +108,16 @@
   #rental-detail .btn-group .btn-lg {
     padding: 8px 15px;
     font-size: 18px; }
+#rental-detail #rental-pictures {
+  margin-bottom: 50px; }
 #rental-detail #details {
   padding: 20px 0; }
   #rental-detail #details .details {
     font-size: 20px; }
+  #rental-detail #details #detail-icons, #rental-detail #details #detail-text {
+    margin-bottom: 30px; }
+    #rental-detail #details #detail-icons p, #rental-detail #details #detail-text p {
+      font-size: 16px; }
   #rental-detail #details .item {
     text-align: center; }
     #rental-detail #details .item img {
@@ -137,6 +143,58 @@
     top: 0;
     bottom: 0;
     width: 98%; }
+#rental-detail .panel {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 0;
+  padding: 20px;
+  overflow: hidden; }
+  #rental-detail .panel span.price {
+    font-size: 32px;
+    color: #383742;
+    display: block;
+    line-height: 1; }
+  #rental-detail .panel .book-this {
+    margin-top: 20px; }
+    #rental-detail .panel .book-this span {
+      font-size: 17px;
+      display: block;
+      margin-bottom: 5px; }
+    #rental-detail .panel .book-this .date-in, #rental-detail .panel .book-this .date-out, #rental-detail .panel .book-this .sleeps {
+      background: #fff;
+      width: calc(50% - 5px);
+      position: relative;
+      float: left;
+      border: 1px solid #eee;
+      margin-bottom: 15px; }
+      #rental-detail .panel .book-this .date-in i.calendar, #rental-detail .panel .book-this .date-in i.person, #rental-detail .panel .book-this .date-out i.calendar, #rental-detail .panel .book-this .date-out i.person, #rental-detail .panel .book-this .sleeps i.calendar, #rental-detail .panel .book-this .sleeps i.person {
+        opacity: .5;
+        position: absolute;
+        right: 5px;
+        top: 10px; }
+      #rental-detail .panel .book-this .date-in i.calendar, #rental-detail .panel .book-this .date-out i.calendar, #rental-detail .panel .book-this .sleeps i.calendar {
+        background: url(../img/icons/date-calendar.svg) no-repeat;
+        width: 14px;
+        height: 14px;
+        background-size: cover; }
+      #rental-detail .panel .book-this .date-in i.person, #rental-detail .panel .book-this .date-out i.person, #rental-detail .panel .book-this .sleeps i.person {
+        background: url(../img/icons/sleeps.svg) no-repeat;
+        width: 14px;
+        height: 14px;
+        background-size: cover; }
+      #rental-detail .panel .book-this .date-in input, #rental-detail .panel .book-this .date-out input, #rental-detail .panel .book-this .sleeps input {
+        width: 100%;
+        border: none;
+        outline: none;
+        height: 35px;
+        font-size: 16px;
+        text-indent: 5px; }
+    #rental-detail .panel .book-this .date-in {
+      margin-right: 5px; }
+    #rental-detail .panel .book-this .sleeps {
+      width: calc(100% - 4px); }
+    #rental-detail .panel .book-this .btn {
+      width: calc(100% - 4px); }
 
 .navbar-stayScrape {
   background: #3731BF;

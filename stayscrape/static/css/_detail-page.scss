@@ -56,10 +56,20 @@
 		}
 	}
 
+	#rental-pictures {
+		margin-bottom: 50px;
+	}
+
 	#details {
 		padding: 20px 0;
 		.details {
 			font-size: 20px;
+		}
+		#detail-icons, #detail-text {
+			margin-bottom: 30px;
+			p {
+				font-size: 16px;
+			}
 		}
 		.item {
 			text-align: center;
@@ -91,7 +101,73 @@
 		#map { position:absolute; top:0; bottom:0; width:98%; }
 	}
 
+	.panel {
+		background: #fafafa;
+		border: 1px solid #eee;
+		border-radius: 0;
+		padding: 20px;
+		overflow: hidden;
 
+		span.price {
+			font-size: 32px;
+			color: $main-color;
+			display: block;
+			line-height: 1;
+		}
+
+		.book-this {
+			margin-top: 20px;
+			span {
+				font-size: 17px;
+				display: block;
+				margin-bottom: 5px;
+			}
+			.date-in, .date-out, .sleeps {
+				background: #fff;
+				width: calc(50% - 5px);
+				position: relative;
+				float: left;
+				border: 1px solid #eee;
+				margin-bottom: 15px;
+				i.calendar, i.person {
+					opacity: .5;
+					position: absolute;
+					right: 5px;
+					top: 10px;
+				}
+				i.calendar {
+					background: url(../img/icons/date-calendar.svg) no-repeat;
+					width: 14px;
+					height: 14px;
+					background-size: cover;
+				}
+				i.person {
+					background: url(../img/icons/sleeps.svg) no-repeat;
+					width: 14px;
+					height: 14px;
+					background-size: cover;
+
+				}
+				input {
+					width: 100%;
+					border: none;
+					outline: none;
+					height: 35px;
+					font-size: 16px;
+					text-indent: 5px;
+				}
+			}
+			.date-in {
+				margin-right: 5px;
+			}
+			.sleeps {
+				width: calc(100% - 4px);
+			}
+			.btn {
+				width: calc(100% - 4px);
+			}
+		}
+	}
 
 
 }

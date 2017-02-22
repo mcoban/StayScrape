@@ -1,5 +1,6 @@
-from django import template
+import json
 import math
+from django import template
 
 register = template.Library()
 
@@ -23,6 +24,6 @@ def rental_title(title):
 @register.filter
 def rental_breadcrumb(location):
 	li = ""
-	for l in location.split(":"):
-		li += "<li><a href='#'>%s</a></li>" % l.title()
+	for l in location:
+		li += "<li><a href='#'>%s</a></li>" % l['name']
 	return li

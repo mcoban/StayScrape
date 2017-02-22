@@ -16,10 +16,12 @@ def showRental(request, type, id):
 	if type in rental_types:
 		rental = Rental.objects.get(pk=id)
 		if rental:
-			json_data = json.loads(rental.shortJSON)
+			shortJSON = json.loads(rental.shortJSON)
+			longJSON = json.loads(rental.longJSON)
 			return render(request, "rentals/detail.html", {
 				"rental": rental,
-				"json": json_data
+				"json": shortJSON,
+				"detail_json": longJSON
 			})
 
 	return HttpResponse('yok')
