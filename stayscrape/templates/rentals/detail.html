@@ -23,24 +23,7 @@
 		    cursor: pointer;
 		}
 
-		.carousel {
-		  background: #FAFAFA;
-		}
 
-		.carousel-cell-image {
-		  display: block;
-		  height: 500px;
-		  min-width: 200px;
-		  opacity: 0;
-		  -webkit-transition: opacity 0.4s;
-		          transition: opacity 0.4s;
-		}
-
-		/* fade in lazy loaded image */
-		.carousel-cell-image.flickity-lazyloaded,
-		.carousel-cell-image.flickity-lazyerror {
-		  opacity: 1;
-		}
 
 	</style>
 
@@ -118,11 +101,14 @@
 
 		<div class="container">
 			<h1>{{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental {{ json.propertyType }} #{{ rental.id }} in {{ detail_json.listing.primaryLocation.description }}{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %}</h1>
+
+{% if json.reviewCount > 0 %}
 			<div id="rates">
 				{% autoescape off %}
 				{{ json.averageRating|rating_stars }} from ({{ json.reviewCount }} reviews)
 				{% endautoescape %}
 			</div>
+{% endif %}
 			<div class="row">
 				<div class="col-md-13">
 					<div class="btn-group">
@@ -134,19 +120,24 @@
 					</div>
 					<div id="rental-pictures">
 						<div class="carousel" data-flickity='{ "lazyLoad": true }'>
-{% for image in detail_json.unit.images.images %}
+{% for image in detail_json.listing.images %}
+{% for item in image.imageFiles %}
+{% if "1.10" in item.secureUri or "c10" in item.secureUri %}
 							<div class="carousel-cell">
-								<img class="carousel-cell-image" data-flickity-lazyload="{{ image.imageFilesBySize.1024x768.secureUri }}" alt="{{ img.note }}" />
+								<img class="carousel-cell-image" data-flickity-lazyload="{{ item.secureUri }}" alt="{{ image.note }}" />
 						  	</div>
+{% endif %}
 {% endfor %}
+{% endfor %}
+
 						</div>
 					</div>
 					<div id="details">
 						<div class="row">
-							<div class="col-md-3">
+							<div class="col-md-4">
 								<span class="details">Details:</span>
 							</div>
-							<div class="col-md-15">
+							<div class="col-md-14">
 								<div class="row" id="detail-icons">
 									<div class="col-md-3 item">
 										<img src="{% static "img/icons/property.svg" %}" alt="{{ json.propertyType }}">
@@ -177,12 +168,40 @@
 							</div>
 						</div>
 						<div class="row" id="detail-text">
-							<div class="col-md-3">
+							<div class="col-md-4">
 								<span class="details">About {{ json.propertyType }}:</span>
 							</div>
-							<div class="col-md-15">
+							<div class="col-md-14">
 								<p>
 									This Rental {{ json.propertyType }} is located in {{ detail_json.listing.address.stateProvince }} / {{ detail_json.listing.address.city }} with {{ rental.sleeps }} sleeps, {{ rental.bedrooms }} bedrooms and {{ rental.bathrooms }} bathrooms.
+								</p>
+								<p>
+									{{ json_detail.listing.description }}
+								</p>
+							</div>
+						</div>
+						<div class="row" id="about-owner">
+							<div class="col-md-4">
+								<span class="details">About Owner:</span>
+							</div>
+							<div class="col-md-14">
+								<p>
+									<strong>{{ detail_json.listing.contact.name }}</strong>
+{% if detail_json.listing.contact.ownerProfilePhoto %}
+									<img src="{{ detail_json.listing.contact.ownerProfilePhoto }}" alt="">
+{% endif %}
+								</p>
+								<p>
+									<strong>Spoken Langauge:</strong> 
+{% for lang in detail_json.listing.contact.languagesSpoken %}
+	{{ lang }},
+{% endfor %}
+								</p>
+								<p>
+									<strong>Phone:</strong> 
+{% for phone in detail_json.listing.contact.phones %}
+{{ phone.telScheme }}<br>
+{% endfor %}
 								</p>
 							</div>
 						</div>
@@ -198,6 +217,26 @@
 								</div>
 							</div>
 						</div>
+						<div id="featured">
+							<div class="row">
+								<div class="col-xs-18">
+									<h3>Featured Villas</h3>
+								</div>
+								<div class="col-xs-18">
+									<div class="carousel" data-flickity='{ "lazyLoad": 2, "initialIndex": 1 }'>
+{% for featured in featureds %}
+										<a class="carousel-cell" href="villa">
+											<img class="carousel-cell-image" data-flickity-lazyload="{{ featured.galleryUrl }}" alt="" />
+											<span class="description-container">
+												<span class="price">£ {{ featured.price }}</span>
+												<span class="capacity">{{ featured.sleeps }} sleeps</span>
+											</span>
+									  	</a>
+{% endfor %}
+									</div>
+								</div>
+							</div>
+						</div>
 						
 					</div>
 				</div>
@@ -206,7 +245,7 @@
 						<span class="price">{{ json.averagePrice.currencySymbol }} {{ rental.price }}</span>
 						<span class="per">{{ json.averagePrice.periodType|lower }}</span>
 						<div class="book-this">
-							<span>Select date range</span>
+<!-- 							<span>Select date range</span>
 							<div class="date-in">
 								<i class="calendar"></i>
 								<input type="text">
@@ -218,7 +257,7 @@
 							<div class="sleeps">
 								<i class="person"></i>
 								<input type="text">
-							</div>
+							</div> -->
 							<a href="#" class="btn btn-lg btn-danger btn-info">Request to Book</a>
 						</div>
 					</div>
@@ -285,11 +324,6 @@
 </script>
 
 
-<script>
-	$(document).ready(function() {
-		$('.main-carousel').flickity();
-	})
-</script>
 
 </body>
 </html>

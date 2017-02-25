@@ -109,7 +109,20 @@
     padding: 8px 15px;
     font-size: 18px; }
 #rental-detail #rental-pictures {
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  /* fade in lazy loaded image */ }
+  #rental-detail #rental-pictures .carousel {
+    background: #FAFAFA; }
+  #rental-detail #rental-pictures .carousel-cell-image {
+    display: block;
+    height: 500px;
+    min-width: 200px;
+    opacity: 0;
+    -webkit-transition: opacity 0.4s;
+    transition: opacity 0.4s; }
+  #rental-detail #rental-pictures .carousel-cell-image.flickity-lazyloaded,
+  #rental-detail #rental-pictures .carousel-cell-image.flickity-lazyerror {
+    opacity: 1; }
 #rental-detail #details {
   padding: 20px 0; }
   #rental-detail #details .details {
@@ -135,6 +148,49 @@
       display: block;
       font-size: 24px;
       color: #383742; }
+  #rental-detail #details #about-owner p {
+    font-size: 16px; }
+  #rental-detail #details #featured {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    /* fade in lazy loaded image */ }
+    #rental-detail #details #featured .carousel {
+      background: #FAFAFA; }
+    #rental-detail #details #featured .carousel-cell {
+      position: relative;
+      height: 180px;
+      margin-right: 10px;
+      padding: 0 5px;
+      overflow: hidden; }
+      #rental-detail #details #featured .carousel-cell .description-container {
+        position: absolute;
+        height: 40px;
+        background: rgba(0, 0, 0, 0.4);
+        width: calc(100% - 10px);
+        left: 5px;
+        bottom: 0;
+        text-indent: 10px;
+        overflow: hidden; }
+        #rental-detail #details #featured .carousel-cell .description-container .price, #rental-detail #details #featured .carousel-cell .description-container .capacity {
+          color: #fff;
+          line-height: 40px;
+          text-align: left;
+          font-size: 18px; }
+        #rental-detail #details #featured .carousel-cell .description-container .capacity {
+          float: right;
+          margin-right: 10px; }
+    #rental-detail #details #featured .carousel-cell-image {
+      display: block;
+      max-height: 100%;
+      margin: 0 auto;
+      opacity: 0;
+      -webkit-transition: opacity 0.4s;
+      transition: opacity 0.4s; }
+    #rental-detail #details #featured .carousel-cell-image.flickity-lazyloaded,
+    #rental-detail #details #featured .carousel-cell-image.flickity-lazyerror {
+      opacity: 1; }
+    #rental-detail #details #featured .flickity-page-dots {
+      bottom: -35px; }
 #rental-detail #map-container {
   width: 100%;
   height: 440px; }

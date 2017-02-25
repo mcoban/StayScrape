@@ -58,6 +58,27 @@
 
 	#rental-pictures {
 		margin-bottom: 50px;
+
+		.carousel {
+		  background: #FAFAFA;
+		}
+
+		.carousel-cell-image {
+		  display: block;
+		  height: 500px;
+		  min-width: 200px;
+		  opacity: 0;
+		  -webkit-transition: opacity 0.4s;
+		          transition: opacity 0.4s;
+		}
+
+		/* fade in lazy loaded image */
+		.carousel-cell-image.flickity-lazyloaded,
+		.carousel-cell-image.flickity-lazyerror {
+		  opacity: 1;
+		}
+
+
 	}
 
 	#details {
@@ -90,6 +111,67 @@
 				display: block;
 				font-size: 24px;
 				color: $main-color;
+			}
+		}
+		#about-owner {
+			p {
+				font-size: 16px;
+			}
+		}
+		#featured {
+			margin-top: 30px;
+			padding-bottom: 30px;
+			
+			.carousel {
+			  	background: #FAFAFA;
+			}
+
+			.carousel-cell {
+				position: relative;
+			  	height: 180px;
+			  	margin-right: 10px;
+			  	padding: 0 5px;
+			  	overflow: hidden;
+			  	.description-container {
+			  		position: absolute;
+			  		height: 40px;
+			  		background: rgba(0,0,0,.4);
+			  		width: calc(100% - 10px);
+			  		left: 5px;
+			  		bottom: 0;
+			  		text-indent: 10px;
+			  		overflow: hidden;
+			  		.price, .capacity {
+			  			color: #fff;
+			  			line-height: 40px;
+			  			text-align: left;
+			  			font-size: 18px;
+			  		}
+			  		.capacity {
+			  			float: right;
+			  			margin-right: 10px;
+			  		}
+			  	}
+			}
+
+			.carousel-cell-image {
+			  	display: block;
+			  	max-height: 100%;
+			  	margin: 0 auto;
+			  	// max-width: 100%;
+			  	opacity: 0;
+			  	-webkit-transition: opacity 0.4s;
+			          transition: opacity 0.4s;
+			}
+
+			/* fade in lazy loaded image */
+			.carousel-cell-image.flickity-lazyloaded,
+			.carousel-cell-image.flickity-lazyerror {
+			  	opacity: 1;
+			}
+
+			.flickity-page-dots {
+				bottom: -35px;
 			}
 		}
 	}
