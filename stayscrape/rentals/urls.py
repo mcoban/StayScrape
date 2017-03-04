@@ -2,7 +2,13 @@ from django.conf.urls import url
 from . import views
 
 
-urlpatterns = [
+rentals_urls = [
     url(r'^$', views.index),
-    url(r'^(?P<type>[-\w]+)/(?P<id>[0-9]+)$', views.showRental)
+    url(r'^(?P<id>[0-9]+)$', views.showRental)
+]
+
+villas_urls = [
+    url(r'^$', views.villas),
+    url(r'^(?P<country>[-\w]+)/$', views.listVillas),
+    url(r'^(?P<country>[-\w]+)/(?P<city>[-\w]+)/$', views.listVillas)
 ]

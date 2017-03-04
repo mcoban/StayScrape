@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Country, City, District
+from .models import Country, City
 
 @admin.register(Country)
 class CountryAdmin(admin.ModelAdmin):
@@ -10,7 +10,3 @@ class CountryAdmin(admin.ModelAdmin):
 class CityAdmin(admin.ModelAdmin):
 	list_display = ('name', 'country')
 
-
-@admin.register(District)
-class DistrictAdmin(admin.ModelAdmin):
-	list_display = ('name', 'city')

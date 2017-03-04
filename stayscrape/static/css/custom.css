@@ -382,9 +382,9 @@
         float: left;
         margin-top: 200px; } }
 
-#main section {
+section {
   margin-top: 70px; }
-  #main section h2 {
+  section h2 {
     font-family: Avenir-Light;
     text-align: center;
     font-size: 36px;
@@ -392,54 +392,56 @@
     margin-bottom: 20px;
     color: #383742; }
   @media screen and (max-width: 480px) {
-    #main section {
+    section {
       margin-top: 30px; }
-      #main section h2 {
+      section h2 {
         font-size: 24px; } }
-#main section.featuerd-rentals .featured-item {
+
+section.featuerd-rentals .featured-item {
   height: 300px;
   display: block;
   text-decoration: none; }
-  #main section.featuerd-rentals .featured-item img {
+  section.featuerd-rentals .featured-item img {
     width: 100%; }
-  #main section.featuerd-rentals .featured-item .item-title {
+  section.featuerd-rentals .featured-item .item-title {
     font-family: Avenir-Medium;
     font-size: 16px;
     color: #383742;
     margin-top: 10px;
     display: block; }
-    #main section.featuerd-rentals .featured-item .item-title span.price {
+    section.featuerd-rentals .featured-item .item-title span.price {
       font-family: Avenir-Heavy;
       font-size: inherit;
       margin-right: 10px; }
-  #main section.featuerd-rentals .featured-item .item-location {
+  section.featuerd-rentals .featured-item .item-location {
     font-family: Avenir-Heavy;
     font-size: 16px;
     color: #383742;
     display: block; }
 @media screen and (max-width: 320px) {
-  #main section.featuerd-rentals .featured-item {
+  section.featuerd-rentals .featured-item {
     height: 240px; } }
 @media screen and (min-width: 321px) and (max-width: 425px) {
-  #main section.featuerd-rentals .featured-item {
+  section.featuerd-rentals .featured-item {
     height: 290px; } }
 @media screen and (min-width: 426px) and (max-width: 1440px) {
-  #main section.featuerd-rentals .featured-item {
+  section.featuerd-rentals .featured-item {
     height: 230px; } }
-#main section.best-holiday-places {
+
+section.best-holiday-places {
   margin-top: 30px; }
-  #main section.best-holiday-places h3 {
+  section.best-holiday-places h3 {
     margin: 0;
     transition: ease all .2s; }
-    #main section.best-holiday-places h3:hover {
+    section.best-holiday-places h3:hover {
       box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1); }
-    #main section.best-holiday-places h3 a {
+    section.best-holiday-places h3 a {
       position: relative;
       display: block;
       margin-bottom: 20px; }
-      #main section.best-holiday-places h3 a img {
+      section.best-holiday-places h3 a img {
         width: 100%; }
-      #main section.best-holiday-places h3 a span {
+      section.best-holiday-places h3 a span {
         position: absolute;
         font-family: Avenir-Heavy;
         font-size: 30px;
@@ -451,42 +453,44 @@
         line-height: 250px;
         text-transform: uppercase; }
   @media screen and (max-width: 320px) {
-    #main section.best-holiday-places h3 a span {
+    section.best-holiday-places h3 a span {
       font-size: 24px;
       line-height: 200px; } }
   @media screen and (min-width: 321px) and (max-width: 375px) {
-    #main section.best-holiday-places h3 a span {
+    section.best-holiday-places h3 a span {
       font-size: 24px;
       line-height: 230px; } }
   @media screen and (min-width: 376px) and (max-width: 425px) {
-    #main section.best-holiday-places h3 a span {
+    section.best-holiday-places h3 a span {
       font-size: 26px;
       line-height: 250px; } }
   @media screen and (min-width: 426px) and (max-width: 768px) {
-    #main section.best-holiday-places h3 a span {
+    section.best-holiday-places h3 a span {
       font-size: 20px;
       line-height: 150px; } }
   @media screen and (min-width: 769px) and (max-width: 1440px) {
-    #main section.best-holiday-places h3 a span {
+    section.best-holiday-places h3 a span {
       font-size: 24px;
       line-height: 190px; } }
-#main section.short-desc p {
+
+section.short-desc p {
   font-family: Avenir-Light;
   font-size: 18px;
   line-height: 25px;
   margin: 20px 0; }
-  #main section.short-desc p strong {
+  section.short-desc p strong {
     font-family: Avenir-Medium; }
 @media screen and (max-width: 768px) {
-  #main section.short-desc {
+  section.short-desc {
     margin-top: 30px; } }
-#main section.foot-hero {
+
+section.foot-hero {
   width: 100%;
   height: 550px;
   background: url(../img/foot-hero.jpg) no-repeat;
   background-size: cover;
   padding-top: 230px; }
-  #main section.foot-hero h4 {
+  section.foot-hero h4 {
     font-family: Avenir-Medium;
     font-size: 40px;
     line-height: 52px;
@@ -494,18 +498,18 @@
     color: #fff;
     padding: 0 10px; }
   @media screen and (max-width: 320px) {
-    #main section.foot-hero {
+    section.foot-hero {
       height: 140px;
       padding-top: 60px; }
-      #main section.foot-hero h4 {
+      section.foot-hero h4 {
         font-size: 18px;
         line-height: 1.4;
         padding: 0 10px; } }
   @media screen and (min-width: 321px) and (max-width: 425px) {
-    #main section.foot-hero {
+    section.foot-hero {
       height: 240px;
       padding-top: 100px; }
-      #main section.foot-hero h4 {
+      section.foot-hero h4 {
         font-size: 20px;
         line-height: 1.3; } }
 
@@ -545,6 +549,9 @@ footer {
     footer .social {
       float: right;
       margin-top: 0; } }
+
+#listing .best-holiday-places h3 span {
+  text-transform: none; }
 
 /*for disable scrolling while clicking fixed filterbar input*/
 html, body {
