@@ -27,5 +27,5 @@ urlpatterns = [
     url(r'^villa/', include(rentals_urls)),
     url(r'^villas/', include(villas_urls)),
     url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
-    url(r'^f35ca1260f8e\.html$', TemplateView.as_view(template_name='f35ca1260f8e.html', content_type='text/html')),
+    url(r'^d3cc596d48f7\.html$', TemplateView.as_view(template_name='d3cc596d48f7.html', content_type='text/html')),
 ]
