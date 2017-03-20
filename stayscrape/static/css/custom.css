@@ -58,6 +58,21 @@
     width: 14px;
     height: 14px; }
 
+.vicon {
+  width: 17px;
+  height: 17px;
+  float: left;
+  margin-right: 5px; }
+  .vicon.sleeps {
+    background: url(../img/icons/user.svg) no-repeat;
+    background-size: cover; }
+  .vicon.bathrooms {
+    background: url(../img/icons/shower.svg) no-repeat;
+    background-size: cover; }
+  .vicon.bedrooms {
+    background: url(../img/icons/bed.svg) no-repeat;
+    background-size: cover; }
+
 .btn {
   border-radius: 0;
   border: none;
@@ -83,7 +98,7 @@
   font-size: 14px;
   color: #383742; }
   #rental-detail .breadcrumb a {
-    color: #3731BF; }
+    color: #3e6bd0; }
 #rental-detail #rates {
   list-style: none;
   font-size: 18px;
@@ -253,7 +268,7 @@
       width: calc(100% - 4px); }
 
 .navbar-stayScrape {
-  background: #3731BF;
+  background: #3e6bd0;
   color: #fff;
   width: 100%;
   height: 80px;
@@ -279,7 +294,7 @@
     font-size: 14px;
     text-transform: uppercase; }
     .navbar-stayScrape .navbar-nav a:hover {
-      background: #2b2796; }
+      background: #2b54b0; }
   @media screen and (max-width: 480px) {
     .navbar-stayScrape {
       overflow: hidden; }
@@ -293,20 +308,20 @@
           display: inline-block; } }
 
 .filter-bar {
-  background: #383742;
+  background: #fff;
   width: 100%;
   height: 60px;
   color: #fff;
   position: fixed;
   top: 80px;
   z-index: 999999;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   overflow: hidden; }
   .filter-bar .input-container {
     margin-top: 13px;
     position: relative;
     background: #fff;
-    height: 34px;
+    border: 1px solid #ddd;
+    height: 36px;
     padding: 0 10px; }
     .filter-bar .input-container input {
       border: none;
@@ -343,7 +358,7 @@
 .hero {
   width: 100%;
   height: 480px;
-  background: url(../img/cover.jpg) no-repeat;
+  background: url(https://res.cloudinary.com/stayscrape/image/upload/e_sharpen:20/v1488751598/cover.jpg) no-repeat;
   background-size: cover; }
   .hero h1 {
     float: right;
@@ -385,9 +400,8 @@
 section {
   margin-top: 70px; }
   section h2 {
-    font-family: Avenir-Light;
-    text-align: center;
-    font-size: 36px;
+    font-family: Avenir-Medium;
+    font-size: 28px;
     margin-top: 0;
     margin-bottom: 20px;
     color: #383742; }
@@ -429,28 +443,37 @@ section.featuerd-rentals .featured-item {
     height: 230px; } }
 
 section.best-holiday-places {
-  margin-top: 30px; }
+  margin-top: 70px;
+  font-family: BodoniSvtyTwoOSITCTT-Bold; }
+  section.best-holiday-places .row {
+    margin-bottom: 30px; }
+  section.best-holiday-places h2 {
+    font-family: inherit;
+    font-size: 42px;
+    color: #3E3E3E;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px; }
   section.best-holiday-places h3 {
     margin: 0;
     transition: ease all .2s; }
     section.best-holiday-places h3:hover {
       box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1); }
     section.best-holiday-places h3 a {
-      position: relative;
       display: block;
-      margin-bottom: 20px; }
+      text-align: center;
+      overflow: hidden; }
+      section.best-holiday-places h3 a:hover, section.best-holiday-places h3 a:focus {
+        text-decoration: none; }
       section.best-holiday-places h3 a img {
         width: 100%; }
       section.best-holiday-places h3 a span {
-        position: absolute;
-        font-family: Avenir-Heavy;
-        font-size: 30px;
-        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-        width: 100%;
+        display: block;
+        margin: 10px 0;
+        font-size: 24px;
         text-align: center;
-        top: 0;
-        color: #fff;
-        line-height: 250px;
+        color: #3E3E3E;
         text-transform: uppercase; }
   @media screen and (max-width: 320px) {
     section.best-holiday-places h3 a span {
@@ -487,7 +510,7 @@ section.short-desc p {
 section.foot-hero {
   width: 100%;
   height: 550px;
-  background: url(../img/foot-hero.jpg) no-repeat;
+  background: url(https://res.cloudinary.com/stayscrape/image/upload/c_scale,e_sharpen:20,w_1200/v1488751700/footer-cover.jpg) no-repeat;
   background-size: cover;
   padding-top: 230px; }
   section.foot-hero h4 {
@@ -550,8 +573,136 @@ footer {
       float: right;
       margin-top: 0; } }
 
-#listing .best-holiday-places h3 span {
-  text-transform: none; }
+#listing {
+  background: #f5f5f5; }
+  #listing .best-holiday-places h3 span {
+    text-transform: none; }
+  #listing .sortby-filter {
+    padding: 20px 0;
+    font-size: 16px;
+    overflow: hidden; }
+    #listing .sortby-filter .item {
+      border-right: 1px solid #bbb;
+      padding-right: 10px;
+      margin-right: 10px;
+      float: left; }
+      #listing .sortby-filter .item.name {
+        font-weight: bold; }
+    #listing .sortby-filter .page-title {
+      float: left;
+      font-size: 32px;
+      color: #5e5e5e;
+      padding: 0;
+      margin: 0; }
+    #listing .sortby-filter .count {
+      font-weight: 400;
+      float: right;
+      line-height: 24px;
+      margin-top: 10px; }
+  #listing .villas .villa {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block; }
+    #listing .villas .villa .img-container {
+      width: 100%;
+      height: 220px;
+      text-align: center;
+      overflow: hidden;
+      background-size: cover;
+      position: relative; }
+    #listing .villas .villa .title {
+      padding: 10px;
+      height: 70px;
+      margin: 0;
+      font-size: 17px;
+      font-weight: 400;
+      display: block;
+      color: #383742;
+      margin-top: 5px;
+      line-height: 1.4; }
+    #listing .villas .villa .owner-container {
+      padding: 10px;
+      overflow: hidden;
+      border-top: 1px solid #ddd; }
+      #listing .villas .villa .owner-container .owner-picture {
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+        border-radius: 50px;
+        background-position: center;
+        border: 3px solid #fff;
+        box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.08);
+        float: left;
+        margin-right: 10px; }
+      #listing .villas .villa .owner-container .owner-info {
+        float: left; }
+        #listing .villas .villa .owner-container .owner-info .owner-name {
+          display: block;
+          font-size: 17px;
+          color: #383742;
+          font-weight: 300;
+          margin-top: 15px;
+          line-height: 1; }
+        #listing .villas .villa .owner-container .owner-info .owner-date {
+          font-size: 13px;
+          color: #777; }
+    #listing .villas .villa .amnetities {
+      border-top: 1px solid #ddd;
+      font-size: 14px;
+      overflow: hidden; }
+      #listing .villas .villa .amnetities .name {
+        font-size: 12px;
+        margin-top: 5px;
+        display: block;
+        color: #666; }
+      #listing .villas .villa .amnetities .value {
+        margin-top: 10px;
+        font-size: 18px;
+        display: block;
+        color: #383742; }
+      #listing .villas .villa .amnetities .col {
+        display: inline-block;
+        text-align: center;
+        padding: 10px 8px 4px 8px; }
+        #listing .villas .villa .amnetities .col span.val {
+          font-size: 18px;
+          color: #383742; }
+        #listing .villas .villa .amnetities .col:last-child {
+          border-right: none;
+          float: right;
+          padding-right: 15px; }
+          #listing .villas .villa .amnetities .col:last-child .val {
+            text-align: center;
+            display: block; }
+            #listing .villas .villa .amnetities .col:last-child .val.price {
+              text-align: right;
+              color: #383742;
+              font-weight: 700;
+              font-size: 20px;
+              line-height: 1; }
+  #listing #maps {
+    position: fixed;
+    right: 0;
+    padding: 0; }
+
+.pagination {
+  display: block;
+  overflow: hidden;
+  margin-top: 0; }
+  .pagination .count {
+    font-size: 18px;
+    font-weight: 100; }
+  .pagination .arrows {
+    float: right; }
+    .pagination .arrows a {
+      text-decoration: none;
+      color: #5e5e5e;
+      font-size: 18px; }
+      .pagination .arrows a.prev {
+        margin-right: 10px; }
 
 /*for disable scrolling while clicking fixed filterbar input*/
 html, body {

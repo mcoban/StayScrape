@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'destinations',
     'rentals',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,6 @@ USE_TZ = True
 
 STATIC_URL = '/assets/'
 STATICFILES_DIRS = ('', os.path.join(BASE_DIR, 'static'))
+SITE_URL = 'http://127.0.0.1:8000'
+LOCAL_SITE_URL = 'http://127.0.0.1:8000'
+COUNT_PER_PAGE = 24

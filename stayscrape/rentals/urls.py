@@ -9,6 +9,5 @@ rentals_urls = [
 
 villas_urls = [
     url(r'^$', views.villas),
-    url(r'^(?P<country>[-\w]+)/$', views.listVillas),
-    url(r'^(?P<country>[-\w]+)/(?P<city>[-\w]+)/$', views.listVillas)
+    url(r'^(?P<place>[-\w]+)$', views.listVillas)
 ]

@@ -72,3 +72,23 @@
 		height: 14px;
 	}
 }
+
+
+.vicon {
+	width: 17px;
+	height: 17px;
+	float: left;
+	margin-right: 5px;
+	&.sleeps {
+		background: url(../img/icons/user.svg) no-repeat;
+		background-size: cover;
+	}
+	&.bathrooms {
+		background: url(../img/icons/shower.svg) no-repeat;
+		background-size: cover;
+	}
+	&.bedrooms {
+		background: url(../img/icons/bed.svg) no-repeat;
+		background-size: cover;
+	}
+}

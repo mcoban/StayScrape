@@ -1,12 +1,6 @@
 from django.contrib import admin
-from .models import Country, City
+from .models import Place
 
-@admin.register(Country)
-class CountryAdmin(admin.ModelAdmin):
-	list_display = ('name', )
-
-
-@admin.register(City)
-class CityAdmin(admin.ModelAdmin):
-	list_display = ('name', 'country')
-
+@admin.register(Place)
+class PlaceAdmin(admin.ModelAdmin):
+	list_display = ('name', 'page_title')

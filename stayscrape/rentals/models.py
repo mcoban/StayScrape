@@ -31,3 +31,18 @@ class Rental(models.Model):
 		return '<a href="%s" target="_blank">Referer</a>' % self.detailPageUrl
 	external.allow_tags = True
 
+
+class Relations(models.Model):
+	place_id = models.IntegerField(default=0)
+	rental_id = models.IntegerField(default=0)
+	price = models.IntegerField(default=0)
+	sleeps = models.IntegerField(default=0)
+	bathrooms = models.IntegerField(default=0)
+	bedrooms = models.IntegerField(default=0)
+
+	def __str__(self):
+		return str(self.rental_id)
+
+
+	class Meta:
+		unique_together = ('rental_id', 'place_id', )

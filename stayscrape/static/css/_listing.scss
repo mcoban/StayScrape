@@ -1,5 +1,5 @@
 #listing {
-
+	background: #f5f5f5;
 	.best-holiday-places {
 		h3 {
 			span {
@@ -8,4 +8,163 @@
 		}
 	}
 
+	.sortby-filter {
+		padding: 20px 0;
+		font-size: 16px;
+		overflow: hidden;
+
+		.item {
+			border-right: 1px solid #bbb;
+			padding-right: 10px;
+			margin-right: 10px;
+			float: left;
+			&.name {
+				font-weight: bold;
+			}
+		}
+		.page-title {
+			float: left;
+			font-size: 32px;
+			color: darken($gray-color, 10%);
+			padding: 0;
+			margin: 0;
+		}
+		.count {
+			font-weight: 400;
+			float: right;
+			line-height: 24px;
+			margin-top: 10px;
+		}
+	}
+
+	.villas {
+		.villa {
+			background: #fff;
+			border: 1px solid #ddd;
+			margin-bottom: 30px;
+			overflow: hidden;
+			text-decoration: none;
+			display: block;
+			.img-container {
+				width: 100%;
+				height: 220px;
+				text-align: center;
+				overflow: hidden;
+				background-size: cover;
+				position: relative;
+			}
+			.title {
+				padding: 10px;
+				height: 70px;
+				margin: 0;
+				font-size: 17px;
+				font-weight: 400;
+				display: block;
+				color: $main-color;
+				margin-top: 5px;
+				line-height: 1.4;
+			}
+			.owner-container {
+				padding: 10px;
+				overflow: hidden;
+				border-top: 1px solid #ddd;
+				.owner-picture {
+					width: 50px;
+					height: 50px;
+					background-size: cover;
+					border-radius: 50px;
+					background-position: center;
+					border: 3px solid #fff;
+					box-shadow: 0 0 15px 5px rgba(0,0,0,.08);
+					float: left;
+					margin-right: 10px;
+				}
+				.owner-info {
+					float: left;
+					.owner-name {
+						display: block;
+						font-size: 17px;
+						color: $main-color;
+						font-weight: 300;
+						margin-top: 15px;
+						line-height: 1;
+					}
+					.owner-date {
+						font-size: 13px;
+						color: $gray-color;
+					}
+				}
+				
+			}
+			.amnetities {
+				border-top: 1px solid #ddd;
+				font-size: 14px;
+				overflow: hidden;
+				.name {
+					font-size: 12px;
+					margin-top: 5px;
+					display: block;
+					color: #666;
+				}
+				.value {
+					margin-top: 10px;
+					font-size: 18px;
+					display: block;
+					color: $main-color;
+				}
+				.col {
+					display: inline-block;
+					text-align: center;
+					padding: 10px 8px 4px 8px;
+					span.val {
+						font-size: 18px;
+						color: $main-color;
+					}
+					&:last-child {
+						border-right: none;
+						float: right;
+						padding-right: 15px;
+						.val {
+							text-align: center;
+							display: block;
+							&.price {
+								text-align: right;
+								color: $main-color;
+								font-weight: 700;
+								font-size: 20px;
+								line-height: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+		#maps {
+			position: fixed;
+			right: 0;
+			padding: 0;
+		}
+
+}
+
+.pagination {
+	display: block;
+	overflow: hidden;
+	margin-top: 0;
+	.count {
+		font-size: 18px;
+		font-weight: 100;
+	}
+	.arrows {
+		float: right;
+		a {
+			text-decoration: none;
+			color: darken($gray-color, 10%);
+			font-size: 18px;
+			&.prev {
+				margin-right: 10px;
+			}
+		}
+	}
 }

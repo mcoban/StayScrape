@@ -34,7 +34,8 @@
 	<meta itemprop="image" content="http://stayscrape.com/assets/img/logo@3x.png">
 
 
-	<link rel="stylesheet" href="{% static "css/core.min.css" %}">
+	<!-- <link rel="stylesheet" href="{% static "css/core.min.css" %}"> -->
+	<link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
 	<link rel="stylesheet" href="{% static "css/custom.css" %}">
 	<link rel="icon" type="image/png" sizes="32x32" href="{% static "img/favicon.png" %}">
 </head>
@@ -61,7 +62,7 @@
 						<i class="icon search right"></i>
 					</div>
 				</div>
-				<div class="col-xs-13 col-sm-6 col-md-4">
+				<!-- <div class="col-xs-13 col-sm-6 col-md-4">
 					<div class="input-container" id="date-input-container">
 						<div class="row">
 							<div class="col-xs-8 checkin-container">
@@ -75,7 +76,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<div class="col-sm-2 col-xs-5">
 					<div class="input-container" id="guest-container">
 						<i class="icon left guest"></i>
@@ -97,6 +98,7 @@
 		</div>
 	</div>
 
+
 	<div class="hero">
 		<div class="container">
 			<h1 class="slogan">Villa Holidays And Holiday Rentals For Your Summer Vacation</h1>
@@ -104,172 +106,108 @@
 	</div>
 
 	<div id="main">
-		
-		<section class="featuerd-rentals">
-			<div class="container">
-				<h2>Featured Homes</h2>
-				<div class="row">
-					<div class="col-sm-6">
-						<a href="#" class="featured-item">
-							<img src="{% static "img/featured-homes/1.jpg" %}" alt="Home1">
-							<span class="item-title"><span class="price">$1400</span> Villa Private with 3 Bedrooms Lorem ipsum dolor sit amet.</span>
-						</a>
-					</div>
-					<div class="col-sm-6">
-						<a href="#" class="featured-item">
-							<img src="{% static "img/featured-homes/2.jpg" %}" alt="Home1">
-							<span class="item-title"><span class="price">$1400</span> Villa Private with 3 Bedrooms Lorem ipsum dolor sit amet.</span>
-						</a>
-					</div>
-					<div class="col-sm-6">
-						<a href="#" class="featured-item">
-							<img src="{% static "img/featured-homes/3.jpg" %}" alt="Home1">
-							<span class="item-title"><span class="price">$1400</span> Villa Private with 3 Bedrooms Lorem ipsum dolor sit amet.</span>
-						</a>
-					</div>
-					<div class="col-sm-6">
-						<a href="#" class="featured-item">
-							<img src="{% static "img/featured-homes/4.jpg" %}" alt="Home1">
-							<span class="item-title"><span class="price">$1400</span> Villa Private with 3 Bedrooms Lorem ipsum dolor sit amet.</span>
-						</a>
-					</div>
-					<div class="col-sm-6">
-						<a href="#" class="featured-item">
-							<img src="{% static "img/featured-homes/5.jpg" %}" alt="Home1">
-							<span class="item-title"><span class="price">$1400</span> Villa Private with 3 Bedrooms Lorem ipsum dolor sit amet.</span>
-						</a>
-					</div>
-					<div class="col-sm-6">
-						<a href="#" class="featured-item">
-							<img src="{% static "img/featured-homes/6.jpg" %}" alt="Home1">
-							<span class="item-title"><span class="price">$1400</span> Villa Private with 3 Bedrooms Lorem ipsum dolor sit amet.</span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
 
 		<section class="best-holiday-places">
 			<div class="container">
-				<h2>Best Holiday Places</h2>
+				<h2>Featured Places</h2>
 				<div class="row">
-					<div class="col-sm-6">
+					<div class="col-sm-6 col-md-3">
 						<h3>
-							<a href="#">
-								<img class="img-responsive" src="{% static "img/featured-places/ibiza.jpg" %}" alt="Ibiza">
-								<span>Ibiza</span>
+							<a href="/villas/tuscany">
+								<img class="img-responsive" src="https://res.cloudinary.com/stayscrape/image/upload/e_sharpen:20,q_100/v1488816560/florida.jpg" alt="Florida">
+								<span>Florida</span>
 							</a>
 						</h3>
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-6 col-md-3">
 						<h3>
-							<a href="#">
-								<img class="img-responsive" src="{% static "img/featured-places/london.jpg" %}" alt="Ibiza">
-								<span>London</span>
-							</a>
-						</h3>
-					</div>
-					<div class="col-sm-6">
-						<h3>
-							<a href="#">
-								<img class="img-responsive" src="{% static "img/featured-places/rome.jpg" %}" alt="Ibiza">
-								<span>Rome</span>
-							</a>
-						</h3>
-					</div>
-					<div class="col-sm-6">
-						<h3>
-							<a href="#">
-								<img class="img-responsive" src="{% static "img/featured-places/budapest.jpg" %}" alt="Ibiza">
-								<span>Budapest</span>
-							</a>
-						</h3>
-					</div>
-					<div class="col-sm-6">
-						<h3>
-							<a href="#">
-								<img class="img-responsive" src="{% static "img/featured-places/newyork.jpg" %}" alt="Ibiza">
-								<span>Newyork</span>
-							</a>
-						</h3>
-					</div>
-					<div class="col-sm-6">
-						<h3>
-							<a href="#">
-								<img class="img-responsive" src="{% static "img/featured-places/barcelona.jpg" %}" alt="Ibiza">
-								<span>Barcelona</span>
-							</a>
-						</h3>
-					</div>
-					<div class="col-sm-6">
-						<h3>
-							<a href="#">
-								<img class="img-responsive" src="{% static "img/featured-places/lisbon.jpg" %}" alt="Ibiza">
-								<span>Lisbon</span>
-							</a>
-						</h3>
-					</div>
-					<div class="col-sm-6">
-						<h3>
-							<a href="#">
-								<img class="img-responsive" src="{% static "img/featured-places/dubai.jpg" %}" alt="Ibiza">
-								<span>Dubai</span>
-							</a>
-						</h3>
-					</div>
-					<div class="col-sm-6">
-						<h3>
-							<a href="#">
-								<img class="img-responsive" src="{% static "img/featured-places/bahamas.jpg" %}" alt="Ibiza">
-								<span>Bahamas</span>
-							</a>
-						</h3>
-					</div>
-					<div class="col-sm-6">
-						<h3>
-							<a href="#">
-								<img class="img-responsive" src="{% static "img/featured-places/bali.jpg" %}" alt="Ibiza">
-								<span>Bali</span>
-							</a>
-						</h3>
-					</div>
-					<div class="col-sm-6">
-						<h3>
-							<a href="#">
-								<img class="img-responsive" src="{% static "img/featured-places/tuscany.jpg" %}" alt="Ibiza">
+							<a href="/villas/tuscany">
+								<img class="img-responsive" src="https://res.cloudinary.com/stayscrape/image/upload/e_sharpen:20,q_100/v1488814753/tuscany.jpg" alt="Tuscany">
 								<span>Tuscany</span>
 							</a>
 						</h3>
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-6 col-md-3">
 						<h3>
-							<a href="#">
-								<img class="img-responsive" src="{% static "img/featured-places/fethiye.jpg" %}" alt="Ibiza">
-								<span>Fethiye</span>
+							<a href="/villas/tuscany">
+								<img class="img-responsive" src="https://res.cloudinary.com/stayscrape/image/upload/e_sharpen:20,q_100/v1488814754/sicily.jpg" alt="Sicily">
+								<span>Sicily</span>
 							</a>
 						</h3>
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-6 col-md-3">
 						<h3>
-							<a href="#">
-								<img class="img-responsive" src="{% static "img/featured-places/rio.jpg" %}" alt="Ibiza">
-								<span>Rio dejenario</span>
-							</a>
-						</h3>
-					</div>
-					<div class="col-sm-6">
-						<h3>
-							<a href="#">
-								<img class="img-responsive" src="{% static "img/featured-places/santorini.jpg" %}" alt="Ibiza">
+							<a href="/villas/tuscany">
+								<img class="img-responsive" src="https://res.cloudinary.com/stayscrape/image/upload/e_sharpen:20,q_100/v1488814752/santorini.jpg" alt="santorini">
 								<span>Santorini</span>
 							</a>
 						</h3>
 					</div>
-					<div class="col-sm-6">
+				</div>
+				<div class="row">
+					<div class="col-sm-6 col-md-3">
 						<h3>
-							<a href="#">
-								<img class="img-responsive" src="{% static "img/featured-places/majorca.jpg" %}" alt="Ibiza">
+							<a href="/villas/tuscany">
+								<img class="img-responsive" src="https://res.cloudinary.com/stayscrape/image/upload/e_sharpen:20,q_100/v1488814754/mykonos.jpg" alt="Mykonos">
+								<span>Mykonos</span>
+							</a>
+						</h3>
+					</div>
+					<div class="col-sm-6 col-md-3">
+						<h3>
+							<a href="/villas/tuscany">
+								<img class="img-responsive" src="https://res.cloudinary.com/stayscrape/image/upload/e_sharpen:20,q_100/v1488814751/marrakech.jpg" alt="marrakech">
+								<span>Marrakech</span>
+							</a>
+						</h3>
+					</div>
+					<div class="col-sm-6 col-md-3">
+						<h3>
+							<a href="/villas/tuscany">
+								<img class="img-responsive" src="https://res.cloudinary.com/stayscrape/image/upload/e_sharpen:20,q_100/v1488814751/majorca.jpg" alt="Marjorca">
 								<span>Majorca</span>
+							</a>
+						</h3>
+					</div>
+					<div class="col-sm-6 col-md-3">
+						<h3>
+							<a href="/villas/tuscany">
+								<img class="img-responsive" src="https://res.cloudinary.com/stayscrape/image/upload/e_sharpen:20,q_100/v1488814751/kas.jpg" alt="Kaş">
+								<span>Kalkan</span>
+							</a>
+						</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 col-md-3">
+						<h3>
+							<a href="/villas/tuscany">
+								<img class="img-responsive" src="https://res.cloudinary.com/stayscrape/image/upload/e_sharpen:20,q_100/v1488814751/jamaica.jpg" alt="Jamaica">
+								<span>Jamaica</span>
+							</a>
+						</h3>
+					</div>
+					<div class="col-sm-6 col-md-3">
+						<h3>
+							<a href="/villas/tuscany">
+								<img class="img-responsive" src="https://res.cloudinary.com/stayscrape/image/upload/e_sharpen:20,q_100/v1488814751/ibiza.jpg" alt="Ibiza">
+								<span>Ibiza</span>
+							</a>
+						</h3>
+					</div>
+					<div class="col-sm-6 col-md-3">
+						<h3>
+							<a href="/villas/tuscany">
+								<img class="img-responsive" src="https://res.cloudinary.com/stayscrape/image/upload/e_sharpen:20,q_100/v1488814750/cape-town.jpg" alt="Cape Town">
+								<span>Cape Town</span>
+							</a>
+						</h3>
+					</div>
+					<div class="col-sm-6 col-md-3">
+						<h3>
+							<a href="/villas/tuscany">
+								<img class="img-responsive" src="https://res.cloudinary.com/stayscrape/image/upload/e_sharpen:20,q_100/v1488814750/crotia_dm3mdd.jpg" alt="Crotia">
+								<span>Crotia</span>
 							</a>
 						</h3>
 					</div>
@@ -286,10 +224,6 @@
 			</div>
 		</section>
 
-
-		<section class="foot-hero">
-			<h4>Do not worry about where to stay <br>Just enjoy your holiday</h4>
-		</section>
 
 	</div>
 	
