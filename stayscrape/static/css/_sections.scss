@@ -35,7 +35,7 @@ $break-laptop: 1440px;
 
 	.navbar-nav {
 		a {
-			font-family: Avenir-Heavy;
+			// font-family: Avenir-Heavy;
 			color: $navbar-link-color;
 			line-height: 80px;
 			padding: 0 15px;
@@ -137,7 +137,7 @@ $break-laptop: 1440px;
 	background-size: cover;
 	h1 {
 		float: right;
-		font-family: Avenir-Light;
+		// font-family: Avenir-Light;
 		color: #fff;
 		font-size: 54px;
 		line-height: 74px;
@@ -148,7 +148,7 @@ $break-laptop: 1440px;
 	@media screen and (max-width: $break-mobile-s) {
 		height: 160px;
 		h1 {
-			font-family: Avenir-Medium;
+			// font-family: Avenir-Medium;
 			font-size: 22px;
 			line-height: 1.2;
 			margin-top: 50px;
@@ -164,7 +164,7 @@ $break-laptop: 1440px;
 			line-height: 1.4;
 			margin-top: 80px;
 			width: 100%;
-			font-family: Avenir-Medium;
+			// font-family: Avenir-Medium;
 			text-align: center;
 		}
 	}
@@ -187,7 +187,7 @@ $break-laptop: 1440px;
 section {
 	margin-top: 70px;
 	h2 {
-		font-family: Avenir-Medium;
+		// font-family: Avenir-Medium;
 		font-size: 28px;
 		margin-top: 0;
 		margin-bottom: 20px;
@@ -210,19 +210,19 @@ section.featuerd-rentals {
 			width: 100%;
 		}
 		.item-title {
-			font-family: Avenir-Medium;
+			// font-family: Avenir-Medium;
 			font-size: 16px;
 			color: $main-color;
 			margin-top: 10px;
 			display: block;
 			span.price {
-				font-family: Avenir-Heavy;
+				// font-family: Avenir-Heavy;
 				font-size: inherit;
 				margin-right: 10px;
 			}
 		}
 		.item-location {
-			font-family: Avenir-Heavy;
+			// font-family: Avenir-Heavy;
 			font-size: 16px;
 			color: $main-color;
 			display: block;
@@ -251,7 +251,6 @@ section.featuerd-rentals {
 
 section.best-holiday-places {
 	margin-top: 70px;
-	font-family: BodoniSvtyTwoOSITCTT-Bold;
 
 	.row {
 		margin-bottom: 30px;
@@ -289,6 +288,7 @@ section.best-holiday-places {
 				text-align: center;
 				color: #3E3E3E;
 				text-transform: uppercase;
+				// font-family: Avenir-Heavy;
 			}
 		}
 	}
@@ -351,12 +351,12 @@ section.best-holiday-places {
 
 section.short-desc {
 	p {
-		font-family: Avenir-Light;
+		// font-family: Avenir-Light;
 		font-size: 18px;
 		line-height: 25px;
 		margin: 20px 0;
 		strong {
-			font-family: Avenir-Medium;
+			// font-family: Avenir-Medium;
 		}
 	}
 
@@ -375,7 +375,7 @@ section.foot-hero {
 	padding-top: 230px;
 
 	h4 {
-		font-family: Avenir-Medium;
+		// font-family: Avenir-Medium;
 		font-size: 40px;
 		line-height: 52px;
 		text-align: center;
@@ -423,7 +423,7 @@ footer {
 		.stay-connected {
 			margin-top: 30px;
 			color: #FFDC00;
-			font-family: Avenir-Heavy;
+			// font-family: Avenir-Heavy;
 			display: block;
 			font-size: 18px;
 			margin-bottom: 5px;

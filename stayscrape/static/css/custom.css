@@ -1,3 +1,27 @@
+@font-face {
+  font-family: "Avenir";
+  src: url(../fonts/AvenirLTStd-Light.otf);
+  font-weight: 100; }
+@font-face {
+  font-family: "Avenir";
+  src: url(../fonts/AvenirLTStd-Book.otf);
+  font-weight: 200; }
+@font-face {
+  font-family: "Avenir";
+  src: url(../fonts/AvenirLTStd-Roman.otf);
+  font-weight: 300; }
+@font-face {
+  font-family: "Avenir";
+  src: url(../fonts/AvenirLTStd-Medium.otf);
+  font-weight: 400; }
+@font-face {
+  font-family: "Avenir";
+  src: url(../fonts/AvenirLTStd-Heavy.otf);
+  font-weight: 500; }
+@font-face {
+  font-family: "Avenir";
+  src: url(../fonts/AvenirLTStd-Black.otf);
+  font-weight: 600; }
 .icon {
   width: 18px;
   height: 18px;
@@ -287,7 +311,6 @@
     margin-top: 24px;
     margin-left: 0 !important; }
   .navbar-stayScrape .navbar-nav a {
-    font-family: Avenir-Heavy;
     color: #fff;
     line-height: 80px;
     padding: 0 15px;
@@ -362,7 +385,6 @@
   background-size: cover; }
   .hero h1 {
     float: right;
-    font-family: Avenir-Light;
     color: #fff;
     font-size: 54px;
     line-height: 74px;
@@ -372,7 +394,6 @@
     .hero {
       height: 160px; }
       .hero h1 {
-        font-family: Avenir-Medium;
         font-size: 22px;
         line-height: 1.2;
         margin-top: 50px;
@@ -386,7 +407,6 @@
         line-height: 1.4;
         margin-top: 80px;
         width: 100%;
-        font-family: Avenir-Medium;
         text-align: center; } }
   @media screen and (min-width: 481px) and (max-width: 768px) {
     .hero {
@@ -400,7 +420,6 @@
 section {
   margin-top: 70px; }
   section h2 {
-    font-family: Avenir-Medium;
     font-size: 28px;
     margin-top: 0;
     margin-bottom: 20px;
@@ -418,17 +437,14 @@ section.featuerd-rentals .featured-item {
   section.featuerd-rentals .featured-item img {
     width: 100%; }
   section.featuerd-rentals .featured-item .item-title {
-    font-family: Avenir-Medium;
     font-size: 16px;
     color: #383742;
     margin-top: 10px;
     display: block; }
     section.featuerd-rentals .featured-item .item-title span.price {
-      font-family: Avenir-Heavy;
       font-size: inherit;
       margin-right: 10px; }
   section.featuerd-rentals .featured-item .item-location {
-    font-family: Avenir-Heavy;
     font-size: 16px;
     color: #383742;
     display: block; }
@@ -443,8 +459,7 @@ section.featuerd-rentals .featured-item {
     height: 230px; } }
 
 section.best-holiday-places {
-  margin-top: 70px;
-  font-family: BodoniSvtyTwoOSITCTT-Bold; }
+  margin-top: 70px; }
   section.best-holiday-places .row {
     margin-bottom: 30px; }
   section.best-holiday-places h2 {
@@ -497,12 +512,9 @@ section.best-holiday-places {
       line-height: 190px; } }
 
 section.short-desc p {
-  font-family: Avenir-Light;
   font-size: 18px;
   line-height: 25px;
   margin: 20px 0; }
-  section.short-desc p strong {
-    font-family: Avenir-Medium; }
 @media screen and (max-width: 768px) {
   section.short-desc {
     margin-top: 30px; } }
@@ -514,7 +526,6 @@ section.foot-hero {
   background-size: cover;
   padding-top: 230px; }
   section.foot-hero h4 {
-    font-family: Avenir-Medium;
     font-size: 40px;
     line-height: 52px;
     text-align: center;
@@ -551,7 +562,6 @@ footer {
   footer .social .stay-connected {
     margin-top: 30px;
     color: #FFDC00;
-    font-family: Avenir-Heavy;
     display: block;
     font-size: 18px;
     margin-bottom: 5px; }
@@ -714,7 +724,8 @@ body {
   background: #fff;
   color: #383742;
   padding-top: 140px;
-  font-family: Avenir-Medium;
+  font-family: Avenir;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased; }
 
