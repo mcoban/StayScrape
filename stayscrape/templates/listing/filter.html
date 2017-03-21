@@ -70,7 +70,11 @@
 		<div class="row">
 			<div class="col-md-8">
 				<div class="sortby-filter">
+					{% if place.page_title %}
 					<h1 class="page-title">{{ place.page_title }}</h1>
+					{% else %}
+					<h1 class="page-title">Villas in {{ place.name }}</h1>
+					{% endif %}
 					<span class="count">{{ pagination.start }}-{{ pagination.end }} of {{ place.count }} Holiday Villas</span>
 				</div>
 
