@@ -1,6 +1,8 @@
 import json
 import math
 from django import template
+from slugify import slugify
+from django.conf import settings
 
 register = template.Library()
 
@@ -25,5 +27,5 @@ def rental_title(title):
 def rental_breadcrumb(location):
 	li = ""
 	for l in location:
-		li += "<li><a href='#'>%s</a></li>" % l['name']
+		li += "<li><a href='%s/villas/%s'>%s</a></li>" % (settings.SITE_URL, slugify(l['name']), l['name'])
 	return li

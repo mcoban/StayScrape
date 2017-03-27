@@ -80,8 +80,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'stayscrape',
         'USER': 'root',
-        # 'PASSWORD': 'condor',
-        'PASSWORD': '@condord@',
+        'PASSWORD': 'condor',
+        # 'PASSWORD': '@condord@',
         'HOST': '127.0.0.1',
         'PORT': 3306
     }

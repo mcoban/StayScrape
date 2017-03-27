@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
 	<title>{{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa #{{ rental.id }} in {{ detail_json.listing.primaryLocation.description }}{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %}</title>
-	<meta name="description" content="{{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa with {{ rental.bathrooms }} bahtrooms, {{ rental.bedrooms }} bedrooms, {{ rental.sleeps }} sleeps.{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %} Starting from £{{ rental.price }} average per night.">
+	<meta name="description" content="{{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa with {{ rental.bathrooms }} bahtrooms, {{ rental.bedrooms }} bedrooms, {{ rental.sleeps }} sleeps{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %} Starting from £{{ rental.price }} average per night.">
 
 	<link rel="stylesheet" href="{% static "css/core.min.css" %}">
 	<link rel="stylesheet" href="{% static "css/custom.css" %}">

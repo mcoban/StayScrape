@@ -17,7 +17,7 @@ class Rental(models.Model):
 	is_checked = models.BooleanField(default=False)
 	averageRating = models.DecimalField(default=0, max_digits=2, decimal_places=1)
 	reviewCount = models.DecimalField(default=0, max_digits=2, decimal_places=1)
-	slug = models.CharField(max_length=250, default="")
+
 
 	def thumbnail(self):
 		return '<img src="%s" height="90" />' % self.galleryUrl
