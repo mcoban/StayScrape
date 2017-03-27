@@ -128,4 +128,5 @@ STATIC_URL = '/assets/'
 STATICFILES_DIRS = ('', os.path.join(BASE_DIR, 'static'))
 SITE_URL = 'http://127.0.0.1:8000'
 LOCAL_SITE_URL = 'http://127.0.0.1:8000'
+WEBSITE_IP = '178.62.25.205'
 COUNT_PER_PAGE = 24
