@@ -25,7 +25,7 @@
 	<nav class="navbar navbar-stayScrape">
 		<div class="container">
 			<div class="navbar-header">
-				<a href="{{ settings.LOCAL_SITE_URL }}" class="navbar-brand"></a>
+				<a href="{{ settings.SITE_URL }}" class="navbar-brand"></a>
 			</div>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#">Destinaions</a></li>
@@ -82,7 +82,7 @@
 					<div class="row">
 {% for rental in rentals %}
 						<div class="col-md-4">
-							<a href="{{ settings.LOCAL_SITE_URL }}/villa/{{ rental.id }}" class="villa" target="_blank">
+							<a href="{{ settings.SITE_URL }}/villa/{{ rental.id }}" class="villa" target="_blank">
 								<div class="img-container" style="background-image:url({{ rental.galleryUrl }})"></div>
 								<!-- <div class="img-container" data-original="{{ rental.galleryUrl }}"></div> -->
 								<h3 class="title">Villa in {{ rental.longJSON.listing.primaryLocation.name }} with {{ rental.sleeps }} sleeps, {{ rental.bathrooms }} bathrooms, and {{ rental.bedrooms }} bedrooms</h3>

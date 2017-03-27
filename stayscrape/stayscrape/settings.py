@@ -80,7 +80,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'stayscrape',
         'USER': 'root',
-        'PASSWORD': 'condor',
+        # 'PASSWORD': 'condor',
+        'PASSWORD': '@condord@',
         'HOST': '127.0.0.1',
         'PORT': 3306
     }
@@ -125,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/assets/'
 STATICFILES_DIRS = ('', os.path.join(BASE_DIR, 'static'))
-SITE_URL = 'http://127.0.0.1:8000'
+SITE_URL = 'https://stayscrape.com'
 LOCAL_SITE_URL = 'http://127.0.0.1:8000'
 WEBSITE_IP = '178.62.25.205'
 COUNT_PER_PAGE = 24

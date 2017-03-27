@@ -31,7 +31,7 @@
 	<nav class="navbar navbar-stayScrape">
 		<div class="container">
 			<div class="navbar-header">
-				<a href="{{ settings.LOCAL_SITE_URL }}" class="navbar-brand"></a>
+				<a href="{{ settings.SITE_URL }}" class="navbar-brand"></a>
 			</div>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#">Destinaions</a></li>
@@ -209,7 +209,7 @@
 								<div class="col-xs-18">
 									<div class="carousel" data-flickity='{ "lazyLoad": 2, "initialIndex": 1 }'>
 {% for featured in featureds %}
-										<a class="carousel-cell" href="{{ setting.sLOCAL_SITE_URL }}/villa/{{ featured.id }}">
+										<a class="carousel-cell" href="{{ setting.SITE_URL }}/villa/{{ featured.id }}">
 											<img class="carousel-cell-image" data-flickity-lazyload="{{ featured.galleryUrl }}" alt="Villa #{{ featured.id }}" />
 											<span class="description-container">
 												<span class="price">£ {{ featured.price }}</span>
