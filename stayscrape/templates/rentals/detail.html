@@ -17,12 +17,14 @@
 	<meta property="og:site_name" content="StayScrape" />
 	<meta property="og:locale" content="en_UK" />
 
+	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="{{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa #{{ rental.id }} in {{ detail_json.listing.primaryLocation.description }}{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %}" />
 	<meta name="twitter:url" content="https://stayscrape.com/villa/{{ rental.id }}" />
 	<meta name="twitter:description" content="{{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa with {{ rental.bathrooms }} bahtrooms, {{ rental.bedrooms }} bedrooms, {{ rental.sleeps }} sleeps{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %} Starting from £{{ rental.price }} average per night." />
 	<meta name="twitter:image" content="{{ rental.galleryUrl }}" />
 	<meta name="twitter:site" content="@stayscrape" />
-
+	<meta name="twitter:creator" content="@stayscrape" />
+	
 	<meta itemprop="name" content="StayScrape" />
 	<meta itemprop="url" content="https://stayscrape.com/villa/{{ rental.id }}" />
 	<meta itemprop="description" content="{{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa with {{ rental.bathrooms }} bahtrooms, {{ rental.bedrooms }} bedrooms, {{ rental.sleeps }} sleeps{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %} Starting from £{{ rental.price }} average per night." />
