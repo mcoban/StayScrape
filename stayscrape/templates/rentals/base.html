@@ -1,0 +1,292 @@
+{% load static %}
+{% load rental_filters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+	<title>{{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa #{{ rental.id }} in {{ detail_json.listing.primaryLocation.description }}{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %}</title>
+	<meta name="description" content="{{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa with {{ rental.bathrooms }} bahtrooms, {{ rental.bedrooms }} bedrooms, {{ rental.sleeps }} sleeps{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %} Starting from £{{ rental.price }} average per night.">
+
+	<link rel="stylesheet" href="{% static "css/core.min.css" %}">
+	<link rel="stylesheet" href="{% static "css/custom.css" %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static "img/favicon.png" %}">
+	<link rel="canonical" href="{{ rental.detailPageUrl }}">
+
+	{% block "headerSeo" %}{% endblock %}
+
+	<style>
+		#marker {
+		    width: 40px;
+		    height: 36px;
+		    cursor: pointer;
+		}
+	</style>
+
+</head>
+<body>
+	
+	<nav class="navbar navbar-stayScrape">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="{{ settings.SITE_URL }}" class="navbar-brand"></a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">Destinaions</a></li>
+				<li><a href="#">Places</a></li>
+				<li><a href="#">Blog</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="filter-bar">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-18 col-sm-7 col-md-8">
+					<div class="input-container" id="place-input-container">
+						<input type="text" class="place-input" placeholder="Type a place that you want to stay" value="{{ detail_json.listing.address.city }}">
+						<i class="icon search right"></i>
+					</div>
+				</div>
+
+				<div class="col-sm-2 col-xs-5 col-md-3">
+					<div class="input-container" id="guest-container">
+						<i class="icon left guest"></i>
+						<select name="guests" id="guest">
+							<option value="" disabled selected>Guests</option>
+							<option value="1">1 Guest</option>
+							<option value="2">2 Guests</option>
+							<option value="3">3 Guests</option>
+							<option value="4">4 Guests</option>
+							<option value="5">5 Guests</option>
+							<option value="5+">5+ Guests</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-sm-3 col-xs-18">
+					<a href="#" class="btn search-button">Search</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	<div id="rental-detail">
+		
+		<div class="container">
+			<ul class="breadcrumb">
+				{% autoescape off %}
+				{{ detail_json.listing.regions|rental_breadcrumb }}
+				{% endautoescape %}
+				<li>{{ detail_json.listing.address.city }} Rental {{ json.propertyType }} #{{ rental.id }} in {{ detail_json.listing.address.stateProvince }}</li>
+			</ul>
+		</div>
+
+		<div class="container">
+			<h1>{{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental {{ json.propertyType }} #{{ rental.id }} in {{ detail_json.listing.primaryLocation.description }}{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %}</h1>
+
+{% if json.reviewCount > 0 %}
+			<div id="rates">
+				{% autoescape off %}
+				{{ json.averageRating|rating_stars }} from ({{ json.reviewCount }} reviews)
+				{% endautoescape %}
+			</div>
+{% endif %}
+			<div class="row">
+				<div class="col-md-13">
+					<div class="btn-group">
+						<button class="btn btn-info btn-lg"><i class="icon home"></i> Overview</button>
+						<button class="btn btn-info btn-lg"><i class="icon pin"></i> Location</button>
+						<button class="btn btn-info btn-lg"><i class="icon credit-card"></i> Prices</button>
+						<button class="btn btn-info btn-lg"><i class="icon availability"></i> Availability</button>
+						<button class="btn btn-info btn-lg"><i class="icon list"></i> Facilities</button>
+					</div>
+					<div id="rental-pictures">
+						<div class="carousel" data-flickity='{ "lazyLoad": true }'>
+{% for image in detail_json.listing.images %}
+{% for item in image.imageFiles %}
+{% if "1.10" in item.secureUri or "c10" in item.secureUri %}
+							<div class="carousel-cell">
+								<img class="carousel-cell-image" data-flickity-lazyload="{{ item.secureUri }}" alt="{{ image.note }}" />
+						  	</div>
+{% endif %}
+{% endfor %}
+{% endfor %}
+
+						</div>
+					</div>
+					<div id="details">
+						<div class="row">
+							<div class="col-md-4">
+								<span class="details">Details:</span>
+							</div>
+							<div class="col-md-14">
+								<div class="row" id="detail-icons">
+									<div class="col-md-3 item">
+										<img src="{% static "img/icons/property.svg" %}" alt="{{ json.propertyType }}">
+										<span>Property</span>
+										<p>{{ json.propertyType }}</p>
+									</div>
+									<div class="col-md-3 item">
+										<img src="{% static "img/icons/sleeps.svg" %}" alt="{{ rental.sleeps }} People">
+										<span>People</span>
+										<p>{{ rental.sleeps }}</p>
+									</div>
+									<div class="col-md-3 item">
+										<img src="{% static "img/icons/bed.svg" %}" alt="{{ rental.bedrooms }} bedrooms">
+										<span>Bedrooms</span>
+										<p>{{ rental.bedrooms }}</p>
+									</div>
+									<div class="col-md-3 item">
+										<img src="{% static "img/icons/shower.svg" %}" alt="{{ rental.bathrooms }} Bahtrooms">
+										<span>Bahtrooms</span>
+										<p>{{ rental.bathrooms }}</p>
+									</div>
+									<div class="col-md-4 item">
+										<img src="{% static "img/icons/moon.svg" %}" alt="Minimum Stay">
+										<span>Minimum Stay</span>
+										<p>{{ json.minStayRange.minStayLow }} Nights</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row" id="detail-text">
+							<div class="col-md-4">
+								<span class="details">About {{ json.propertyType }}:</span>
+							</div>
+							<div class="col-md-14">
+								<p>
+									This Rental {{ json.propertyType }} is located in {{ detail_json.listing.address.stateProvince }} / {{ detail_json.listing.address.city }} with {{ rental.sleeps }} sleeps, {{ rental.bedrooms }} bedrooms and {{ rental.bathrooms }} bathrooms.
+								</p>
+								<p>
+									{{ json_detail.listing.description }}
+								</p>
+							</div>
+						</div>
+						<div class="row" id="about-owner">
+							<div class="col-md-4">
+								<span class="details">About Owner:</span>
+							</div>
+							<div class="col-md-14">
+								<p>
+									<strong>{{ detail_json.listing.contact.name }}</strong>
+{% if detail_json.listing.contact.ownerProfilePhoto %}
+									<img src="{{ detail_json.listing.contact.ownerProfilePhoto }}" alt="">
+{% endif %}
+								</p>
+								<p>
+									<strong>Spoken Langauge:</strong> 
+{% for lang in detail_json.listing.contact.languagesSpoken %}
+	{{ lang }},
+{% endfor %}
+								</p>
+								<p>
+									<strong>Phone:</strong> 
+{% for phone in detail_json.listing.contact.phones %}
+{{ phone.telScheme }}<br>
+{% endfor %}
+								</p>
+							</div>
+						</div>
+						<div id="location">
+							<div class="row">
+								<div class="col-xs-18">
+									<h3>Location</h3>
+								</div>
+								<div class="col-xs-18">
+									<div id="map-container">
+										<div id="map"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="featured">
+							<div class="row">
+								<div class="col-xs-18">
+									<h3>Featured Villas</h3>
+								</div>
+								<div class="col-xs-18">
+									<div class="carousel" data-flickity='{ "lazyLoad": 2, "initialIndex": 1 }'>
+{% for featured in featureds %}
+										<a class="carousel-cell" href="{{ setting.SITE_URL }}/villa/{{ featured.id }}">
+											<img class="carousel-cell-image" data-flickity-lazyload="{{ featured.galleryUrl }}" alt="Villa #{{ featured.id }}" />
+											<span class="description-container">
+												<span class="price">£ {{ featured.price }}</span>
+												<span class="capacity">{{ featured.sleeps }} sleeps</span>
+											</span>
+									  	</a>
+{% endfor %}
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="panel">
+						<span class="price">{{ json.averagePrice.currencySymbol }} {{ rental.price }}</span>
+						<span class="per">{{ json.averagePrice.periodType|lower }}</span>
+						<div class="book-this">
+							<a href="#" class="btn btn-lg btn-danger btn-info">Request to Book</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+	
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-18 col-sm-2 footer-logo-section">
+					<a href="#" class="footer-brand"></a>
+				</div>
+				<div class="col-xs-18 col-sm-6 col-md-4 pull-right">
+					{% block "social" %}{% endblock %}
+				</div>
+			</div>
+		</div>
+	</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
+
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1Ijoic3RheXNjcmFwZSIsImEiOiJjaXpjdzVpdDIxbmhtMzJxb3FzeW10d2JrIn0.CV-uNOleGhjFI01yRCaxaw';
+	var map = new mapboxgl.Map({
+	    container: 'map',
+	    style: 'mapbox://styles/mapbox/streets-v9',
+	    center: [{{ json.geoCode.longitude }}, {{ json.geoCode.latitude }}],
+	    zoom: 13,
+	});
+	map.addControl(new mapboxgl.GeolocateControl({
+	    positionOptions: {
+	        enableHighAccuracy: true
+	    }
+	}));
+	map.addControl(new mapboxgl.NavigationControl());
+
+
+	var popup = new mapboxgl.Popup({offset: 25})
+	    .setText('{{ rental.headline|rental_title }}');
+	
+	var el = document.createElement('img');
+	el.id = 'marker';
+	el.src = "{% static "img/icons/map_icon.png" %}"
+	
+	new mapboxgl.Marker(el, {offset:[-15, -24]})
+	    .setLngLat([{{ json.geoCode.longitude }}, {{ json.geoCode.latitude }}])
+	    .setPopup(popup)
+	    .addTo(map);
+</script>
+
+
+
+</body>
+</html>
