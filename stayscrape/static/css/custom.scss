@@ -17,9 +17,14 @@ html, body{
 body {
 	background: #fff;
 	color: $main-color;
-	padding-top: 140px;
 	font-family: Avenir;
 	font-weight: 400;
 	font-size: 14px;
 	-webkit-font-smoothing: antialiased;
+	&#home {
+		padding-top: 80px;
+	}
+	&#listing {
+		padding-top: 140px;
+	}
 }

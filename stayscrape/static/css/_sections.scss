@@ -132,50 +132,102 @@ $break-laptop: 1440px;
 
 .hero {
 	width: 100%;
-	height: 640px;
-	background: url(https://res.cloudinary.com/stayscrape/image/upload/c_scale,w_1440/v1490135851/cover_mfltja.jpg) no-repeat;
+	height: 540px;
+	// background: url(https://res.cloudinary.com/stayscrape/image/upload/c_scale,w_1440/v1490135851/cover_mfltja.jpg) no-repeat;
+	background: url(https://res.cloudinary.com/stayscrape/image/upload/c_scale,q_100,w_1440/v1490130994/caribbean_vojkuy.jpg) center center no-repeat;
 	background-size: cover;
-	h1 {
-		float: right;
-		// font-family: Avenir-Light;
-		color: #fff;
-		font-size: 54px;
-		line-height: 74px;
-		width: 540px;
-		margin-top: 160px;
+	padding-top: 160px;
+	.search-widget {
+		width: 600px;
+		margin: auto;
+		h1 {
+			color: #fff;
+			font-size: 42px;
+			text-align: center;
+			text-shadow: 0 0 10px rgba(0,0,0,.2);
+		}
+		.searchBox {
+			input {
+				width: 100%;
+				border: none;
+				height: 50px;
+				font-size: 18px;
+				text-indent: 10px;
+				outline: none;
+				box-shadow: 0 0 5px rgba(0,0,0,.2);
+			}
+		}
 	}
 
 	@media screen and (max-width: $break-mobile-s) {
-		height: 160px;
-		h1 {
-			// font-family: Avenir-Medium;
-			font-size: 22px;
-			line-height: 1.2;
-			margin-top: 50px;
+		padding-top: 100px;
+		height: 480px;
+		.search-widget {
 			width: 100%;
-			text-align: center;
+			padding: 0 15px;
+			h1 {
+				font-size: 20px;
+				line-height: 1.2;
+				margin-top: 50px;
+				width: 100%;
+				font-weight: 600;
+				text-align: center;
+				display: block;
+			}
+			.searchBox {
+				input {
+					height: 40px;
+					font-size: 16px;
+				}
+			}
 		}
 	}
 	
 	@media screen and (min-width: $break-mobile-s + 1) and (max-width: $break-small) {
-		height: 220px;
-		h1 {
-			font-size: 24px;
-			line-height: 1.4;
-			margin-top: 80px;
+		padding-top: 140px;
+		height: 600px;
+		.search-widget {
 			width: 100%;
-			// font-family: Avenir-Medium;
-			text-align: center;
+			padding: 0 15px;
+			h1 {
+				font-size: 22px;
+				line-height: 1.2;
+				margin-top: 50px;
+				width: 100%;
+				font-weight: 600;
+				text-align: center;
+				display: block;
+			}
+			.searchBox {
+				input {
+					height: 50px;
+					font-size: 16px;
+				}
+			}
 		}
 	}
 	
 	@media screen and (min-width: $break-small + 1) and (max-width: $break-medium) {
+		padding-top: 50px;
 		height: 340px;
-		h1 {
-			font-size: 36px;
-			line-height: 1.4;
-			float: left;
-			margin-top: 200px;
+		.search-widget {
+			width: 500px;
+			padding: 0 15px;
+			h1 {
+				font-size: 28px;
+				line-height: 1.2;
+				margin-top: 50px;
+				width: 100%;
+				font-weight: 600;
+				text-align: center;
+				display: block;
+			}
+			.searchBox {
+				input {
+					height: 50px;
+					font-size: 16px;
+				}
+			}
 		}
 	}
 }
@@ -252,24 +304,23 @@ section.featuerd-rentals {
 section.best-holiday-places {
 	margin-top: 70px;
 
-	.row {
-		margin-bottom: 30px;
-	}
-
 	h2 {
 		font-family: inherit;
-		font-size: 42px;
-		color: #3E3E3E;
+		font-size: 32px;
+		color: $main-color;
 		letter-spacing: 0px;
 		text-transform: uppercase;
 		text-align: center;
 		margin-bottom: 30px;
 	}
 	h3 {
-		margin: 0;
+		margin: 0 0 40px 0;
 		transition: ease all .2s;
 		&:hover {
 			box-shadow: 0 0 10px 5px rgba(0,0,0,.1);
+		}
+		&.country {
+			height: 440px;
 		}
 		a {
 			display: block;
@@ -294,44 +345,72 @@ section.best-holiday-places {
 	}
 
 	@media screen and (max-width: $break-mobile-s) {
+		margin-top: 30px;
+		h2 {
+			font-size: 20px;
+			margin-bottom: 10px;
+		}
 		h3 {
+			&.country {
+				height: 240px;
+			}
 			a {
 				span {
 					font-size: 24px;
-					line-height: 200px;
 				}
 			}
 		}
 	}
 
 	@media screen and (min-width: $break-mobile-s + 1) and (max-width: $break-mobile-m) {
+		margin-top: 30px;
+		h2 {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
 		h3 {
+			&.country {
+				height: 270px;
+			}
 			a {
 				span {
 					font-size: 24px;
-					line-height: 230px;
 				}
 			}
 		}
 	}
 
 	@media screen and (min-width: $break-mobile-m + 1) and (max-width: $break-mobile-l) {
+		margin-top: 30px;
+		h2 {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
 		h3 {
+			&.country {
+				height: 300px;
+			}
 			a {
 				span {
 					font-size: 26px;
-					line-height: 250px;
 				}
 			}
 		}
 	}
 
 	@media screen and (min-width: $break-mobile-l + 1) and (max-width: $break-tablet) {
+		margin-top: 40px;
+		h2 {
+			font-size: 30px;
+			margin-bottom: 20px;
+		}
 		h3 {
+			&.country {
+				height: 300px;
+			}
 			a {
 				span {
 					font-size: 20px;
-					line-height: 150px;
 				}
 			}
 		}
@@ -342,7 +421,6 @@ section.best-holiday-places {
 			a {
 				span {
 					font-size: 24px;
-					line-height: 190px;
 				}
 			}
 		}
