@@ -9,22 +9,22 @@
 	
 	<meta name="author" content="StayScrape" />
 	<link rel="publisher" href="https://plus.google.com/107271556185400806991" />
-	<meta property="og:title" content="StayScrape: Best Holiday Villas for Holiday Rentals" />
-	<meta property="og:url" content="https://stayscrape.com" />
+	<meta property="og:title" content="{{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa #{{ rental.id }} in {{ detail_json.listing.primaryLocation.description }}{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %}" />
+	<meta property="og:url" content="https://stayscrape.com/villa/{{ rental.id }}" />
 	<meta property="og:description" content="{{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa with {{ rental.bathrooms }} bahtrooms, {{ rental.bedrooms }} bedrooms, {{ rental.sleeps }} sleeps{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %} Starting from £{{ rental.price }} average per night." />
 	<meta property="og:image" content="https://stayscrape.com/assets/img/logo@3x.png" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="StayScrape" />
 	<meta property="og:locale" content="en_UK" />
 
-	<meta name="twitter:title" content="StayScrape: Best Holiday Rental Villas for Summer Vacation" />
-	<meta name="twitter:url" content="https://stayscrape.com" />
+	<meta name="twitter:title" content="{{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa #{{ rental.id }} in {{ detail_json.listing.primaryLocation.description }}{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %}" />
+	<meta name="twitter:url" content="https://stayscrape.com/villa/{{ rental.id }}" />
 	<meta name="twitter:description" content="{{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa with {{ rental.bathrooms }} bahtrooms, {{ rental.bedrooms }} bedrooms, {{ rental.sleeps }} sleeps{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %} Starting from £{{ rental.price }} average per night." />
 	<meta name="twitter:image" content="https://stayscrape.com/assets/img/logo@3x.png" />
 	<meta name="twitter:site" content="@stayscrape" />
 
 	<meta itemprop="name" content="StayScrape" />
-	<meta itemprop="url" content="https://stayscrape.com/" />
+	<meta itemprop="url" content="https://stayscrape.com/villa/{{ rental.id }}" />
 	<meta itemprop="description" content="{{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa with {{ rental.bathrooms }} bahtrooms, {{ rental.bedrooms }} bedrooms, {{ rental.sleeps }} sleeps{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %} Starting from £{{ rental.price }} average per night." />
 	<meta itemprop="image" content="https://stayscrape.com/assets/img/logo@3x.png" />
 {% endblock %}
