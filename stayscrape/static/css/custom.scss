@@ -13,18 +13,3 @@ html, body{
     height: 100%;
 }
 
-
-body {
-	background: #fff;
-	color: $main-color;
-	font-family: Avenir;
-	font-weight: 400;
-	font-size: 14px;
-	-webkit-font-smoothing: antialiased;
-	&#home {
-		padding-top: 80px;
-	}
-	&#listing {
-		padding-top: 140px;
-	}
-}

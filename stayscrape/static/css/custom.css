@@ -291,6 +291,24 @@
     #rental-detail .panel .book-this .btn {
       width: calc(100% - 4px); }
 
+body {
+  background: #fff;
+  color: #383742;
+  font-family: Avenir;
+  font-weight: 400;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased; }
+  body#home {
+    padding-top: 80px; }
+    @media screen and (max-width: 480px) {
+      body#home {
+        padding-top: 0; } }
+  body#listing {
+    padding-top: 140px; }
+  @media screen and (max-width: 480px) {
+    body {
+      padding-top: 0; } }
+
 .navbar-stayScrape {
   background: #3e6bd0;
   color: #fff;
@@ -320,13 +338,16 @@
       background: #2b54b0; }
   @media screen and (max-width: 480px) {
     .navbar-stayScrape {
-      overflow: hidden; }
+      overflow: hidden;
+      height: 60px;
+      margin-bottom: 0; }
       .navbar-stayScrape .navbar-header {
         width: 100%;
         margin: 0;
         padding: 0;
         text-align: center; }
         .navbar-stayScrape .navbar-header .navbar-brand {
+          margin-top: 15px;
           float: none;
           display: inline-block; } }
 
@@ -374,14 +395,15 @@
         outline: none; }
   @media screen and (max-width: 480px) {
     .filter-bar {
-      overflow: hidden; }
+      overflow: hidden;
+      top: 60px; }
       .filter-bar .search-button {
         width: 100%; } }
 
 .hero {
   width: 100%;
   height: 540px;
-  background: url(https://res.cloudinary.com/stayscrape/image/upload/c_scale,q_100,w_1440/v1490130994/caribbean_vojkuy.jpg) center center no-repeat;
+  background: url(https://res.cloudinary.com/stayscrape/image/upload/e_sharpen:20/v1490822600/cover_utslzg.jpg) center center no-repeat;
   background-size: cover;
   padding-top: 160px; }
   .hero .search-widget {
@@ -511,8 +533,12 @@ section.best-holiday-places {
     transition: ease all .2s; }
     section.best-holiday-places h3:hover {
       box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1); }
-    section.best-holiday-places h3.country {
-      height: 440px; }
+    section.best-holiday-places h3.continent .img {
+      margin: 0; }
+    section.best-holiday-places h3.country .img {
+      max-height: 350px;
+      overflow: hidden;
+      margin: 0; }
     section.best-holiday-places h3 a {
       display: block;
       text-align: center;
@@ -534,8 +560,6 @@ section.best-holiday-places {
       section.best-holiday-places h2 {
         font-size: 20px;
         margin-bottom: 10px; }
-      section.best-holiday-places h3.country {
-        height: 240px; }
       section.best-holiday-places h3 a span {
         font-size: 24px; } }
   @media screen and (min-width: 321px) and (max-width: 375px) {
@@ -544,8 +568,6 @@ section.best-holiday-places {
       section.best-holiday-places h2 {
         font-size: 24px;
         margin-bottom: 10px; }
-      section.best-holiday-places h3.country {
-        height: 270px; }
       section.best-holiday-places h3 a span {
         font-size: 24px; } }
   @media screen and (min-width: 376px) and (max-width: 425px) {
@@ -554,8 +576,6 @@ section.best-holiday-places {
       section.best-holiday-places h2 {
         font-size: 24px;
         margin-bottom: 10px; }
-      section.best-holiday-places h3.country {
-        height: 300px; }
       section.best-holiday-places h3 a span {
         font-size: 26px; } }
   @media screen and (min-width: 426px) and (max-width: 768px) {
@@ -564,11 +584,13 @@ section.best-holiday-places {
       section.best-holiday-places h2 {
         font-size: 30px;
         margin-bottom: 20px; }
-      section.best-holiday-places h3.country {
-        height: 300px; }
+      section.best-holiday-places h3.country .img {
+        max-height: 245px; }
       section.best-holiday-places h3 a span {
         font-size: 20px; } }
   @media screen and (min-width: 769px) and (max-width: 1440px) {
+    section.best-holiday-places h3.country .img {
+      max-height: 325px; }
     section.best-holiday-places h3 a span {
       font-size: 24px; } }
 
@@ -780,17 +802,5 @@ html, body {
   -webkit-overflow-scrolling: touch;
   overflow: auto;
   height: 100%; }
-
-body {
-  background: #fff;
-  color: #383742;
-  font-family: Avenir;
-  font-weight: 400;
-  font-size: 14px;
-  -webkit-font-smoothing: antialiased; }
-  body#home {
-    padding-top: 80px; }
-  body#listing {
-    padding-top: 140px; }
 
 /*# sourceMappingURL=custom.css.map */
