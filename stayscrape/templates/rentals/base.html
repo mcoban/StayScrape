@@ -18,16 +18,8 @@
 
 	{% block "headerSeo" %}{% endblock %}
 
-	<style>
-		#marker {
-		    width: 40px;
-		    height: 36px;
-		    cursor: pointer;
-		}
-	</style>
-
 </head>
-<body>
+<body id="detail">
 	
 	<nav class="navbar navbar-stayScrape">
 		<div class="container">
@@ -96,13 +88,6 @@
 {% endif %}
 			<div class="row">
 				<div class="col-md-13">
-					<div class="btn-group">
-						<button class="btn btn-info btn-lg"><i class="icon home"></i> Overview</button>
-						<button class="btn btn-info btn-lg"><i class="icon pin"></i> Location</button>
-						<button class="btn btn-info btn-lg"><i class="icon credit-card"></i> Prices</button>
-						<button class="btn btn-info btn-lg"><i class="icon availability"></i> Availability</button>
-						<button class="btn btn-info btn-lg"><i class="icon list"></i> Facilities</button>
-					</div>
 					<div id="rental-pictures">
 						<div class="carousel" data-flickity='{ "lazyLoad": true }'>
 {% for image in detail_json.listing.images %}
@@ -124,27 +109,27 @@
 							</div>
 							<div class="col-md-14">
 								<div class="row" id="detail-icons">
-									<div class="col-md-3 item">
+									<div class="col-xs-6 item">
 										<img src="{% static "img/icons/property.svg" %}" alt="{{ json.propertyType }}">
 										<span>Property</span>
 										<p>{{ json.propertyType }}</p>
 									</div>
-									<div class="col-md-3 item">
+									<div class="col-xs-6 item">
 										<img src="{% static "img/icons/sleeps.svg" %}" alt="{{ rental.sleeps }} People">
 										<span>People</span>
 										<p>{{ rental.sleeps }}</p>
 									</div>
-									<div class="col-md-3 item">
+									<div class="col-xs-6 item">
 										<img src="{% static "img/icons/bed.svg" %}" alt="{{ rental.bedrooms }} bedrooms">
 										<span>Bedrooms</span>
 										<p>{{ rental.bedrooms }}</p>
 									</div>
-									<div class="col-md-3 item">
+									<div class="col-xs-6 item">
 										<img src="{% static "img/icons/shower.svg" %}" alt="{{ rental.bathrooms }} Bahtrooms">
 										<span>Bahtrooms</span>
 										<p>{{ rental.bathrooms }}</p>
 									</div>
-									<div class="col-md-4 item">
+									<div class="col-xs-6 item">
 										<img src="{% static "img/icons/moon.svg" %}" alt="Minimum Stay">
 										<span>Minimum Stay</span>
 										<p>{{ json.minStayRange.minStayLow }} Nights</p>

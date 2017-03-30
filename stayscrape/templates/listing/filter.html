@@ -81,7 +81,7 @@
 				<div class="villas">
 					<div class="row">
 {% for rental in rentals %}
-						<div class="col-md-6 col-lg-4">
+						<div class="col-sm-6 col-lg-4">
 							<a href="{{ settings.SITE_URL }}/villa/{{ rental.id }}" class="villa" target="_blank">
 								<div class="img-container" style="background-image:url({{ rental.galleryUrl }})"></div>
 								<h3 class="title">Villa in {{ rental.longJSON.listing.primaryLocation.name }} with {{ rental.sleeps }} sleeps, {{ rental.bathrooms }} bathrooms, and {{ rental.bedrooms }} bedrooms</h3>
@@ -147,15 +147,6 @@
 		</div>
 	</footer>
 
-	<!-- <script src="{% static "js/jquery.min.js" %}"></script>
-	<script src="{% static "js/jquery.lazy.min.js" %}"></script>
-	<script>
-	    $(function() {
-	        $('.img-container').lazyload({
-	        	effect : "fadeIn"
-			});      
-	    });
-	</script> -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>

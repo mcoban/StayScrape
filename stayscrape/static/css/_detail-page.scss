@@ -1,3 +1,18 @@
+$break-small: 480px;
+$break-medium: 768px;
+
+$break-mobile-s: 320px;
+$break-mobile-m: 375px;
+$break-mobile-l: 425px;
+$break-tablet: 768px;
+$break-laptop: 1024px;
+$break-laptop: 1440px;
+
+#marker {
+    width: 40px;
+    height: 36px;
+    cursor: pointer;
+}
 @mixin breadcrumb {
 	background: #fff;
 	margin-top: 20px;
@@ -33,10 +48,18 @@
 	}
 }
 
+body#detail {
+	padding-top: 140px;
+	@media screen and (max-width: $break-small) {
+		padding-top: 100px;
+	}
+}
+
 #rental-detail {
 
 	.breadcrumb {
 		@include breadcrumb;
+		margin: 0;
 	}
 
 	#rates {
@@ -46,6 +69,7 @@
 
 	h1 {
 		font-size: 32px;
+		font-weight: 400;
 	}
 
 	.btn-group {
@@ -55,6 +79,7 @@
 			font-size: 18px;
 		}
 	}
+
 
 	#rental-pictures {
 		margin-bottom: 50px;
@@ -78,7 +103,6 @@
 		  opacity: 1;
 		}
 
-
 	}
 
 	#details {
@@ -94,6 +118,8 @@
 		}
 		.item {
 			text-align: center;
+			margin-bottom: 20px;
+			overflow: hidden;
 			img {
 				width: 32px;
 				height: 32px;
@@ -251,5 +277,51 @@
 		}
 	}
 
-
+	@media screen and (max-width: $break-small) {
+		.breadcrumb {
+			display: none;
+		}
+		h1 {
+			font-size: 20px;
+			line-height: 1.2;
+			font-weight: 400;
+			width: 100%;
+			height: 20px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			margin-top: 20px;
+		}
+		#rates {
+			font-size: 16px;
+			li {
+				width: 16px;
+				height: 16px;
+			}
+		}
+	}
+	@media screen and (max-width: $break-mobile-l) {
+		.carousel-cell-image {
+			height: 300px !important;
+		}
+		.flickity-page-dots {
+			bottom: -40px;
+		}
+	}
+	@media screen and (max-width: $break-mobile-m) {
+		.carousel-cell-image {
+			height: 270px !important;
+		}
+		.flickity-page-dots {
+			bottom: -50px;
+		}
+	}
+	@media screen and (max-width: $break-mobile-s) {
+		.carousel-cell-image {
+			height: 220px !important;
+		}
+		.flickity-page-dots {
+			bottom: -50px;
+		}
+	}
 }
