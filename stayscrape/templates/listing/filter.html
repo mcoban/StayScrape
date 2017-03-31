@@ -5,11 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-
-
 	<title>{% if place.meta_title %}{{ place.meta_title }}{% else %}Villas in {{ place.name }} | StayScrape{% endif %}</title>
-
-
 	<link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
 	<link rel="stylesheet" href="{% static "css/custom.css" %}">
 	<link rel="icon" type="image/png" sizes="32x32" href="{% static "img/favicon.png" %}">
@@ -84,7 +80,7 @@
 						<div class="col-sm-6 col-lg-4">
 							<a href="{{ settings.SITE_URL }}/villa/{{ rental.id }}" class="villa" target="_blank">
 								<div class="img-container" style="background-image:url({{ rental.galleryUrl }})"></div>
-								<h3 class="title">Villa in {{ rental.longJSON.listing.primaryLocation.name }} with {{ rental.sleeps }} sleeps, {{ rental.bathrooms }} bathrooms, and {{ rental.bedrooms }} bedrooms</h3>
+								<h3 class="title">Villa #{{ rental.id }} in {{ rental.longJSON.listing.primaryLocation.name }} with {{ rental.sleeps }} sleeps, {{ rental.bathrooms }} bathrooms, and {{ rental.bedrooms }} bedrooms</h3>
 								<div class="amnetities">
 									<div class="col">
 										<span class="vicon sleeps"></span>
@@ -120,7 +116,9 @@
 				</div>
 			</div>
 			<div class="col-md-4">
-				<div id="villas-map"></div>
+				<div id="map">
+					<div id="villas-map"></div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -150,84 +148,54 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
+<script src='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js'></script>
+<link rel="stylesheet" href="{% static "css/mapbox.css" %}" />
 
-<!-- <script>
-    mapboxgl.accessToken = 'pk.eyJ1Ijoic3RheXNjcmFwZSIsImEiOiJjaXpjdzVpdDIxbmhtMzJxb3FzeW10d2JrIn0.CV-uNOleGhjFI01yRCaxaw';
-    var geojson = {
-        "type": "FeatureCollection",
-        "features": [
-            {
-                "type": "Feature",
-                "properties": {
-                    "message": "Foo",
-                    "iconSize": [60, 60]
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        -66.324462890625,
-                        -16.024695711685304
-                    ]
-                }
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "message": "Bar",
-                    "iconSize": [50, 50]
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        -61.2158203125,
-                        -15.97189158092897
-                    ]
-                }
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "message": "Baz",
-                    "iconSize": [40, 40]
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        -63.29223632812499,
-                        -18.28151823530889
-                    ]
-                }
-            }
-        ]
-    };
 
-    var map = new mapboxgl.Map({
-        container: 'villas-map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        center: [-65.017, -16.457],
-        zoom: 5
-    });
+<script>
+L.mapbox.accessToken = 'pk.eyJ1Ijoic3RheXNjcmFwZSIsImEiOiJjaXpjdzVpdDIxbmhtMzJxb3FzeW10d2JrIn0.CV-uNOleGhjFI01yRCaxaw';
+var mapTooltipsJS = L.mapbox.map('villas-map', 'mapbox.streets')
+  // .setView([{{ rentals.0.json.geoCode.latitude }}, {{ rentals.0.json.geoCode.longitude }}], 4);
+var myLayer = L.mapbox.featureLayer().addTo(mapTooltipsJS);
+var markers = [];
+var geojson = [
+{% for rental in rentals %}
+	markers.push([{{ rental.json.geoCode.latitude }}, {{ rental.json.geoCode.longitude }}]),
+	{
+		type: 'Feature',
+	    geometry: {
+	      type: 'Point',
+	      coordinates: [{{ rental.json.geoCode.longitude }}, {{ rental.json.geoCode.latitude }}]
+	    },
+	    properties: {
+	    	'title': 'Villa #{{ rental.id }} in {{ rental.longJSON.listing.primaryLocation.name }}',
+	    	'image': '{{ rental.galleryUrl }}',
+	    	'url': '{{ settings.SITE_URL }}/villa/{{ rental.id }}',
+	      	'marker-color': '#3e6bd0',
+	      	'marker-size': 'large',
+	      	'marker-symbol': 'town'
+	    }
+	},
+{% endfor %}
+];
 
-    // add markers to map
-    geojson.features.forEach(function(marker) {
-        // create a DOM element for the marker
-        var el = document.createElement('div');
-        el.className = 'marker';
-        el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
-        el.style.width = marker.properties.iconSize[0] + 'px';
-        el.style.height = marker.properties.iconSize[1] + 'px';
+// Set a custom icon on each marker based on feature properties.
+myLayer.on('layeradd', function(e) {
+	var marker = e.layer,
+		feature = marker.feature;
+  	var content = '<a href="' + feature.properties.url + '"><img src="' + feature.properties.image + '"><span>' + feature.properties.title + '</span></a>';
+  	marker.bindPopup(content);
+});
+myLayer.setGeoJSON(geojson);
+mapTooltipsJS.fitBounds(markers);
+mapTooltipsJS.scrollWheelZoom.disable();
 
-        el.addEventListener('click', function() {
-            window.alert(marker.properties.message);
-        });
+myLayer.on('click', function(e) {
+	mapTooltipsJS.panTo(e.layer.getLatLng());
+})
 
-        // add marker to map
-        new mapboxgl.Marker(el, {offset: [-marker.properties.iconSize[0] / 2, -marker.properties.iconSize[1] / 2]})
-            .setLngLat(marker.geometry.coordinates)
-            .addTo(map);
-    });
-</script> -->
+</script>
+
 
 
 </body>

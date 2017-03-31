@@ -831,10 +831,13 @@ footer {
               font-weight: 700;
               font-size: 20px;
               line-height: 1; }
-  #listing #maps {
-    position: fixed;
-    right: 0;
-    padding: 0; }
+  #listing #map {
+    position: relative; }
+    #listing #map #villas-map {
+      height: 400px; }
+
+.map-tooltip img {
+  display: none !important; }
 
 .pagination {
   display: block;
@@ -855,6 +858,17 @@ footer {
 @media screen and (max-width: 480px) {
   .pull-right {
     float: left !important; } }
+.leaflet-popup-content {
+  max-width: 240px; }
+  .leaflet-popup-content img {
+    width: 100%; }
+  .leaflet-popup-content span {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #383742; }
+
 /*for disable scrolling while clicking fixed filterbar input*/
 html, body {
   -webkit-overflow-scrolling: touch;

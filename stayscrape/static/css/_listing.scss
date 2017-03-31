@@ -160,12 +160,19 @@ $break-laptop: 1440px;
 			}
 		}
 	}
-		#maps {
-			position: fixed;
-			right: 0;
-			padding: 0;
+	#map {
+		position: relative;
+		#villas-map {
+			height: 400px;
 		}
+	}
 
+}
+
+.map-tooltip {
+	img {
+		display: none !important;
+	}
 }
 
 .pagination {
@@ -192,5 +199,19 @@ $break-laptop: 1440px;
 @media screen and (max-width: $break-small) {
 	.pull-right {
 		float: left !important;
+	}
+}
+
+.leaflet-popup-content {
+	max-width: 240px;
+	img {
+		width: 100%;
+	}
+	span {
+		display: block;
+		margin-top: 10px;
+		font-size: 14px;
+		font-weight: 500;
+		color: $main-color;
 	}
 }

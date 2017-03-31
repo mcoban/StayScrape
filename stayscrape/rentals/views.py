@@ -53,6 +53,7 @@ def listVillas(request, place):
 			rentals = Rental.objects.filter(id__in=[related.rental_id for related in relateds])[start:start + settings.COUNT_PER_PAGE]
 			
 			for rental in rentals:
+				rental.json = json.loads(rental.shortJSON)
 				rental.longJSON = json.loads(rental.longJSON)
 
 			pagination = {
