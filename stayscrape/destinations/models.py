@@ -8,6 +8,7 @@ class Place(models.Model):
 	page_title = models.CharField(max_length=200, blank=True, null=True)
 	meta_title = models.CharField(max_length=150, blank=True, null=True)
 	meta_description = models.CharField(max_length=200, blank=True, null=True)
+	description = models.TextField(blank=True, null=True)
 	count = models.IntegerField(default=0)
 
 	def __str__(self):

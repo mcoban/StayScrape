@@ -163,7 +163,14 @@ $break-laptop: 1440px;
 	#map {
 		position: relative;
 		#villas-map {
-			height: 400px;
+			height: 540px;
+		}
+		&~#description {
+			margin-top: 30px;
+			p {
+				font-size: 16px;
+				line-height: 1.4;
+			}
 		}
 	}
 

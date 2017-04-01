@@ -834,7 +834,12 @@ footer {
   #listing #map {
     position: relative; }
     #listing #map #villas-map {
-      height: 400px; }
+      height: 540px; }
+    #listing #map ~ #description {
+      margin-top: 30px; }
+      #listing #map ~ #description p {
+        font-size: 16px;
+        line-height: 1.4; }
 
 .map-tooltip img {
   display: none !important; }
