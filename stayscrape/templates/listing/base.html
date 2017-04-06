@@ -89,7 +89,7 @@
 					{% endif %}
 					<span class="count">{{ pagination.start }}-{{ pagination.end }} of {{ place.count }} Holiday Villas</span>
 				</div>
-				{% if pagination.page == 1 %}
+				{% if pagination.page == 1 and place.description %}
 				<div class="description">
 					{{ place.description }}
 				</div>
