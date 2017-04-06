@@ -406,8 +406,7 @@ body {
   color: #fff;
   position: fixed;
   top: 80px;
-  z-index: 999999;
-  overflow: hidden; }
+  z-index: 999999; }
   .filter-bar .input-container {
     margin-top: 13px;
     position: relative;
@@ -441,17 +440,16 @@ body {
       color: #383742; }
       .filter-bar .input-container#guest-container select:focus {
         outline: none; }
-    .filter-bar .input-container#order-container select {
-      -webkit-appearance: none;
-      margin-left: 30px;
-      height: 34px;
-      line-height: 36px;
-      background: #fff;
-      border: none;
-      width: calc(100% - 30px);
-      color: #383742; }
-      .filter-bar .input-container#order-container select:focus {
-        outline: none; }
+  .filter-bar .dropdown {
+    margin-top: 13px;
+    position: relative;
+    background: #fff; }
+    .filter-bar .dropdown .btn {
+      width: 100%;
+      border: 1px solid #ddd;
+      height: 36px;
+      padding: 0 10px;
+      text-align: left; }
   @media screen and (max-width: 480px) {
     .filter-bar {
       overflow: hidden;
@@ -780,6 +778,11 @@ footer {
           font-size: 28px; }
         #listing .sortby-filter .count {
           float: left; } }
+  #listing .description {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #777;
+    margin-bottom: 30px; }
   #listing .villas .villa {
     background: #fff;
     border: 1px solid #ddd;

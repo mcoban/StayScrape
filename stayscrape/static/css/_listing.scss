@@ -57,6 +57,13 @@ $break-laptop: 1440px;
 		}
 	}
 
+	.description {
+		font-size: 15px;
+		line-height: 1.75;
+		color: $gray-color;
+		margin-bottom: 30px;
+	}
+
 	.villas {
 		.villa {
 			background: #fff;

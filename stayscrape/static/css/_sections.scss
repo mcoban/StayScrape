@@ -95,7 +95,7 @@ body {
 	position: fixed;
 	top: 80px;
 	z-index: 999999;
-	overflow: hidden;
+	// overflow: hidden;
 
 	.input-container {
 		margin-top: 13px;
@@ -144,20 +144,17 @@ body {
 				}
 			}
 		}
-		&#order-container {
-			select {
-				-webkit-appearance: none;
-				margin-left: 30px;
-				height: 34px;
-				line-height: 36px;
-				background: #fff;
-				border: none;
-				width: calc(100% - 30px);
-				color: $main-color;
-				&:focus {
-					outline: none;
-				}
-			}	
+	}
+	.dropdown {
+		margin-top: 13px;
+		position: relative;
+		background: #fff;
+		.btn {
+			width: 100%;
+			border: 1px solid #ddd;
+			height: 36px;
+			padding: 0 10px;
+			text-align: left;
 		}
 	}
 
