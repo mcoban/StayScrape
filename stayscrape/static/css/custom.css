@@ -441,6 +441,17 @@ body {
       color: #383742; }
       .filter-bar .input-container#guest-container select:focus {
         outline: none; }
+    .filter-bar .input-container#order-container select {
+      -webkit-appearance: none;
+      margin-left: 30px;
+      height: 34px;
+      line-height: 36px;
+      background: #fff;
+      border: none;
+      width: calc(100% - 30px);
+      color: #383742; }
+      .filter-bar .input-container#order-container select:focus {
+        outline: none; }
   @media screen and (max-width: 480px) {
     .filter-bar {
       overflow: hidden;
@@ -713,6 +724,28 @@ footer {
     footer .social {
       float: right;
       margin-top: 0; } }
+
+.placeholder {
+  background-color: #f6f6f6;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden; }
+
+.placeholder img {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 1s linear; }
+
+.placeholder img.loaded {
+  opacity: 1; }
+
+.img-small {
+  filter: blur(50px);
+  transform: scale(1); }
 
 #listing {
   background: #f5f5f5; }

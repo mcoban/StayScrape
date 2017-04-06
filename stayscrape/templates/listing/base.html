@@ -29,13 +29,13 @@
 	<div class="filter-bar">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xs-18 col-sm-7 col-md-5">
+				<div class="col-xs-18 col-sm-7 col-md-4">
 					<div class="input-container" id="place-input-container">
 						<input type="text" class="place-input" placeholder="Type a place that you want to stay">
 						<i class="icon search right"></i>
 					</div>
 				</div>
-				<div class="col-sm-2 col-xs-5">
+				<div class="col-xs-5 col-sm-2 col-md-1">
 					<div class="input-container" id="guest-container">
 						<i class="icon left guest"></i>
 						<select name="guests" id="guest">
@@ -46,6 +46,19 @@
 							<option value="4">4 Guests</option>
 							<option value="5">5 Guests</option>
 							<option value="5+">5+ Guests</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-xs-3 col-sm-6 col-md-2">
+					<div class="input-container" id="order-container">
+						<select name="order" id="order">
+							<option value="-1" disabled selected>Order By</option>
+							<option value="1">Price Ascending</option>
+							<option value="1">Price Descending</option>
+							<option value="1">Sleeps Ascending</option>
+							<option value="1">Sleeps Descending</option>
+							<option value="1">Bedroom Ascending</option>
+							<option value="1">Bedroom Descending</option>
 						</select>
 					</div>
 				</div>
