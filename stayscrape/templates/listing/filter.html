@@ -13,6 +13,7 @@
 	
 	<meta name="author" content="StayScrape" />
 	<link rel="publisher" href="https://plus.google.com/107271556185400806991" />
+	<meta name="description" content="{% if place.meta_description %}{{ place.meta_description }}{% endif %}">
 	<meta property="og:title" content="{% if place.meta_title %}{{ place.meta_title }}{% else %}Holiday Villas in {{ place.name }} For Rent | StayScrape{% endif %}" />
 	<meta property="og:url" content="https://stayscrape.com/villas/{{ place.slug }}" />
 	<meta property="og:description" content="{% if place.meta_description %}{{ place.meta_description }}{% endif %}" />
