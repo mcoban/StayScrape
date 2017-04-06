@@ -29,6 +29,6 @@ $(window).bind("load", function() {
 			var src = img.attr('data-origin');
 			$(this).attr('src', src);
 		});
-	}, 3000);
+	}, 2000);
 
 });
