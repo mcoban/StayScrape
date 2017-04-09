@@ -30,3 +30,6 @@ def rental_breadcrumb(location):
 		li += "<li><a href='%s/villas/%s'>%s</a></li>" % (settings.SITE_URL, slugify(l['name']), l['name'])
 	return li
 
+@register.filter
+def slug_this(name):
+	return slugify(name)
