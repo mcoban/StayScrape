@@ -62,15 +62,13 @@ def listVillas(request, place):
 				"sleeps_high": "-sleeps"
 			}
 			
-			# try:
-			# 	relateds = Relations.objects.filter(place_id=place.id).order_by(order_obj[orderby])
-			# 	rentals = Rental.objects.filter(id__in=[related.rental_id for related in relateds]).order_by(order_obj[orderby])[start:start + settings.COUNT_PER_PAGE]
-			# except KeyError:
-			# 	relateds = Relations.objects.filter(place_id=place.id)
-			# 	rentals = Rental.objects.filter(id__in=[related.rental_id for related in relateds])[start:start + settings.COUNT_PER_PAGE]
+			try:
+				relateds = Relations.objects.filter(place_id=place.id).order_by(order_obj[orderby])
+				rentals = Rental.objects.filter(id__in=[related.rental_id for related in relateds]).order_by(order_obj[orderby])[start:start + settings.COUNT_PER_PAGE]
+			except KeyError:
+				relateds = Relations.objects.filter(place_id=place.id)
+				rentals = Rental.objects.filter(id__in=[related.rental_id for related in relateds])[start:start + settings.COUNT_PER_PAGE]
 
-			relateds = Relations.objects.filter(place_id=place.id)
-			rentals = Rental.objects.filter(id__in=[related.rental_id for related in relateds])[start:start + settings.COUNT_PER_PAGE]
 			
 			for rental in rentals:
 				rental.json = json.loads(rental.shortJSON)
@@ -85,15 +83,20 @@ def listVillas(request, place):
 
 			if page > 1:
 				pagination["prev"] = "%s/villas/%s?page=%d" % (settings.SITE_URL, place.slug, page - 1)
+				if orderby:
+					pagination["prev"] = "%s/villas/%s?orderby=%s&page=%d" % (settings.SITE_URL, place.slug, orderby, page - 1)
 
 			if page * settings.COUNT_PER_PAGE < int(place.count):
 				pagination["next"] = "%s/villas/%s?page=%d" % (settings.SITE_URL, place.slug, page + 1)
+				if orderby:
+					pagination["next"] = "%s/villas/%s?orderby=%s&page=%d" % (settings.SITE_URL, place.slug, orderby, page + 1)
 			
 			return render(request, "listing/filter.html",{
 				"settings": settings,
 				"place": place,
 				"rentals": rentals,
-				"pagination": pagination
+				"pagination": pagination,
+				"orderby": orderby
 			})
 		except Rental.DoesNotExist:
 			return HttpResponse("yok")
