@@ -13,29 +13,32 @@ def index(request):
 	return HttpResponse('Rentals Index Page')	
 
 def showRental(request, id, slug=None):
-	rental = Rental.objects.get(pk=id)
-	regions = json.loads(rental.longJSON)['listing']['regions']
-	for region in regions:
-		place = region['name']
 
-	place = Place.objects.get(name=place)
-	relateds = Relations.objects.filter(place_id=place.id)
-	featureds = Rental.objects.filter(id__in=[related.rental_id for related in relateds])[:30]
-	if rental:
-		shortJSON = json.loads(rental.shortJSON)
-		longJSON = json.loads(rental.longJSON)
-		if slug == None:
-			# return HttpResponse(slugify(longJSON['listing']['primaryLocation']['description']))
-			return redirect("%s/villa/%d/%s" % (settings.SITE_URL, rental.id, slugify(longJSON['listing']['primaryLocation']['description'])))
-		return render(request, "rentals/detail.html", {
-			"settings": settings,
-			"rental": rental,
-			"json": shortJSON,
-			"detail_json": longJSON,
-			"featureds": featureds
-		})
+	try:
+		rental = Rental.objects.get(pk=id)
+		regions = json.loads(rental.longJSON)['listing']['regions']
+		for region in regions:
+			place = region['name']
 
-	return HttpResponse('yok')
+		place = Place.objects.get(name=place)
+		relateds = Relations.objects.filter(place_id=place.id)
+		featureds = Rental.objects.filter(id__in=[related.rental_id for related in relateds])[:30]
+		if rental:
+			shortJSON = json.loads(rental.shortJSON)
+			longJSON = json.loads(rental.longJSON)
+			if slug == None:
+				return redirect("%s/villa/%d/%s" % (settings.SITE_URL, rental.id, slugify(longJSON['listing']['primaryLocation']['description'])))
+			return render(request, "rentals/detail.html", {
+				"settings": settings,
+				"rental": rental,
+				"json": shortJSON,
+				"detail_json": longJSON,
+				"featureds": featureds
+			})
+
+		return HttpResponse('yok')
+	except Rental.DoesNotExist:
+		raise Http404("Rental does not exists")
 
 
 
