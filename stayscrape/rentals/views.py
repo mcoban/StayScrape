@@ -14,13 +14,14 @@ def index(request):
 
 def showRental(request, id, slug=None):
 
+
 	try:
 		rental = Rental.objects.get(pk=id)
 		regions = json.loads(rental.longJSON)['listing']['regions']
 		for region in regions:
 			place = region['name']
 
-		place = Place.objects.get(name=place)
+		place = Place.objects.get(slug=slugify(place))
 		relateds = Relations.objects.filter(place_id=place.id)
 		featureds = Rental.objects.filter(id__in=[related.rental_id for related in relateds])[:30]
 		if rental:
