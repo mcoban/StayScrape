@@ -23,7 +23,6 @@ def showRental(request, id, slug=None):
 		for region in regions:
 			place = region['name']
 
-		return HttpResponse(regions)
 		place = Place.objects.get(slug=slugify(place))
 		relateds = Relations.objects.filter(place_id=place.id)
 		featureds = Rental.objects.filter(id__in=[related.rental_id for related in relateds])[:30]
