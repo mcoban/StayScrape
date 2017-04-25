@@ -49,13 +49,123 @@ $break-laptop: 1440px;
 }
 
 body#detail {
-	padding-top: 140px;
+	padding-top: 80px;
 	@media screen and (max-width: $break-small) {
 		padding-top: 100px;
 	}
 }
 
 #rental-detail {
+
+	.photo-wall {
+		width: 100%;
+		height: 400px;
+		background: #eee;
+		display: block;
+		position: relative;
+		overflow: hidden;
+		margin-bottom: 20px;
+		.photo-wall-content {
+			position: absolute;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			list-style-type: none;
+			padding: 0;
+			overflow: x-scroll;
+			li {
+				float: left;
+				margin: 0;
+				width: calc(100% / 3);
+				height: 400px;
+				.img-wrapper {
+					overflow: hidden;
+					position: relative;
+					border-right: 2px solid #fff;
+					border-bottom: 2px solid #fff;
+					height: 100%;
+					.img {
+						display: block;
+						width: 100%;
+						height: 100%;
+						background-size: cover;
+						background-position: center center;
+					}
+				}
+			}
+		}
+	}
+
+	.summary-container {
+		// max-width: 960px;
+		h1 {
+			font-size: 36px;
+			font-weight: 400;
+			color: #444;
+			margin: 0;
+			line-height: 1.3;
+		}
+		h2 {
+			font-size: 20px;
+			font-weight: 100;
+			margin-top: 10px;
+			color: #666;
+			margin-bottom: 20px;
+		}
+		.about-the-villa {
+			h3 {
+				color: #444;
+				margin-bottom: 20px;
+			}
+			p {
+				font-size: 18px;
+				font-weight: 100;
+				line-height: 1.7;
+				height: 110px;
+				margin-bottom: 20px;
+				overflow: hidden;
+			}
+			a {
+				font-size: 16px;
+				font-weight: 600;
+				text-decoration: none;
+				text-transform: uppercase;
+				margin-bottom: 30px;
+				letter-spacing: -1px;
+			}
+			.hide-more {
+				display: none;
+			}
+		}
+		.amnetities {
+			margin-top: 10px;
+			color: #666;
+			font-size: 18px;
+			font-weight: 500;
+			margin-bottom: 5px;
+		}
+		.owner {
+			text-align: center;
+			a {
+				width: 72px;
+				height: 72px;
+				background: #eee;
+				border-radius: 72px;
+				border: 2px solid #666;
+				display: inline-block;
+				background-size: cover;
+				background-position: center center;
+				background-repeat: no-repeat;
+				&~p {
+					font-size: 14px;
+					display: block;
+					text-align: center;
+					margin-top: 5px;
+					font-weight: 100;
+				}
+			}
+		}
+	}
 
 	.breadcrumb {
 		@include breadcrumb;
@@ -64,7 +174,6 @@ body#detail {
 
 	#rates {
 		@include rates;
-		margin-bottom: 20px;
 	}
 
 	h1 {
@@ -105,6 +214,19 @@ body#detail {
 
 	}
 
+	.owner {
+		img {
+			width: 100%;
+		}
+		p {
+			font-size: 20px;
+			display: block;
+			text-align: center;
+			font-weight: 500;
+			margin-top: 10px;
+		}
+	}
+
 	#details {
 		padding: 20px 0;
 		.details {
@@ -137,11 +259,6 @@ body#detail {
 				display: block;
 				font-size: 24px;
 				color: $main-color;
-			}
-		}
-		#about-owner {
-			p {
-				font-size: 16px;
 			}
 		}
 		#featured {
@@ -205,16 +322,78 @@ body#detail {
 
 	#map-container {
 		width: 100%;
-		height: 440px;
+		height: 360px;
 		#map { position:absolute; top:0; bottom:0; width:98%; }
 	}
 
 	.panel {
-		background: #fafafa;
-		border: 1px solid #eee;
+		background: #fff;
 		border-radius: 0;
-		padding: 20px;
+		margin-top: -73px;
 		overflow: hidden;
+		border: none;
+		box-shadow: none;
+		.panel-heading {
+			background: $footer-bg;
+			border-radius: 0;
+			border: none;
+			color: #fff;
+			font-size: 22px;
+			font-weight: 500;
+			small {
+				font-size: 16px;
+				font-weight: 100;
+				letter-spacing: -1px;
+			}
+		}
+		.panel-body {
+			border: 1px solid #eee;
+			.contact-agent {
+				font-size: 17px;
+				font-weight: 500;
+				display: block;
+				text-transform: uppercase;
+				margin-bottom: 20px;
+			}
+			input {
+				border-radius: 0;
+			}
+			textarea {
+				width: 100%;
+				border: 1px solid #ccc;
+				outline: none;
+				padding: 10px;
+			}
+			.btn {
+				font-weight: 500;
+				padding: 10px 0;
+				font-size: 16px;
+			}
+			.featured-villa {
+				display: block;
+				margin-bottom: 15px;
+				border-bottom: 1px solid #eee;
+				padding-bottom: 15px;
+				overflow: hidden;
+				.img {
+					width: 35%;
+					height: 70px;
+					background: #eee;
+					display: block;
+					background-size: cover;
+					background-repeat: no-repeat;
+					background-position: center center;
+					float: left;
+				}
+				.description {
+					width: 75%;
+					padding: 0 10px;
+					.price {
+						font-size: 22px;
+					}
+				}
+			}
+		}
 
 		span.price {
 			font-size: 32px;
