@@ -91,6 +91,25 @@
 						</div>
 					</div>
 					<hr>
+					<div class="amnetity-images">
+						<div class="item">
+							<img src="{% static "/img/icons/sleeps.svg" %}" alt="{{ rental.sleeps }} guests">
+							<span>{{ rental.sleeps }} guests</span>
+						</div>
+						<div class="item">
+							<img src="{% static "/img/icons/bed.svg" %}" alt="{{ rental.bedrooms }} beds">
+							<span>{{ rental.bedrooms }} beds</span>
+						</div>
+						<div class="item">
+							<img src="{% static "/img/icons/shower.svg" %}" alt="{{ rental.bathrooms }} baths">
+							<span>{{ rental.bathrooms }} baths</span>
+						</div>
+						<div class="item">
+							<img src="{% static "img/icons/moon.svg" %}" alt="Minimum Stay">
+							<span>{{ json.minStayRange.minStayLow }} nights</span>
+						</div>
+					</div>
+					<hr>
 					<div class="row">
 						<div class="col-xs-18"><h3>Location Map</h3></div>
 						<div class="col-xs-18">
@@ -122,11 +141,12 @@
 							<a href="#" class="btn btn-block btn-primary">Send Short Message</a>
 							<hr>
 {% for featured in featureds %}
-							<a href="#" class="featured-villa">
-								<!-- <img src="{{ featured.galleryUrl }}" alt="Villa #{{ featured.id }}" /> -->
+							<a href="{{ setting.SITE_URL }}/villa/{{ featured.id }}/{{ featured.longJSON.listing.primaryLocation.description|slug_this }}" class="featured-villa">
 								<span class="img" style="background-image: url({{ featured.galleryUrl }})"></span>
 								<span class="description">
-									<span class="price">{{ featured.price }}</span>
+									<span class="price">£{{ featured.price }} <small>nightly</small></span>
+									<small>{{ featured.bedrooms }} beds, {{ featured.bathrooms }} baths, {{ featured.sleeps }} sleeps</small>
+									<span class="place">{{ featured.longJSON.listing.primaryLocation.description }}</span>
 								</span>
 							</a>
 {% endfor %}

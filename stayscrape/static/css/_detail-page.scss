@@ -137,6 +137,30 @@ body#detail {
 				display: none;
 			}
 		}
+		.amnetity-images {
+			width: 100%;
+			overflow: hidden;
+			.item {
+				border-right: 1px solid #ddd;
+				width: calc(20% - 1px);
+				float: left;
+				text-align: center;
+				&:last-child {
+					border-right: none;
+				}
+				span {
+					font-size: 21px;
+					display: block;
+					color: #666;
+					font-weight: 100;
+				}
+				img {
+					width: 24px;
+					opacity: .6;
+					margin-bottom: 20px;
+				}
+			}
+		}
 		.amnetities {
 			margin-top: 10px;
 			color: #666;
@@ -375,9 +399,14 @@ body#detail {
 				border-bottom: 1px solid #eee;
 				padding-bottom: 15px;
 				overflow: hidden;
+				&:last-child {
+					border-bottom: none;
+					margin-bottom: 0;
+					padding-bottom: 0;
+				}
 				.img {
-					width: 35%;
-					height: 70px;
+					width: 30%;
+					height: 72px;
 					background: #eee;
 					display: block;
 					background-size: cover;
@@ -386,10 +415,22 @@ body#detail {
 					float: left;
 				}
 				.description {
-					width: 75%;
-					padding: 0 10px;
+					float: left;
+					width: 70%;
+					padding: 10px;
 					.price {
-						font-size: 22px;
+						font-size: 24px;
+						font-weight: 500;
+						color: #444;
+					}
+					small {
+						font-size: 14px;
+						color: #444;
+						font-weight: 400;
+					}
+					.place {
+						color: #444;
+						font-weight: 500;
 					}
 				}
 			}

@@ -190,6 +190,25 @@ body#detail {
   letter-spacing: -1px; }
 #rental-detail .summary-container .about-the-villa .hide-more {
   display: none; }
+#rental-detail .summary-container .amnetity-images {
+  width: 100%;
+  overflow: hidden; }
+  #rental-detail .summary-container .amnetity-images .item {
+    border-right: 1px solid #ddd;
+    width: calc(20% - 1px);
+    float: left;
+    text-align: center; }
+    #rental-detail .summary-container .amnetity-images .item:last-child {
+      border-right: none; }
+    #rental-detail .summary-container .amnetity-images .item span {
+      font-size: 21px;
+      display: block;
+      color: #666;
+      font-weight: 100; }
+    #rental-detail .summary-container .amnetity-images .item img {
+      width: 24px;
+      opacity: .6;
+      margin-bottom: 20px; }
 #rental-detail .summary-container .amnetities {
   margin-top: 10px;
   color: #666;
@@ -389,9 +408,13 @@ body#detail {
       border-bottom: 1px solid #eee;
       padding-bottom: 15px;
       overflow: hidden; }
+      #rental-detail .panel .panel-body .featured-villa:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0; }
       #rental-detail .panel .panel-body .featured-villa .img {
-        width: 35%;
-        height: 70px;
+        width: 30%;
+        height: 72px;
         background: #eee;
         display: block;
         background-size: cover;
@@ -399,10 +422,20 @@ body#detail {
         background-position: center center;
         float: left; }
       #rental-detail .panel .panel-body .featured-villa .description {
-        width: 75%;
-        padding: 0 10px; }
+        float: left;
+        width: 70%;
+        padding: 10px; }
         #rental-detail .panel .panel-body .featured-villa .description .price {
-          font-size: 22px; }
+          font-size: 24px;
+          font-weight: 500;
+          color: #444; }
+        #rental-detail .panel .panel-body .featured-villa .description small {
+          font-size: 14px;
+          color: #444;
+          font-weight: 400; }
+        #rental-detail .panel .panel-body .featured-villa .description .place {
+          color: #444;
+          font-weight: 500; }
   #rental-detail .panel span.price {
     font-size: 32px;
     color: #383742;

@@ -25,7 +25,10 @@ def showRental(request, id, slug=None):
 
 		place = Place.objects.get(slug=slugify(place))
 		relateds = Relations.objects.filter(place_id=place.id)
-		featureds = Rental.objects.filter(id__in=[related.rental_id for related in relateds])[:30]
+		featureds = Rental.objects.filter(id__in=[related.rental_id for related in relateds])[:8]
+		for featured in featureds:
+			featured.longJSON = json.loads(featured.longJSON)
+			featured.shortJSON = json.loads(featured.shortJSON)
 		
 		if slug == None:
 			return redirect("%s/villa/%d/%s" % (settings.SITE_URL, rental.id, slugify(longJSON['listing']['primaryLocation']['description'])))
