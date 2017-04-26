@@ -88,9 +88,9 @@
 								<a href="#" class="read-more">Read More</a>
 								<a href="#" class="hide-more">Hide More</a>
 								<div class="labels">
-									<span class="label label-danger">{{ detail_json.listing.address.stateProvince }} Villa</span>
-									<span class="label label-danger">{{ detail_json.listing.address.city }} Villa</span>
-									<span class="label label-danger">{{ detail_json.listing.primaryLocation.description }} Villa</span>
+									<em>{{ detail_json.listing.address.stateProvince }} Villa</em>,
+									<em>{{ detail_json.listing.address.city }} Villa</em>,
+									<em>{{ detail_json.listing.primaryLocation.description }} Villa</em>
 								</div>
 							</div>
 						</div>
@@ -113,6 +113,10 @@
 							<img src="{% static "img/icons/moon.svg" %}" alt="Minimum Stay">
 							<span>{{ json.minStayRange.minStayLow }} nights</span>
 						</div>
+					</div>
+					<hr>
+					<div class="row">
+						
 					</div>
 					<hr>
 					<div class="row">
@@ -141,7 +145,7 @@
 								<input type="email" id="email" class="form-control" placeholder="Email">
 							</div>
 							<div class="form-group">
-								<textarea name="message" id="message" rows="3">I am interested in {{ detail_json.listing.address.city }} Holiday Villa #{{ rental.id }}.</textarea>
+								<textarea name="message" id="message" rows="3">I am interested in {{ detail_json.listing.primaryLocation.description }} Holiday Villa #{{ rental.id }}.</textarea>
 							</div>
 							<a href="#" class="btn btn-block btn-primary">Send Short Message</a>
 							<hr>
