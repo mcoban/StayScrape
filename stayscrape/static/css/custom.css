@@ -194,8 +194,10 @@ body#detail {
 #rental-detail .summary-container .labels {
   margin-top: 15px; }
   #rental-detail .summary-container .labels .label {
-    font-size: 14px;
+    font-size: 13px;
     padding-top: 5px;
+    font-weight: 400;
+    text-shadow: none;
     border: none;
     border-radius: 0; }
 #rental-detail .summary-container .amnetity-images {
@@ -217,6 +219,15 @@ body#detail {
       width: 24px;
       opacity: .6;
       margin-bottom: 20px; }
+#rental-detail .summary-container .amnetities {
+  list-style-type: none;
+  padding: 0; }
+  #rental-detail .summary-container .amnetities li {
+    width: 10%;
+    float: left;
+    margin-bottom: 40px; }
+    #rental-detail .summary-container .amnetities li img {
+      opacity: .75; }
 #rental-detail .summary-container .amnetities {
   margin-top: 10px;
   color: #666;

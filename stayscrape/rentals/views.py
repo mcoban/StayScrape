@@ -12,7 +12,8 @@ from destinations.models import Place
 def index(request):
 	return HttpResponse('Rentals Index Page')	
 
-def redirectRental(request, id, slug):
+
+def redirectRental(request, id, slug=None):
 	try:
 		rental = Rental.objects.get(pk=id)
 		shortJSON = json.loads(rental.shortJSON)

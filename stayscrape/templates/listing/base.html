@@ -6,7 +6,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 	<title>{% if place.meta_title %}{{ place.meta_title }}{% else %}Holiday Villas in {{ place.name }} For Rent | StayScrape{% endif %}</title>
-	<!-- <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}"> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{% static "css/custom.css" %}">
 	<link rel="icon" type="image/png" sizes="32x32" href="{% static "img/favicon.png" %}">
@@ -183,9 +182,10 @@ var geojson = [
 	      coordinates: [{{ rental.json.geoCode.longitude }}, {{ rental.json.geoCode.latitude }}]
 	    },
 	    properties: {
-	    	'title': 'Villa #{{ rental.id }} in {{ rental.longJSON.listing.primaryLocation.name }}',
+	    	// 'title': 'Villa #{{ rental.id }} in {{ rental.longJSON.listing.primaryLocation.name }}',
+	    	'title': '{{ rental.longJSON.listing.primaryLocation.description }} Villa to Rent in {{ rental.longJSON.listing.address.stateProvince }} {{ rental.longJSON.listing.address.city }} #{{ rental.id }}',
 	    	'image': '{{ rental.galleryUrl }}',
-	    	'url': '{{ settings.SITE_URL }}/villa/{{ rental.id }}',
+	    	'url': '{{ settings.SITE_URL }}/rental/{{ rental.id }}/{{ rental.longJSON.listing.primaryLocation.description|slug_this }}-villa',
 	      	'marker-color': '#3e6bd0',
 	      	'marker-size': 'large',
 	      	'marker-symbol': 'town'

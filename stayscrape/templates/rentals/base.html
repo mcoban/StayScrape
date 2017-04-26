@@ -88,9 +88,9 @@
 								<a href="#" class="read-more">Read More</a>
 								<a href="#" class="hide-more">Hide More</a>
 								<div class="labels">
-									<em>{{ detail_json.listing.address.stateProvince }} Villa</em>,
-									<em>{{ detail_json.listing.address.city }} Villa</em>,
-									<em>{{ detail_json.listing.primaryLocation.description }} Villa</em>
+									<span class="label label-danger">{{ detail_json.listing.address.stateProvince }} Villa</span>
+									<span class="label label-danger">{{ detail_json.listing.address.city }} Villa</span>
+									<span class="label label-danger">{{ detail_json.listing.primaryLocation.description }} Villa</span>
 								</div>
 							</div>
 						</div>
@@ -116,7 +116,14 @@
 					</div>
 					<hr>
 					<div class="row">
-						
+						<div class="col-xs-18"><h3>Amnetities</h3></div>
+						<div class="col-xs-18">
+							<ul class="amnetities">
+{% for amnetity in detail_json.listing.featuredAmenities %}
+								<li><img src="{% static "img/icons/amnetities/" %}{{amnetity}}.svg" %  width="48" alt=""></li>
+{% endfor %}
+							</ul>
+						</div>
 					</div>
 					<hr>
 					<div class="row">
