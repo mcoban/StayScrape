@@ -8,7 +8,7 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
-	<title>{{ detail_json.listing.primaryLocation.description }} {{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Villa to Rent #{{ rental.id }}</title>
+	<title>{{ detail_json.listing.primaryLocation.description }} Villa to Rent in {{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} #{{ rental.id }}</title>
 	<meta name="description" content="{{ detail_json.listing.primaryLocation.description }} {{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa with {{ rental.bathrooms }} bahtrooms, {{ rental.bedrooms }} bedrooms, {{ rental.sleeps }} sleeps{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %} Starting from £{{ rental.price }} average per night.">
 
 	<link rel="stylesheet" href="{% static "css/core.min.css" %}">

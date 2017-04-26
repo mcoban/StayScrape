@@ -9,7 +9,7 @@
 	
 	<meta name="author" content="StayScrape" />
 	<link rel="publisher" href="https://plus.google.com/107271556185400806991" />
-	<meta property="og:title" content="{{ detail_json.listing.primaryLocation.description }} {{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Villa to Rent #{{ rental.id }}" />
+	<meta property="og:title" content="{{ detail_json.listing.primaryLocation.description }} Villa to Rent in {{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} #{{ rental.id }}" />
 	<meta property="og:url" content="https://stayscrape.com/villa/{{ rental.id }}" />
 	<meta property="og:description" content="{{ detail_json.listing.primaryLocation.description }} {{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa with {{ rental.bathrooms }} bahtrooms, {{ rental.bedrooms }} bedrooms, {{ rental.sleeps }} sleeps{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %} Starting from £{{ rental.price }} average per night." />
 	<meta property="og:image" content="{{ rental.galleryUrl }}" />
@@ -18,7 +18,7 @@
 	<meta property="og:locale" content="en_UK" />
 
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="{{ detail_json.listing.primaryLocation.description }} {{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Villa to Rent #{{ rental.id }}" />
+	<meta name="twitter:title" content="{{ detail_json.listing.primaryLocation.description }} Villa to Rent in {{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} #{{ rental.id }}" />
 	<meta name="twitter:url" content="https://stayscrape.com/villa/{{ rental.id }}" />
 	<meta name="twitter:description" content="{{ detail_json.listing.primaryLocation.description }} {{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa with {{ rental.bathrooms }} bahtrooms, {{ rental.bedrooms }} bedrooms, {{ rental.sleeps }} sleeps{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %} Starting from £{{ rental.price }} average per night." />
 	<meta name="twitter:image" content="{{ rental.galleryUrl }}" />
