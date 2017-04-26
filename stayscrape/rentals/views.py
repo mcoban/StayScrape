@@ -12,6 +12,22 @@ from destinations.models import Place
 def index(request):
 	return HttpResponse('Rentals Index Page')	
 
+def redirectRental(request, id, slug):
+	try:
+		rental = Rental.objects.get(pk=id)
+		shortJSON = json.loads(rental.shortJSON)
+		longJSON = json.loads(rental.longJSON)
+		regions = longJSON['listing']['regions']
+		
+		return redirect("%s/rental/%d/%s-villa" % (settings.SITE_URL, rental.id, slugify(longJSON['listing']['primaryLocation']['description'])))
+
+		return HttpResponse('yok')
+	except Rental.DoesNotExist:
+		raise Http404("Rental does not exists")
+
+
+
+
 def showRental(request, id, slug=None):
 
 
@@ -31,7 +47,7 @@ def showRental(request, id, slug=None):
 			featured.shortJSON = json.loads(featured.shortJSON)
 		
 		if slug == None:
-			return redirect("%s/villa/%d/%s" % (settings.SITE_URL, rental.id, slugify(longJSON['listing']['primaryLocation']['description'])))
+			return redirect("%s/rental/%d/%s-villa" % (settings.SITE_URL, rental.id, slugify(longJSON['listing']['primaryLocation']['description'])))
 		return render(request, "rentals/detail.html", {
 			"settings": settings,
 			"rental": rental,

@@ -81,7 +81,7 @@
 					<div class="row">
 {% for rental in rentals %}
 						<div class="col-sm-6 col-lg-4">
-							<a href="{{ settings.SITE_URL }}/villa/{{ rental.id }}/{{ rental.longJSON.listing.primaryLocation.description|slug_this }}" class="villa">
+							<a href="{{ settings.SITE_URL }}/rental/{{ rental.id }}/{{ rental.longJSON.listing.primaryLocation.description|slug_this }}-villa" class="villa">
 								<div class="img-container" style="background-image:url({{ rental.galleryUrl }})"></div>
 								<h3 class="title">Villa #{{ rental.id }} in {{ rental.longJSON.listing.primaryLocation.name }} with {{ rental.sleeps }} sleeps, {{ rental.bathrooms }} baths, and {{ rental.bedrooms }} beds</h3>
 								<div class="amnetities">
