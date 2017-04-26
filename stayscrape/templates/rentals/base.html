@@ -120,7 +120,7 @@
 						<div class="col-xs-18">
 							<ul class="amnetities">
 {% for amnetity in detail_json.listing.featuredAmenities %}
-								<li><img src="{% static "img/icons/amnetities/" %}{{amnetity}}.svg" %  width="48" alt=""></li>
+								<li><img src="{% static "img/icons/amnetities/" %}{{amnetity|lower}}.svg" %  width="48" alt=""></li>
 {% endfor %}
 							</ul>
 						</div>
