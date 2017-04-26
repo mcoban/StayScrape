@@ -137,6 +137,15 @@ body#detail {
 				display: none;
 			}
 		}
+		.labels {
+			margin-top: 15px;
+			.label {
+				font-size: 14px;
+				padding-top: 5px;
+				border: none;
+				border-radius: 0;
+			}
+		}
 		.amnetity-images {
 			width: 100%;
 			overflow: hidden;

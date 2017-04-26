@@ -191,6 +191,13 @@ body#detail {
   letter-spacing: -1px; }
 #rental-detail .summary-container .about-the-villa .hide-more {
   display: none; }
+#rental-detail .summary-container .labels {
+  margin-top: 15px; }
+  #rental-detail .summary-container .labels .label {
+    font-size: 14px;
+    padding-top: 5px;
+    border: none;
+    border-radius: 0; }
 #rental-detail .summary-container .amnetity-images {
   width: 100%;
   overflow: hidden; }
