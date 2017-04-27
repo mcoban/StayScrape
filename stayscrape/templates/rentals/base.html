@@ -53,16 +53,19 @@
 			</ul>
 		</div>
 
-		<div class="container summary-container">
+		<div class="container summary-container" itemscope itemtype="http://schema.org/Product">
 			<div class="row">
 				<div class="col-md-13">
 					<div class="row">
 						<div class="col-md-15">
 							<h2>{{ detail_json.listing.primaryLocation.description }}</h2>
-							<h1>{{ detail_json.listing.primaryLocation.description }} Villa for Rent #{{ rental.id }} in {{ detail_json.listing.address.city }}</h1>
+							<h1 itemprop="name">{{ detail_json.listing.primaryLocation.description }} Villa for Rent #{{ rental.id }} in {{ detail_json.listing.address.city }}</h1>
 							<span class="amnetities">{{ rental.bedrooms }} beds, {{ rental.bathrooms }} baths, {{ rental.sleeps }} sleeps</span>
 {% if json.reviewCount > 0 %}
-			<div id="rates">
+			<div id="rates" itemprop="aggregateRating"
+    itemscope itemtype="http://schema.org/AggregateRating">
+    			<span itemprop="ratingValue">{{ json.averageRating }}</span>
+    			<span itemprop="ratingCount">{{ json.reviewCount }}</span>
 				{% autoescape off %}
 				{{ json.averageRating|rating_stars }} from ({{ json.reviewCount }} reviews)
 				{% endautoescape %}
@@ -137,9 +140,9 @@
 					<hr>
 
 				</div>
-				<div class="col-md-5">
+				<div class="col-md-5" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 					<div class="panel">
-						<div class="panel-heading">{{ json.averagePrice.currencySymbol }} {{ rental.price }} <small>per night</small></div>
+						<div class="panel-heading" itemprop="price" content="{{ rental.price }}"><span itemprop="priceCurrency" content="{{ json.averagePrice.currencySymbol }}">{{ json.averagePrice.currencySymbol }}</span> {{ rental.price }} <small>per night</small></div>
 						<div class="panel-body">
 							<span class="contact-agent">Contact Agent</span>
 							<div class="form-group">
