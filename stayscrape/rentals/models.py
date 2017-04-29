@@ -1,5 +1,7 @@
 import json
 from django.db import models
+from django.conf import settings
+from slugify import slugify
 
 class Rental(models.Model):
 	regionId = models.IntegerField(default=0)
@@ -24,7 +26,12 @@ class Rental(models.Model):
 	thumbnail.allow_tags = True
 
 	def view(self):
-		return '<a href="http://127.0.0.1:8000/villa/%s" target="_blank">View</a>' % self.id
+		try:
+			longJSON = json.loads(self.longJSON)
+			return '<a href="%s/rental/%d/%s-villa" target="_blank">View</a>' % (settings.SITE_URL, self.id, slugify(longJSON['listing']['primaryLocation']['description']))
+			# return '<a href="%s/rental/%d" target="_blank">View</a>' % (settings.SITE_URL, self.id)
+		except KeyError:
+			return '<a href="%s/rental/%d" target="_blank">View</a>' % (settings.SITE_URL, self.id)
 	view.allow_tags = True
 
 	def external(self):
