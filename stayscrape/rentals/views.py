@@ -13,6 +13,15 @@ def index(request):
 	return HttpResponse('Rentals Index Page')	
 
 
+
+def update_featured_pictures(request):
+	#return HttpResponse("Update Pictures")
+	rentals = Rental.objects.filter(picturesArray="")[:50]
+	return render(request, "update-pictures.html", {
+		"rentals": rentals
+	})
+
+
 def redirectRental(request, id, slug=None):
 	try:
 		rental = Rental.objects.get(pk=id)

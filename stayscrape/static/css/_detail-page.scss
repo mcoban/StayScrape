@@ -65,6 +65,9 @@ body#detail {
 		position: relative;
 		overflow: hidden;
 		margin-bottom: 20px;
+		& > img {
+			display: none;
+		}
 		.photo-wall-content {
 			position: absolute;
 			left: 0;

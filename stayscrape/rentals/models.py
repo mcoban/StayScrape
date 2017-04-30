@@ -19,6 +19,7 @@ class Rental(models.Model):
 	is_checked = models.BooleanField(default=False)
 	averageRating = models.DecimalField(default=0, max_digits=2, decimal_places=1)
 	reviewCount = models.DecimalField(default=0, max_digits=2, decimal_places=1)
+	picturesArray = models.CharField(blank=True, null=True, max_length=10000)
 
 
 	def thumbnail(self):

@@ -134,6 +134,8 @@ body#detail {
   position: relative;
   overflow: hidden;
   margin-bottom: 20px; }
+  #rental-detail .photo-wall > img {
+    display: none; }
   #rental-detail .photo-wall .photo-wall-content {
     position: absolute;
     left: 0;
