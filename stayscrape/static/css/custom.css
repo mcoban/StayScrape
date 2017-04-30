@@ -279,6 +279,10 @@ body#detail {
   #rental-detail #rates .empty {
     background: url("../img/star-empty.svg") no-repeat;
     background-size: cover; }
+  #rental-detail #rates .ratingValue, #rental-detail #rates .ratingCount {
+    display: none; }
+#rental-detail .telephone {
+  display: none; }
 #rental-detail h1 {
   font-size: 32px;
   font-weight: 400; }

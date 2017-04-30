@@ -224,6 +224,12 @@ body#detail {
 
 	#rates {
 		@include rates;
+		.ratingValue, .ratingCount {
+			display: none;
+		}
+	}
+	.telephone {
+		display: none;
 	}
 
 	h1 {
