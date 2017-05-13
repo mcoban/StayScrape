@@ -9,6 +9,7 @@ $break-laptop: 1024px;
 $break-laptop: 1440px;
 
 @import "detail-page";
+@import "blog-page";
 
 
 body {
@@ -27,10 +28,14 @@ body {
 	&#listing {
 		padding-top: 140px;
 	}
+	&#blog {
+		padding-top: 100px;
+	}
 	@media screen and (max-width: $break-small) {
 		padding-top: 0;
 	}
 }
+
 
 
 
@@ -87,6 +92,8 @@ body {
 	}
 }
 
+
+
 .filter-bar {
 	background: $filter-bar-bg;
 	width: 100%;
@@ -95,7 +102,6 @@ body {
 	position: fixed;
 	top: 80px;
 	z-index: 999999;
-	// overflow: hidden;
 
 	.input-container {
 		margin-top: 13px;

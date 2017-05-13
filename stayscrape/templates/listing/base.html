@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-	<title>{% if place.meta_title %}{{ place.meta_title }}{% else %}Holiday Villas in {{ place.name }} For Rent | StayScrape{% endif %}</title>
+	<title>{% if place.meta_title %}{{ place.meta_title }}{% if pagination.page > 1 %} Page:{{ pagination.page }} {% endif %}{% else %}Holiday Villas in {{ place.name }} For Rent {% if pagination.page > 1 %} Page:{{ pagination.page }} {% endif %}| StayScrape{% endif %}</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{% static "css/custom.css" %}">
 	<link rel="icon" type="image/png" sizes="32x32" href="{% static "img/favicon.png" %}">

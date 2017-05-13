@@ -14,7 +14,7 @@
 	<meta name="author" content="StayScrape" />
 	<link rel="publisher" href="https://plus.google.com/107271556185400806991" />
 	<meta name="description" content="{% if place.meta_description %}{{ place.meta_description }}{% endif %}">
-	<meta property="og:title" content="{% if place.meta_title %}{{ place.meta_title }}{% else %}Holiday Villas in {{ place.name }} For Rent | StayScrape{% endif %}" />
+	<meta property="og:title" content="{% if place.meta_title %}{{ place.meta_title }}{% if pagination.page > 1 %} Page:{{ pagination.page }} {% endif %}{% else %}Holiday Villas in {{ place.name }} For Rent {% if pagination.page > 1 %} Page:{{ pagination.page }} {% endif %}| StayScrape{% endif %}" />
 	<meta property="og:url" content="https://stayscrape.com/villas/{{ place.slug }}" />
 	<meta property="og:description" content="{% if place.meta_description %}{{ place.meta_description }}{% endif %}" />
 	<meta property="og:image" content="https://stayscrape.com/assets/img/logo@3x.png" />
@@ -22,12 +22,12 @@
 	<meta property="og:site_name" content="StayScrape" />
 	<meta property="og:locale" content="en_UK" />
 
-	<meta name="twitter:title" content="{% if place.meta_title %}{{ place.meta_title }}{% else %}Holiday Villas in {{ place.name }} For Rent | StayScrape{% endif %}" />
+	<meta name="twitter:title" content="{% if place.meta_title %}{{ place.meta_title }}{% if pagination.page > 1 %} Page:{{ pagination.page }} {% endif %}{% else %}Holiday Villas in {{ place.name }} For Rent {% if pagination.page > 1 %} Page:{{ pagination.page }} {% endif %}| StayScrape{% endif %}" />
 	<meta name="twitter:url" content="https://stayscrape.com/villas/{{ place.slug }}" />
 	<meta name="twitter:description" content="{% if place.meta_description %}{{ place.meta_description }}{% endif %}" />
 	<meta name="twitter:site" content="@stayscrape" />
 
-	<meta itemprop="name" content="{% if place.meta_title %}{{ place.meta_title }}{% else %}Holiday Villas in {{ place.name }} For Rent | StayScrape{% endif %}" />
+	<meta itemprop="name" content="{% if place.meta_title %}{{ place.meta_title }}{% if pagination.page > 1 %} Page:{{ pagination.page }} {% endif %}{% else %}Holiday Villas in {{ place.name }} For Rent {% if pagination.page > 1 %} Page:{{ pagination.page }} {% endif %}| StayScrape{% endif %}" />
 	<meta itemprop="url" content="https://stayscrape.com/villas/{{ place.slug }}" />
 	<meta itemprop="description" content="{% if place.meta_description %}{{ place.meta_description }}{% endif %}" />
 	<meta itemprop="image" content="https://stayscrape.com/assets/img/logo@3x.png" />

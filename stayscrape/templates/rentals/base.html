@@ -166,7 +166,7 @@
 							<a href="#" class="btn btn-block btn-primary">Send Short Message</a>
 							<hr>
 {% for featured in featureds %}
-							<a href="{{ setting.SITE_URL }}/villa/{{ featured.id }}/{{ featured.longJSON.listing.primaryLocation.description|slug_this }}" class="featured-villa">
+							<a href="{{ settings.SITE_URL }}/rental/{{ featured.id }}/{% if featured.longJSON.listing.primaryLocation.description %}{{ featured.longJSON.listing.primaryLocation.description|slug_this }}{% else %}villa{% endif %}" class="featured-villa">
 								<span class="img" style="background-image: url({{ featured.galleryUrl }})"></span>
 								<span class="description">
 									<span class="price">£{{ featured.price }} <small>nightly</small></span>

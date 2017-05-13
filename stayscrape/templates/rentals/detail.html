@@ -1,4 +1,5 @@
 {% extends "rentals/base.html" %}
+{% load rental_filters %}
 {% load static %}
 
 {% block "headerSeo" %}
@@ -10,8 +11,11 @@
 	<meta name="author" content="StayScrape" />
 	<link rel="publisher" href="https://plus.google.com/107271556185400806991" />
 	<meta property="og:title" content="{{ detail_json.listing.primaryLocation.description }} Villa to Rent in {{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} #{{ rental.id }}" />
-	<meta property="og:url" content="https://stayscrape.com/villa/{{ rental.id }}" />
+	
+	<meta property="og:url" content="{{ settings.SITE_URL }}/rental/{{ rental.id }}/{% if rental.longJSON.listing.primaryLocation.description %}{{ rental.longJSON.listing.primaryLocation.description|slug_this }}{% else %}villa{% endif %}" />
+	
 	<meta property="og:description" content="{{ detail_json.listing.primaryLocation.description }} {{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa with {{ rental.bathrooms }} bahtrooms, {{ rental.bedrooms }} bedrooms, {{ rental.sleeps }} sleeps{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %} Starting from £{{ rental.price }} average per night." />
+	
 	<meta property="og:image" content="{{ rental.galleryUrl }}" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="StayScrape" />
@@ -19,15 +23,20 @@
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="{{ detail_json.listing.primaryLocation.description }} Villa to Rent in {{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} #{{ rental.id }}" />
-	<meta name="twitter:url" content="https://stayscrape.com/villa/{{ rental.id }}" />
+	
+	<meta name="twitter:url" content="{{ settings.SITE_URL }}/rental/{{ rental.id }}/{% if rental.longJSON.listing.primaryLocation.description %}{{ rental.longJSON.listing.primaryLocation.description|slug_this }}{% else %}villa{% endif %}" />
+	
 	<meta name="twitter:description" content="{{ detail_json.listing.primaryLocation.description }} {{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa with {{ rental.bathrooms }} bahtrooms, {{ rental.bedrooms }} bedrooms, {{ rental.sleeps }} sleeps{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %} Starting from £{{ rental.price }} average per night." />
+	
 	<meta name="twitter:image" content="{{ rental.galleryUrl }}" />
 	<meta name="twitter:site" content="@stayscrape" />
 	<meta name="twitter:creator" content="@stayscrape" />
 	
 	<meta itemprop="name" content="StayScrape" />
-	<meta itemprop="url" content="https://stayscrape.com/villa/{{ rental.id }}" />
+	<meta itemprop="url" content="{{ settings.SITE_URL }}/rental/{{ rental.id }}/{% if rental.longJSON.listing.primaryLocation.description %}{{ rental.longJSON.listing.primaryLocation.description|slug_this }}{% else %}villa{% endif %}" />
+	
 	<meta itemprop="description" content="{{ detail_json.listing.primaryLocation.description }} {{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa with {{ rental.bathrooms }} bahtrooms, {{ rental.bedrooms }} bedrooms, {{ rental.sleeps }} sleeps{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %} Starting from £{{ rental.price }} average per night." />
+	
 	<meta itemprop="image" content="{{ rental.galleryUrl }}" />
 {% endblock %}
 

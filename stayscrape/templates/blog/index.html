@@ -1,0 +1,26 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block "articles" %}
+			<header class="marginTop50 block">
+				<h1 class="marginBottom20">Articles</h1>
+			</header>
+
+			<div class="row">
+{% for article in articles %}
+				<div class="col-md-9">
+					<article class="postItem">
+						<a href="{{ article.slug }}-{{ article.id }}" class="fullWidth block backgroundSizeCover backgroundColorGray height270" style="background-image: url({{ article.thumbnail_url }}); background-position: 50% 50%;">
+							<span class="textScreenReader">{{ article.title }}</span>
+						</a>
+						<div class="marginTop10">
+							<a href="{{ article.slug }}-{{ article.id }}">
+								<h3 class="letterSpacingTight lineHeightTighter fontSize22">{{ article.title }}</h3>
+								<span class="block fontSize17 fontWeight200 lineHeightTighter">{{ article.short }}</span>
+							</a>
+						</div>
+					</article>
+				</div>
+{% endfor %}
+			</div>
+{% endblock %}

@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+	<title>Blog</title>
+	<meta name="description" content="">
+
+	<link rel="stylesheet" href="{% static "css/core.min.css" %}">
+	<link rel="stylesheet" href="{% static "css/custom.css" %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static "img/favicon.png" %}">
+	<link rel="canonical" href="{{ rental.detailPageUrl }}">
+
+	{% block "headerSeo" %}{% endblock %}
+
+</head>
+
+
+<body id="blog">
+	
+	<nav class="navbar navbar-blog">
+		<div class="container-blog">
+			<a href="{{ settings.SITE_URL }}" class="blog-logo">STAYSCRAPE BLOG</a>
+		</div>
+		<div class="container-blog">
+			<ul class="nav navbar-nav navbar-left">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Destinations</a></li>
+			</ul>
+
+		</div>
+	</nav>
+
+
+	<div class="blog-container">
+		<div class="container-blog">
+			<header>
+				<h1 class="marginBottom20">Popular Destinations</h1>
+			</header>
+
+			<div class="row">
+				<article>
+					<div class="col-md-12">
+						<a class="fullWidth block backgroundSizeCover height350 backgroundColorGray" href="#" style="background-image: url(https://res.cloudinary.com/stayscrape/image/upload/c_scale,w_960/v1490134311/france.jpg); background-position: 50% 50%;">
+							<span class="textScreenReader">Lorem ipsum dolor sit amet.</span>
+						</a>
+					</div>
+					<div class="col-md-6">
+						<a href="#">
+							<h3 class="fontSize32 marginTop5 fontWeight500 block">Lorem ipsum dolor sit amet.</h3>
+							<span class="block fontSize17 fontWeight300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, nulla!</span>
+						</a>
+					</div>
+				</article>
+			</div>
+
+			<div class="row marginTop20">
+				<div class="col-md-6">
+					<article class="postItem">
+						<a class="fullWidth block backgroundSizeCover backgroundColorGray height175" href="#" style="background-image: url(https://res.cloudinary.com/stayscrape/image/upload/c_scale,w_960/v1490134765/portugal_fefk7k.jpg); background-position: 50% 50%;">
+							<span class="textScreenReader">adsadsad</span>
+						</a>
+						<div class="marginTop10">
+							<a href="#">
+								<h3 class="letterSpacingTight lineHeightTighter fontSize22">For sale: baby shoes, never&nbsp;worn</h3>
+								<span class="block fontSize17 fontWeight200 lineHeightTighter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, quae!</span>
+								<span class="block marginTop15 fontSize15 fontWeight600">Spain</span>
+							</a>
+						</div>
+					</article>
+				</div>
+				<div class="col-md-6">
+					<article class="postItem">
+						<a class="fullWidth block backgroundSizeCover backgroundColorGray height175" href="#" style="background-image: url(https://res.cloudinary.com/stayscrape/image/upload/c_scale,w_960/v1490132629/cyprus_qbf0ia.jpg); background-position: 50% 50%;">
+							<span class="textScreenReader">adsadsad</span>
+						</a>
+						<div class="marginTop10">
+							<a href="#">
+								<h3 class="letterSpacingTight lineHeightTighter fontSize22">For sale: baby shoes, never&nbsp;worn</h3>
+								<span class="block fontSize17 fontWeight200 lineHeightTighter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, quae!</span>
+								<span class="block marginTop15 fontSize15 fontWeight600">Spain</span>
+							</a>
+						</div>
+					</article>
+				</div>
+				<div class="col-md-6">
+					<article class="postItem">
+						<a class="fullWidth block backgroundSizeCover backgroundColorGray height175" href="#" style="background-image: url(https://cdn-images-1.medium.com/max/800/1*Qh9htFvp1fcELQPGwhgGqw.jpeg); background-position: 50% 50%;">
+							<span class="textScreenReader">adsadsad</span>
+						</a>
+						<div class="marginTop10">
+							<a href="#">
+								<h3 class="letterSpacingTight lineHeightTighter fontSize22">For sale: baby shoes, never&nbsp;worn</h3>
+								<span class="block fontSize17 fontWeight200 lineHeightTighter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, quae!</span>
+								<span class="block marginTop15 fontSize15 fontWeight600">Spain</span>
+							</a>
+						</div>
+					</article>
+				</div>
+			</div>
+
+			
+
+			{% block "articles" %}{% endblock %}
+			
+
+
+		</div>
+	</div>
+	
+
+</body>
+</html>

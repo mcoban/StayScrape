@@ -1,0 +1,122 @@
+$break-mobile-s: 320px;
+$break-mobile-m: 375px;
+$break-mobile-l: 425px;
+$break-tablet: 768px;
+$break-laptop: 1024px;
+$break-laptop: 1440px;
+
+
+@each $bp in (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60) {
+	.margin#{$bp} {
+		margin: #{$bp}px;
+	}
+	.marginTop#{$bp} {
+		margin-top: #{$bp}px;
+	}
+	.marginRight#{$bp} {
+		margin-right: #{$bp}px;
+	}
+	.marginBottom#{$bp} {
+		margin-bottom: #{$bp}px;
+	}
+	.marginLeft#{$bp} {
+		margin-left: #{$bp}px;
+	}
+
+	.padding#{$bp} {
+		padding: #{$bp}px;
+	}
+	.paddingTop#{$bp} {
+		padding-top: #{$bp}px;
+	}
+	.paddingRight#{$bp} {
+		padding-right: #{$bp}px;
+	}
+	.paddingBottom#{$bp} {
+		padding-bottom: #{$bp}px;
+	}
+	.paddingLeft#{$bp} {
+		padding-left: #{$bp}px;
+	}
+}
+
+@each $fw in (100, 200, 300, 400, 500, 600, 700) {
+	.fontWeight#{$fw} {
+		font-weight: #{$fw};
+	}
+}
+
+
+@for $i from 10 through 50 {
+	.fontSize#{$i} {
+		font-size: #{$i}px !important;
+	}
+}
+
+
+@for $i from 1 through 150 {
+	$value: $i * 5;
+	.width#{$value} {
+		width: #{$value}px;
+	}
+	.height#{$value} {
+		height: #{$value}px;
+	}
+}
+
+@media screen and (max-width: $break-mobile-s) {
+
+	@for $i from 1 through 150 {
+		$value: $i * 5;
+		.xs-width#{$value} {
+			width: #{$value}px;
+		}
+		.xs-height#{$value} {
+			height: #{$value}px;
+		}
+	}	
+}
+
+
+
+.block {
+	display: block;
+}
+
+.fullWidth {
+	width: 100%;
+}
+
+.floatLeft {
+	float: left;
+}
+
+.floatRight {
+	float: right;
+}
+
+.backgroundSizeCover {
+	background-size: cover;
+}
+
+.textScreenReader {
+	width: 1px !important;
+	height: 1px !important;
+	color: rgba(255,255,255, 0) !important;
+}
+
+.backgroundColorGray {
+	background-color: #f0f0f0;
+}
+
+.letterSpacingTight {
+	letter-spacing: -0.07em !important;
+}
+
+.lineHeightTighter {
+	line-height: 1.1 !important;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}

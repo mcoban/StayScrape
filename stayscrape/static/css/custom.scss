@@ -1,9 +1,11 @@
+@import "misc";
 @import "colors";
 @import "fonts";
 @import "icons";
 @import "buttons";
-@import "_sections";
-@import "_listing";
+@import "sections";
+@import "listing-page";
+@import "article-page";
 
 
 /*for disable scrolling while clicking fixed filterbar input*/
