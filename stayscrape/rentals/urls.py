@@ -5,7 +5,8 @@ from . import views
 rentals_urls = [
     url(r'^$', views.index),
     url(r'^(?P<id>[0-9]+)$', views.showRental),
-    url(r'^(?P<id>[0-9]+)/(?P<slug>[-\w]+)$', views.showRental)
+    #url(r'^(?P<id>[0-9]+)/(?P<slug>[-\w]+)$', views.showRental)
+    url(r'^(?P<slug>[-\w]+)$', views.showRental)
 ]
 
 villas_urls = [

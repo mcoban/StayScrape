@@ -80,7 +80,7 @@
 					<div class="row">
 {% for rental in rentals %}
 						<div class="col-sm-6 col-lg-4">
-							<a href="{{ settings.SITE_URL }}/rental/{{ rental.id }}/{{ rental.longJSON.listing.primaryLocation.description|slug_this }}-villa" class="villa">
+							<a href="{{ settings.SITE_URL }}/rental/{{ rental.longJSON.listing.primaryLocation.description|slug_this }}-villa-{{ rental.id }}" class="villa">
 								<div class="img-container" style="background-image:url({{ rental.galleryUrl }})"></div>
 								<h3 class="title">Villa #{{ rental.id }} in {{ rental.longJSON.listing.primaryLocation.name }} with {{ rental.sleeps }} sleeps, {{ rental.bathrooms }} baths, and {{ rental.bedrooms }} beds</h3>
 								<div class="amnetities">
@@ -182,10 +182,9 @@ var geojson = [
 	      coordinates: [{{ rental.json.geoCode.longitude }}, {{ rental.json.geoCode.latitude }}]
 	    },
 	    properties: {
-	    	// 'title': 'Villa #{{ rental.id }} in {{ rental.longJSON.listing.primaryLocation.name }}',
 	    	'title': '{{ rental.longJSON.listing.primaryLocation.description }} Villa to Rent in {{ rental.longJSON.listing.address.stateProvince }} {{ rental.longJSON.listing.address.city }} #{{ rental.id }}',
 	    	'image': '{{ rental.galleryUrl }}',
-	    	'url': '{{ settings.SITE_URL }}/rental/{{ rental.id }}/{{ rental.longJSON.listing.primaryLocation.description|slug_this }}-villa',
+	    	'url': '{{ settings.SITE_URL }}/rental/{{ rental.longJSON.listing.primaryLocation.description|slug_this }}-villa-{{ rental.id }}',
 	      	'marker-color': '#3e6bd0',
 	      	'marker-size': 'large',
 	      	'marker-symbol': 'town'

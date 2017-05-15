@@ -38,8 +38,14 @@ def redirectRental(request, id, slug=None):
 
 
 
-def showRental(request, id, slug=None):
+# def showRental(request, id, slug=None):
+def showRental(request, slug):
 
+	id = slug.split('-').pop()
+	slug = '-'.join(slug.split('-')[:-1])
+
+	if not id.isdigit():
+		return HttpResponse(":)")
 
 	try:
 		rental = Rental.objects.get(pk=id)
@@ -56,8 +62,8 @@ def showRental(request, id, slug=None):
 			featured.longJSON = json.loads(featured.longJSON)
 			featured.shortJSON = json.loads(featured.shortJSON)
 		
-		if slug == None:
-			return redirect("%s/rental/%d/%s-villa" % (settings.SITE_URL, rental.id, slugify(longJSON['listing']['primaryLocation']['description'])))
+		if slug != "%s-villa" % slugify(longJSON['listing']['primaryLocation']['description']):
+			return redirect("%s/rental/%s-villa-%d" % (settings.SITE_URL, slugify(longJSON['listing']['primaryLocation']['description']), rental.id))
 		return render(request, "rentals/detail.html", {
 			"settings": settings,
 			"rental": rental,

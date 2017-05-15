@@ -3531,6 +3531,489 @@ footer {
     max-width: 768px !important;
     margin: auto; }
 
+.-margin0 {
+  margin: 0; }
+
+.-margin5 {
+  margin: 5; }
+
+.-margin10 {
+  margin: 10; }
+
+.-margin15 {
+  margin: 15; }
+
+.-margin20 {
+  margin: 20; }
+
+.-margin25 {
+  margin: 25; }
+
+.-margin30 {
+  margin: 30; }
+
+.-margin35 {
+  margin: 35; }
+
+.-margin40 {
+  margin: 40; }
+
+.-margin45 {
+  margin: 45; }
+
+.-margin50 {
+  margin: 50; }
+
+.-marginTop0 {
+  margin-top: 0; }
+
+.-marginTop5 {
+  margin-top: 5; }
+
+.-marginTop10 {
+  margin-top: 10; }
+
+.-marginTop15 {
+  margin-top: 15; }
+
+.-marginTop20 {
+  margin-top: 20; }
+
+.-marginTop25 {
+  margin-top: 25; }
+
+.-marginTop30 {
+  margin-top: 30; }
+
+.-marginTop35 {
+  margin-top: 35; }
+
+.-marginTop40 {
+  margin-top: 40; }
+
+.-marginTop45 {
+  margin-top: 45; }
+
+.-marginTop50 {
+  margin-top: 50; }
+
+.-marginRight0 {
+  margin-right: 0; }
+
+.-marginRight5 {
+  margin-right: 5; }
+
+.-marginRight10 {
+  margin-right: 10; }
+
+.-marginRight15 {
+  margin-right: 15; }
+
+.-marginRight20 {
+  margin-right: 20; }
+
+.-marginRight25 {
+  margin-right: 25; }
+
+.-marginRight30 {
+  margin-right: 30; }
+
+.-marginRight35 {
+  margin-right: 35; }
+
+.-marginRight40 {
+  margin-right: 40; }
+
+.-marginRight45 {
+  margin-right: 45; }
+
+.-marginRight50 {
+  margin-right: 50; }
+
+.-marginBottom0 {
+  margin-bottom: 0; }
+
+.-marginBottom5 {
+  margin-bottom: 5; }
+
+.-marginBottom10 {
+  margin-bottom: 10; }
+
+.-marginBottom15 {
+  margin-bottom: 15; }
+
+.-marginBottom20 {
+  margin-bottom: 20; }
+
+.-marginBottom25 {
+  margin-bottom: 25; }
+
+.-marginBottom30 {
+  margin-bottom: 30; }
+
+.-marginBottom35 {
+  margin-bottom: 35; }
+
+.-marginBottom40 {
+  margin-bottom: 40; }
+
+.-marginBottom45 {
+  margin-bottom: 45; }
+
+.-marginBottom50 {
+  margin-bottom: 50; }
+
+.-marginLeft0 {
+  margin-left: 0; }
+
+.-marginLeft5 {
+  margin-left: 5; }
+
+.-marginLeft10 {
+  margin-left: 10; }
+
+.-marginLeft15 {
+  margin-left: 15; }
+
+.-marginLeft20 {
+  margin-left: 20; }
+
+.-marginLeft25 {
+  margin-left: 25; }
+
+.-marginLeft30 {
+  margin-left: 30; }
+
+.-marginLeft35 {
+  margin-left: 35; }
+
+.-marginLeft40 {
+  margin-left: 40; }
+
+.-marginLeft45 {
+  margin-left: 45; }
+
+.-marginLeft50 {
+  margin-left: 50; }
+
+.fontSize10 {
+  font-size: 10px; }
+
+.fontSize11 {
+  font-size: 11px; }
+
+.fontSize12 {
+  font-size: 12px; }
+
+.fontSize13 {
+  font-size: 13px; }
+
+.fontSize14 {
+  font-size: 14px; }
+
+.fontSize15 {
+  font-size: 15px; }
+
+.fontSize16 {
+  font-size: 16px; }
+
+.fontSize17 {
+  font-size: 17px; }
+
+.fontSize18 {
+  font-size: 18px; }
+
+.fontSize19 {
+  font-size: 19px; }
+
+.fontSize20 {
+  font-size: 20px; }
+
+.fontSize21 {
+  font-size: 21px; }
+
+.fontSize22 {
+  font-size: 22px; }
+
+.fontSize23 {
+  font-size: 23px; }
+
+.fontSize24 {
+  font-size: 24px; }
+
+.fontSize25 {
+  font-size: 25px; }
+
+.fontSize26 {
+  font-size: 26px; }
+
+.fontSize27 {
+  font-size: 27px; }
+
+.fontSize28 {
+  font-size: 28px; }
+
+.fontSize29 {
+  font-size: 29px; }
+
+.fontSize30 {
+  font-size: 30px; }
+
+.fontSize31 {
+  font-size: 31px; }
+
+.fontSize32 {
+  font-size: 32px; }
+
+.fontSize33 {
+  font-size: 33px; }
+
+.fontSize34 {
+  font-size: 34px; }
+
+.fontSize35 {
+  font-size: 35px; }
+
+.fontSize36 {
+  font-size: 36px; }
+
+.fontSize37 {
+  font-size: 37px; }
+
+.fontSize38 {
+  font-size: 38px; }
+
+.fontSize39 {
+  font-size: 39px; }
+
+.fontSize40 {
+  font-size: 40px; }
+
+.fontSize41 {
+  font-size: 41px; }
+
+.fontSize42 {
+  font-size: 42px; }
+
+.fontSize43 {
+  font-size: 43px; }
+
+.fontSize44 {
+  font-size: 44px; }
+
+.fontSize45 {
+  font-size: 45px; }
+
+.fontSize46 {
+  font-size: 46px; }
+
+.fontSize47 {
+  font-size: 47px; }
+
+.fontSize48 {
+  font-size: 48px; }
+
+.fontSize49 {
+  font-size: 49px; }
+
+.fontSize50 {
+  font-size: 50px; }
+
+.fontSize51 {
+  font-size: 51px; }
+
+.fontSize52 {
+  font-size: 52px; }
+
+.fontSize53 {
+  font-size: 53px; }
+
+.fontSize54 {
+  font-size: 54px; }
+
+.fontSize55 {
+  font-size: 55px; }
+
+.fontSize56 {
+  font-size: 56px; }
+
+.fontSize57 {
+  font-size: 57px; }
+
+.fontSize58 {
+  font-size: 58px; }
+
+.fontSize59 {
+  font-size: 59px; }
+
+.fontSize60 {
+  font-size: 60px; }
+
+@media screen and (max-width: 320px) {
+  .xs-margin0 {
+    margin: 0; }
+
+  .xs-margin5 {
+    margin: 5; }
+
+  .xs-margin10 {
+    margin: 10; }
+
+  .xs-margin15 {
+    margin: 15; }
+
+  .xs-margin20 {
+    margin: 20; }
+
+  .xs-margin25 {
+    margin: 25; }
+
+  .xs-margin30 {
+    margin: 30; }
+
+  .xs-margin35 {
+    margin: 35; }
+
+  .xs-margin40 {
+    margin: 40; }
+
+  .xs-margin45 {
+    margin: 45; }
+
+  .xs-margin50 {
+    margin: 50; }
+
+  .xs-marginTop0 {
+    margin-top: 0; }
+
+  .xs-marginTop5 {
+    margin-top: 5; }
+
+  .xs-marginTop10 {
+    margin-top: 10; }
+
+  .xs-marginTop15 {
+    margin-top: 15; }
+
+  .xs-marginTop20 {
+    margin-top: 20; }
+
+  .xs-marginTop25 {
+    margin-top: 25; }
+
+  .xs-marginTop30 {
+    margin-top: 30; }
+
+  .xs-marginTop35 {
+    margin-top: 35; }
+
+  .xs-marginTop40 {
+    margin-top: 40; }
+
+  .xs-marginTop45 {
+    margin-top: 45; }
+
+  .xs-marginTop50 {
+    margin-top: 50; }
+
+  .xs-marginRight0 {
+    margin-right: 0; }
+
+  .xs-marginRight5 {
+    margin-right: 5; }
+
+  .xs-marginRight10 {
+    margin-right: 10; }
+
+  .xs-marginRight15 {
+    margin-right: 15; }
+
+  .xs-marginRight20 {
+    margin-right: 20; }
+
+  .xs-marginRight25 {
+    margin-right: 25; }
+
+  .xs-marginRight30 {
+    margin-right: 30; }
+
+  .xs-marginRight35 {
+    margin-right: 35; }
+
+  .xs-marginRight40 {
+    margin-right: 40; }
+
+  .xs-marginRight45 {
+    margin-right: 45; }
+
+  .xs-marginRight50 {
+    margin-right: 50; }
+
+  .xs-marginBottom0 {
+    margin-bottom: 0; }
+
+  .xs-marginBottom5 {
+    margin-bottom: 5; }
+
+  .xs-marginBottom10 {
+    margin-bottom: 10; }
+
+  .xs-marginBottom15 {
+    margin-bottom: 15; }
+
+  .xs-marginBottom20 {
+    margin-bottom: 20; }
+
+  .xs-marginBottom25 {
+    margin-bottom: 25; }
+
+  .xs-marginBottom30 {
+    margin-bottom: 30; }
+
+  .xs-marginBottom35 {
+    margin-bottom: 35; }
+
+  .xs-marginBottom40 {
+    margin-bottom: 40; }
+
+  .xs-marginBottom45 {
+    margin-bottom: 45; }
+
+  .xs-marginBottom50 {
+    margin-bottom: 50; }
+
+  .xs-marginLeft0 {
+    margin-left: 0; }
+
+  .xs-marginLeft5 {
+    margin-left: 5; }
+
+  .xs-marginLeft10 {
+    margin-left: 10; }
+
+  .xs-marginLeft15 {
+    margin-left: 15; }
+
+  .xs-marginLeft20 {
+    margin-left: 20; }
+
+  .xs-marginLeft25 {
+    margin-left: 25; }
+
+  .xs-marginLeft30 {
+    margin-left: 30; }
+
+  .xs-marginLeft35 {
+    margin-left: 35; }
+
+  .xs-marginLeft40 {
+    margin-left: 40; }
+
+  .xs-marginLeft45 {
+    margin-left: 45; }
+
+  .xs-marginLeft50 {
+    margin-left: 50; } }
 /*for disable scrolling while clicking fixed filterbar input*/
 html, body {
   -webkit-overflow-scrolling: touch;

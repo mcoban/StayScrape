@@ -11,5 +11,40 @@
 
 	}
 
+}
 
+
+$margins: ( ("margin", "margin"), ("marginTop", "margin-top"), ("marginRight", "margin-right"), ("marginBottom", "margin-bottom"), ("marginLeft", "margin-left") );
+$paddings: ( ("padding", "padding"), ("paddingTop", "padding-top"), ("paddingRight", "padding-right"), ("paddingBottom", "padding-bottom"), ("paddingLeft", "padding-left") );
+
+@mixin createMarginsPaddings($selectors, $preffix: "") {
+	$preffix: if($preffix, $preffix + "-", "");
+	@each $item in $selectors {
+		$class: nth($item, 1);
+		$prop: nth($item, 2);
+		@for $i from 0 through 10 {
+			$val: $i * 5;
+			.#{$preffix}#{$class}#{$val} {
+				#{$prop}: $val;
+			}
+		}
+	}
+}
+
+@mixin createFontSizes($preffix: "") {
+	@for $i from 10 through 60 {
+		.#{$preffix}#{"fontSize"}#{$i} {
+			font-size: #{$i}px;
+		}
+	}
+}
+
+
+
+@include createMarginsPaddings($margins);
+@include createFontSizes();
+
+
+@media screen and (max-width: $break-mobile-s) {
+	@include createMarginsPaddings($margins, "xs")
 }
