@@ -26,6 +26,7 @@ urlpatterns = [
 	url(r'^$', views.home),
     url(r'^admin/', admin.site.urls),
     url(r'^villa/', include(villa_redirect_urls)),
+    url(r'^rental/(?P<id>[0-9]+)', rentals_views.redirectRental2),
     url(r'^rental/', include(rentals_urls)),
     url(r'^villas/', include(villas_urls)),
     url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),

@@ -29,7 +29,20 @@ def redirectRental(request, id, slug=None):
 		longJSON = json.loads(rental.longJSON)
 		regions = longJSON['listing']['regions']
 		
-		return redirect("%s/rental/%d/%s-villa" % (settings.SITE_URL, rental.id, slugify(longJSON['listing']['primaryLocation']['description'])))
+		return redirect("%s/rental/%s-villa-%d" % (settings.SITE_URL, slugify(longJSON['listing']['primaryLocation']['description']), rental.id))
+
+		return HttpResponse('yok')
+	except Rental.DoesNotExist:
+		raise Http404("Rental does not exists")
+
+def redirectRental2(request, id):
+	try:
+		rental = Rental.objects.get(pk=id)
+		shortJSON = json.loads(rental.shortJSON)
+		longJSON = json.loads(rental.longJSON)
+		regions = longJSON['listing']['regions']
+		
+		return redirect("%s/rental/%s-villa-%d" % (settings.SITE_URL, slugify(longJSON['listing']['primaryLocation']['description']), rental.id))
 
 		return HttpResponse('yok')
 	except Rental.DoesNotExist:
