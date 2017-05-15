@@ -8,8 +8,8 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
-	<title>{{ detail_json.listing.primaryLocation.description }} Villa to Rent in {{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} #{{ rental.id }}</title>
-	<meta name="description" content="{{ detail_json.listing.primaryLocation.description }} {{ detail_json.listing.address.stateProvince }} {{ detail_json.listing.address.city }} Rental Villa with {{ rental.bathrooms }} bahtrooms, {{ rental.bedrooms }} bedrooms, {{ rental.sleeps }} sleeps{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %} Starting from £{{ rental.price }} average per night.">
+	<title>{{ rental|get_title }}</title>
+	<meta name="description" content="{{ rental|get_title }} with {{ rental.bathrooms }} bahtrooms, {{ rental.bedrooms }} bedrooms, {{ rental.sleeps }} sleeps{% if detail_json.listing.featuredAmenities.0 == "POOL" %} with Private Pool{% endif %} Starting from £{{ rental.price }} average per night.">
 
 	<link rel="stylesheet" href="{% static "css/core.min.css" %}">
 	<link rel="stylesheet" href="{% static "css/custom.css" %}">
@@ -27,9 +27,9 @@
 				<a href="{{ settings.SITE_URL }}" class="navbar-brand"></a>
 			</div>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Destinaions</a></li>
-				<li><a href="#">Places</a></li>
-				<li><a href="#">Blog</a></li>
+				<li><a>Destinaions</a></li>
+				<li><a>Places</a></li>
+				<li><a href="{{ settings.SITE_URL }}/blog">Blog</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -62,8 +62,13 @@
 							<div class="col-md-15">
 								<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 									<h2 itemprop="addressLocality">{{ detail_json.listing.primaryLocation.description }}</h2>
+									{% autoescape off %}
+									<ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+										{{ detail_json.listing.breadcrumb|rental_breadcrumb }}
+									</ol>
+									{% endautoescape %}
 								</div>
-								<h1 itemprop="name">{{ detail_json.listing.primaryLocation.description }} Villa for Rent #{{ rental.id }} in {{ detail_json.listing.address.city }}</h1>
+								<h1 itemprop="name">{{ rental|get_title }}</h1>
 								<span class="amnetities">{{ rental.bedrooms }} beds, {{ rental.bathrooms }} baths, {{ rental.sleeps }} sleeps</span>
 	{% if json.reviewCount > 0 %}
 				<div id="rates" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">

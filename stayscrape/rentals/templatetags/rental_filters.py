@@ -26,10 +26,26 @@ def rental_title(title):
 @register.filter
 def rental_breadcrumb(location):
 	li = ""
+	count = 0
 	for l in location:
-		li += "<li><a href='%s/villas/%s'>%s</a></li>" % (settings.SITE_URL, slugify(l['name']), l['name'])
+		count = count + 1
+		li += "<li itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'><a itemprop='item' href='%s/villas/%s'><span itemprop='name'>%s</span></a><meta itemprop='position' content='%d' /></li>" % (settings.SITE_URL, slugify(l['name']), l['name'], count)
 	return li
 
 @register.filter
 def slug_this(name):
 	return slugify(name)
+
+
+@register.filter
+def get_district(place):
+	return place.split(",")[0]
+
+
+@register.filter
+def get_title(rental):
+	longJSON = json.loads(rental.longJSON)
+	if rental.title:
+		return "%s Villa #%d to Rent in %s %s" % (rental.title, rental.id, longJSON['listing']['address']['city'], longJSON['listing']['address']['stateProvince'])
+	else:
+		return "%s Villa #%d to Rent in %s %s" % (get_district(longJSON['listing']['primaryLocation']['description']), rental.id, longJSON['listing']['address']['city'], longJSON['listing']['address']['stateProvince'] )

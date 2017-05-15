@@ -77,6 +77,7 @@ def showRental(request, slug):
 		
 		if slug != "%s-villa" % slugify(longJSON['listing']['primaryLocation']['description']):
 			return redirect("%s/rental/%s-villa-%d" % (settings.SITE_URL, slugify(longJSON['listing']['primaryLocation']['description']), rental.id))
+
 		return render(request, "rentals/detail.html", {
 			"settings": settings,
 			"rental": rental,
