@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="{% static "css/core.min.css" %}">
 	<link rel="stylesheet" href="{% static "css/custom.css" %}">
 	<link rel="icon" type="image/png" sizes="32x32" href="{% static "img/favicon.png" %}">
-	<link rel="canonical" href="{{ rental.detailPageUrl }}">
+	<link rel="canonical" href="{{ settings.SITE_URL }}/rental/{{ rental.longJSON.listing.primaryLocation.description|slug_this }}-villa-{{ rental.id }}">
 
 	{% block "headerSeo" %}{% endblock %}
 

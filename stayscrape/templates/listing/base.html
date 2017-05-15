@@ -20,9 +20,9 @@
 				<a href="{{ settings.SITE_URL }}" class="navbar-brand"></a>
 			</div>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Destinaions</a></li>
-				<li><a href="#">Places</a></li>
-				<li><a href="#">Blog</a></li>
+				<li><a>Destinaions</a></li>
+				<li><a>Places</a></li>
+				<li><a href="{{ settings.SITE_URL }}/blog">Blog</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -82,7 +82,8 @@
 						<div class="col-sm-6 col-lg-4">
 							<a href="{{ settings.SITE_URL }}/rental/{{ rental.longJSON.listing.primaryLocation.description|slug_this }}-villa-{{ rental.id }}" class="villa">
 								<div class="img-container" style="background-image:url({{ rental.galleryUrl }})"></div>
-								<h3 class="title">Villa #{{ rental.id }} in {{ rental.longJSON.listing.primaryLocation.name }} with {{ rental.sleeps }} sleeps, {{ rental.bathrooms }} baths, and {{ rental.bedrooms }} beds</h3>
+								<h3 class="title">{{ rental|get_title }} with {{ rental.sleeps }} sleeps, {{ rental.bathrooms }} baths, and {{ rental.bedrooms }} beds</h3>
+								<span class="onePixel">{{ rental.longJSON.listing.description|truncatechars:250 }}</span>
 								<div class="amnetities">
 									<div class="col">
 										<span class="vicon sleeps"></span>

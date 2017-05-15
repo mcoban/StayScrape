@@ -31,6 +31,9 @@
 	<meta itemprop="url" content="https://stayscrape.com/villas/{{ place.slug }}" />
 	<meta itemprop="description" content="{% if place.meta_description %}{{ place.meta_description }}{% endif %}" />
 	<meta itemprop="image" content="https://stayscrape.com/assets/img/logo@3x.png" />
+
+	{% if pagination.prev %}<link rel="prev" href="{{ pagination.prev }}">{% endif %}
+	{% if pagination.next %}<link rel="next" href="{{ pagination.next }}">{% endif %}
 {% endblock %}
 
 {% block "social" %}

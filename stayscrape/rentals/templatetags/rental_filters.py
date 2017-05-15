@@ -44,8 +44,11 @@ def get_district(place):
 
 @register.filter
 def get_title(rental):
-	longJSON = json.loads(rental.longJSON)
-	if rental.title:
-		return "%s Villa #%d to Rent in %s %s" % (rental.title, rental.id, longJSON['listing']['address']['city'], longJSON['listing']['address']['stateProvince'])
-	else:
-		return "%s Villa #%d to Rent in %s %s" % (get_district(longJSON['listing']['primaryLocation']['description']), rental.id, longJSON['listing']['address']['city'], longJSON['listing']['address']['stateProvince'] )
+	longJSON = rental.longJSON
+	try:
+		if rental.title_preffix:
+			return "%s Villa #%d to Rent in %s %s" % (rental.title_preffix, rental.id, longJSON['listing']['address']['city'], longJSON['listing']['address']['stateProvince'])
+		else:
+			return "%s Villa #%d to Rent in %s %s" % (get_district(longJSON['listing']['primaryLocation']['description']), rental.id, longJSON['listing']['address']['city'], longJSON['listing']['address']['stateProvince'] )
+	except KeyError:
+		return "%s Villa #%d to Rent in %s" % (get_district(longJSON['listing']['address']['city']), rental.id, longJSON['listing']['address']['stateProvince'] )

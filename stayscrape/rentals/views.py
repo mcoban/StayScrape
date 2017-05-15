@@ -62,9 +62,10 @@ def showRental(request, slug):
 
 	try:
 		rental = Rental.objects.get(pk=id)
-		shortJSON = json.loads(rental.shortJSON)
-		longJSON = json.loads(rental.longJSON)
-		regions = longJSON['listing']['regions']
+		rental.shortJSON = json.loads(rental.shortJSON)
+		rental.longJSON = json.loads(rental.longJSON)
+		regions = rental.longJSON['listing']['regions']
+		
 		for region in regions:
 			place = region['name']
 
@@ -75,14 +76,14 @@ def showRental(request, slug):
 			featured.longJSON = json.loads(featured.longJSON)
 			featured.shortJSON = json.loads(featured.shortJSON)
 		
-		if slug != "%s-villa" % slugify(longJSON['listing']['primaryLocation']['description']):
-			return redirect("%s/rental/%s-villa-%d" % (settings.SITE_URL, slugify(longJSON['listing']['primaryLocation']['description']), rental.id))
+		if slug != "%s-villa" % slugify(rental.longJSON['listing']['primaryLocation']['description']):
+			return redirect("%s/rental/%s-villa-%d" % (settings.SITE_URL, slugify(rental.longJSON['listing']['primaryLocation']['description']), rental.id))
 
 		return render(request, "rentals/detail.html", {
 			"settings": settings,
 			"rental": rental,
-			"json": shortJSON,
-			"detail_json": longJSON,
+			"json": rental.shortJSON,
+			"detail_json": rental.longJSON,
 			"featureds": featureds
 		})
 
