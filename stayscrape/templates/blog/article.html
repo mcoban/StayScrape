@@ -23,7 +23,7 @@
 		</div>
 		<div class="container-blog">
 			<ul class="nav navbar-nav navbar-left">
-				<li><a href="#">Home</a></li>
+				<li><a href="{{ settings.SITE_URL }}">Home</a></li>
 				<li><a href="#">Destinations</a></li>
 			</ul>
 
@@ -39,13 +39,12 @@
 				<h2 class="marginTop0 marginBottom50 fontSize24 fontWeight300">{{ article.short }}</h2>
 			</header>
 			<div class="content">
-				<p class="fontSize19 fontWeight300 marginBottom30">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione laborum quasi aperiam nam sit similique asperiores, eum perspiciatis optio labore.</p>
-				<p class="fontSize19 fontWeight300 marginBottom30">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione laborum quasi aperiam nam sit similique asperiores, eum perspiciatis optio labore.</p>
+				{% autoescape off %}
+				{{ article.body }}
+				{% endautoescape %}
 			</div>
 		</div>
 	</div>
-
-	<span class="ali">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium voluptatibus consequuntur laborum numquam sequi beatae ex nulla praesentium blanditiis? Necessitatibus amet iste odit assumenda tenetur quibusdam ipsum nobis possimus quaerat.</span>
 	
 
 </body>

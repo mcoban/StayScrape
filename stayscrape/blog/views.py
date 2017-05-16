@@ -25,7 +25,8 @@ def showArticle(request, slug):
 				return redirect("%s/blog/%s-%d" % (settings.SITE_URL, article.slug, article.id) )
 			else:
 				return render(request, "blog/article.html", {
-					"article": article
+					"article": article,
+					"settings": settings
 				})
 		except Post.DoesNotExist:
 			raise Http404("Article does not exists")

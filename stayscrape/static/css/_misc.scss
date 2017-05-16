@@ -12,20 +12,21 @@ $margins: ( ("margin", "margin"), ("marginTop", "margin-top"), ("marginRight", "
 $paddings: ( ("padding", "padding"), ("paddingTop", "padding-top"), ("paddingRight", "padding-right"), ("paddingBottom", "padding-bottom"), ("paddingLeft", "padding-left") );
 
 @mixin createMarginsPaddings($selectors, $preffix: "") {
-	$preffix: if($preffix, $preffix + "-", "");
+	$preffix: if($preffix != "", $preffix + "-", "");
 	@each $item in $selectors {
 		$class: nth($item, 1);
 		$prop: nth($item, 2);
 		@for $i from 0 through 10 {
 			$val: $i * 5;
 			.#{$preffix}#{$class}#{$val} {
-				#{$prop}: $val;
+				#{$prop}: #{$val}px;
 			}
 		}
 	}
 }
 
 @mixin createFontSizes($preffix: "") {
+	$preffix: if($preffix != "", $preffix + "-", "");
 	@for $i from 10 through 60 {
 		.#{$preffix}#{"fontSize"}#{$i} {
 			font-size: #{$i}px;
@@ -33,80 +34,77 @@ $paddings: ( ("padding", "padding"), ("paddingTop", "padding-top"), ("paddingRig
 	}
 }
 
+@mixin createFontWeights($preffix: "") {
+	$preffix: if($preffix != "", $preffix + "-", "");
+	@for $i from 1 through 6 {
+		$fw: $i * 100;
+		.#{$preffix}#{"fontWeight"}#{$fw} {
+			font-weight: #{$fw};
+		}
+	}
+}
+
+@mixin createWidthsHeights($preffix: "") {
+	$preffix: if($preffix != "", $preffix + "-", "");
+	@for $i from 1 through 150 {
+		$value: $i * 5;
+		.#{$preffix}#{"width"}#{$value} {
+			width: #{$value}px;
+		}
+		.#{$preffix}#{"height"}#{$value} {
+			height: #{$value}px;
+		}
+	}
+}
+
 
 
 @include createMarginsPaddings($margins);
+@include createMarginsPaddings($paddings);
 @include createFontSizes();
+@include createFontWeights();
+@include createWidthsHeights();
 
 
 @media screen and (max-width: $break-mobile-l) {
 	@include createMarginsPaddings($margins, "xs");
-	@include createFontSizes();
+	@include createMarginsPaddings($paddings, "xs");
+	@include createFontSizes("xs");
+	@include createWidthsHeights("xs");
+	@include createFontWeights("xs");
 }
 
 @media screen and (min-width: $break-mobile-l + 1) and (max-width: $break-tablet) {
 	@include createMarginsPaddings($margins, "sm");
-	@include createFontSizes();
+	@include createMarginsPaddings($paddings, "sm");
+	@include createFontSizes("sm");
+	@include createWidthsHeights("sm");
+	@include createFontWeights("sm");
 }
 
 @media screen and (min-width: $break-tablet + 1) and (max-width: $break-laptop) {
 	@include createMarginsPaddings($margins, "md");
-	@include createFontSizes();
+	@include createMarginsPaddings($paddings, "md");
+	@include createFontSizes("md");
+	@include createWidthsHeights("md");
+	@include createFontWeights("md");
 }
 
 @media screen and (min-width: $break-laptop + 1) and (max-width: $break-large) {
 	@include createMarginsPaddings($margins, "lg");
-	@include createFontSizes();
+	@include createMarginsPaddings($paddings, "lg");
+	@include createFontSizes("lg");
+	@include createWidthsHeights("lg");
+	@include createFontWeights("lg");
 }
 
 @media screen and (min-width: $break-large + 1) and (max-width: $break-xlarge) {
 	@include createMarginsPaddings($margins, "xl");
-	@include createFontSizes();
+	@include createMarginsPaddings($paddings, "xl");
+	@include createFontSizes("xl");
+	@include createWidthsHeights("xl");
+	@include createFontWeights("xl");
 }
-
-
-
-
-@each $fw in (100, 200, 300, 400, 500, 600, 700) {
-	.fontWeight#{$fw} {
-		font-weight: #{$fw};
-	}
-}
-
-
-@for $i from 10 through 50 {
-	.fontSize#{$i} {
-		font-size: #{$i}px !important;
-	}
-}
-
-
-@for $i from 1 through 150 {
-	$value: $i * 5;
-	.width#{$value} {
-		width: #{$value}px;
-	}
-	.height#{$value} {
-		height: #{$value}px;
-	}
-}
-
-@media screen and (max-width: $break-mobile-s) {
-
-	@for $i from 1 through 150 {
-		$value: $i * 5;
-		.xs-width#{$value} {
-			width: #{$value}px;
-		}
-		.xs-height#{$value} {
-			height: #{$value}px;
-		}
-	}	
-}
-
-
-
-
 
 
 

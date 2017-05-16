@@ -11,7 +11,6 @@
 	<link rel="stylesheet" href="{% static "css/core.min.css" %}">
 	<link rel="stylesheet" href="{% static "css/custom.css" %}">
 	<link rel="icon" type="image/png" sizes="32x32" href="{% static "img/favicon.png" %}">
-	<link rel="canonical" href="{{ rental.detailPageUrl }}">
 
 	{% block "headerSeo" %}{% endblock %}
 
@@ -26,7 +25,7 @@
 		</div>
 		<div class="container-blog">
 			<ul class="nav navbar-nav navbar-left">
-				<li><a href="#">Home</a></li>
+				<li><a href="{{ settings.SITE_URL }}">Home</a></li>
 				<li><a href="#">Destinations</a></li>
 			</ul>
 

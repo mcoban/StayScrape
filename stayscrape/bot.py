@@ -1,10 +1,21 @@
 import json
-import MySQLdb
+# import MySQLdb
+import pymysql as mdb
 from slugify import slugify
 
 
-db = MySQLdb.connect("127.0.0.1", "root", "condor", "stayscrape")
-cursor = db.cursor()
+# db = MySQLdb.connect("127.0.0.1", "root", "condor", "stayscrape")
+# cursor = db.cursor()
+
+connection = mdb.connect(
+	host='localhost',
+	user='root',
+	password='condor',
+	db='stayscrape',
+	charset='utf8'
+)
+cursor = connection.cursor(mdb.cursors.DictCursor)
+
 
 
 def updatePropertyTypes():
@@ -136,4 +147,54 @@ def updatePlaceCount():
 		print(place[0], count)
 	db.commit()
 
-updatePlaceCount()
+#updatePlaceCount()
+
+
+def generateSitemap():
+	root = "https://stayscrape.com"
+	cursor.execute("SELECT * FROM destinations_place")
+	places = cursor.fetchall()
+
+	content = ""
+
+	for place in places:
+		item = """
+			<url>
+				<loc>%s/villas/%s</loc>
+			<url>
+		""" % (root, place["slug"])
+		content += item
+
+	cursor.execute("SELECT * FROM rentals_rental")
+	rentals = cursor.fetchall()
+
+	for rental in rentals:
+		try:
+			rental["longJSON"] = json.loads(rental["longJSON"])
+			item = """
+				<url>
+					<loc>%s/rental/%s-villa-%d</loc>
+				</url>
+			""" % (root, slugify(rental["longJSON"]["listing"]["primaryLocation"]["description"]), rental["id"])
+			content += item
+		except:
+			pass
+
+	sitemap_body = """
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+%s
+</urlset>
+	""" % content
+
+	f = open("templates/sitemap.xml", "w")
+	f.write(sitemap_body)
+	f.close()
+	print("Sitemap is OK!")
+
+generateSitemap()

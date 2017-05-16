@@ -7,6 +7,14 @@
 		.container-article {
 			max-width: 768px !important;
 			margin: auto;
+
+			.content {
+				p {
+					font-size: 19px;
+					font-weight: 300;
+					margin-bottom: 30px;
+				}
+			}
 		}
 
 	}
