@@ -8,17 +8,15 @@
 
 
 .navbar-blog {
-	@extend .navbar-stayScrape;
-	background: $blog-navbar-bg !important;
-	height: 100px !important;
+	@extend .navbar;
 	line-height: 1 !important;
 	.blog-logo {
-		margin-top: 25px;
+		margin-top: 20px;
 		font-size: 24px;
 		color: #fff;
 		font-weight: 700;
 		display: block;
-		&:hover {
+		&:hover, &:focus, &:active {
 			text-decoration: none;
 		}
 	}
@@ -30,7 +28,7 @@
 			font-size: 13px !important;
 			padding: 0 !important;
 			line-height: 1 !important;
-			margin-top: 15px;
+			margin-top: 10px;
 			margin-right: 15px;
 			color: darken($navbar-bg, 25%);
 			font-weight: 500;

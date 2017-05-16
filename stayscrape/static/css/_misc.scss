@@ -3,42 +3,69 @@ $break-mobile-m: 375px;
 $break-mobile-l: 425px;
 $break-tablet: 768px;
 $break-laptop: 1024px;
-$break-laptop: 1440px;
+$break-large: 1440px;
+$break-xlarge: 2048px;
 
 
-@each $bp in (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60) {
-	.margin#{$bp} {
-		margin: #{$bp}px;
-	}
-	.marginTop#{$bp} {
-		margin-top: #{$bp}px;
-	}
-	.marginRight#{$bp} {
-		margin-right: #{$bp}px;
-	}
-	.marginBottom#{$bp} {
-		margin-bottom: #{$bp}px;
-	}
-	.marginLeft#{$bp} {
-		margin-left: #{$bp}px;
-	}
 
-	.padding#{$bp} {
-		padding: #{$bp}px;
-	}
-	.paddingTop#{$bp} {
-		padding-top: #{$bp}px;
-	}
-	.paddingRight#{$bp} {
-		padding-right: #{$bp}px;
-	}
-	.paddingBottom#{$bp} {
-		padding-bottom: #{$bp}px;
-	}
-	.paddingLeft#{$bp} {
-		padding-left: #{$bp}px;
+$margins: ( ("margin", "margin"), ("marginTop", "margin-top"), ("marginRight", "margin-right"), ("marginBottom", "margin-bottom"), ("marginLeft", "margin-left") );
+$paddings: ( ("padding", "padding"), ("paddingTop", "padding-top"), ("paddingRight", "padding-right"), ("paddingBottom", "padding-bottom"), ("paddingLeft", "padding-left") );
+
+@mixin createMarginsPaddings($selectors, $preffix: "") {
+	$preffix: if($preffix, $preffix + "-", "");
+	@each $item in $selectors {
+		$class: nth($item, 1);
+		$prop: nth($item, 2);
+		@for $i from 0 through 10 {
+			$val: $i * 5;
+			.#{$preffix}#{$class}#{$val} {
+				#{$prop}: $val;
+			}
+		}
 	}
 }
+
+@mixin createFontSizes($preffix: "") {
+	@for $i from 10 through 60 {
+		.#{$preffix}#{"fontSize"}#{$i} {
+			font-size: #{$i}px;
+		}
+	}
+}
+
+
+
+@include createMarginsPaddings($margins);
+@include createFontSizes();
+
+
+@media screen and (max-width: $break-mobile-l) {
+	@include createMarginsPaddings($margins, "xs");
+	@include createFontSizes();
+}
+
+@media screen and (min-width: $break-mobile-l + 1) and (max-width: $break-tablet) {
+	@include createMarginsPaddings($margins, "sm");
+	@include createFontSizes();
+}
+
+@media screen and (min-width: $break-tablet + 1) and (max-width: $break-laptop) {
+	@include createMarginsPaddings($margins, "md");
+	@include createFontSizes();
+}
+
+@media screen and (min-width: $break-laptop + 1) and (max-width: $break-large) {
+	@include createMarginsPaddings($margins, "lg");
+	@include createFontSizes();
+}
+
+@media screen and (min-width: $break-large + 1) and (max-width: $break-xlarge) {
+	@include createMarginsPaddings($margins, "xl");
+	@include createFontSizes();
+}
+
+
+
 
 @each $fw in (100, 200, 300, 400, 500, 600, 700) {
 	.fontWeight#{$fw} {
@@ -76,6 +103,14 @@ $break-laptop: 1440px;
 		}
 	}	
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -127,3 +162,5 @@ $break-laptop: 1440px;
 	color: rgba(255,255,255,0);
 	overflow: hidden;
 }
+
+

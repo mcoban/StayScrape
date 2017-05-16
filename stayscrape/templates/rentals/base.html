@@ -64,7 +64,7 @@
 									<h2 itemprop="addressLocality">{{ detail_json.listing.primaryLocation.description }}</h2>
 									{% autoescape off %}
 									<ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-										{{ detail_json.listing.breadcrumb|rental_breadcrumb }}
+										{{ detail_json.listing.regions|rental_breadcrumb }}
 									</ol>
 									{% endautoescape %}
 								</div>

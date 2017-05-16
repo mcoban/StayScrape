@@ -1,12 +1,4 @@
-$break-small: 480px;
-$break-medium: 768px;
 
-$break-mobile-s: 320px;
-$break-mobile-m: 375px;
-$break-mobile-l: 425px;
-$break-tablet: 768px;
-$break-laptop: 1024px;
-$break-laptop: 1440px;
 
 @import "detail-page";
 @import "blog-page";
@@ -39,7 +31,7 @@ body {
 
 
 
-.navbar-stayScrape {
+.navbar {
 	background: $navbar-bg;
 	color: $navbar-link-color;
 	width: 100%;
