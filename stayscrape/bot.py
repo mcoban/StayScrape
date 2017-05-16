@@ -162,7 +162,7 @@ def generateSitemap():
 			<url>
 				<loc>%s/villas/%s</loc>
 				<priority>1</priority>
-			<url>
+			</url>
 		""" % (root, place["slug"])
 		content += item
 
