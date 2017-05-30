@@ -67,9 +67,11 @@ def showRental(request, slug):
 		regions = rental.longJSON['listing']['regions']
 		
 		for region in regions:
-			place = region['name']
+			try:
+				place = Place.objects.get(slug=slugify(region['name']))
+			except:
+				pass
 
-		place = Place.objects.get(slug=slugify(place))
 		relateds = Relations.objects.filter(place_id=place.id)
 		featureds = Rental.objects.filter(id__in=[related.rental_id for related in relateds]).exclude(id=rental.id)[:8]
 		for featured in featureds:
@@ -87,7 +89,7 @@ def showRental(request, slug):
 			"featureds": featureds
 		})
 
-		return HttpResponse('yok')
+		return HttpResponse('404')
 	except Rental.DoesNotExist:
 		raise Http404("Rental does not exists")
 
