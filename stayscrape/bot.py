@@ -1,11 +1,7 @@
 import json
-# import MySQLdb
 import pymysql as mdb
 from slugify import slugify
 
-
-# db = MySQLdb.connect("127.0.0.1", "root", "condor", "stayscrape")
-# cursor = db.cursor()
 
 connection = mdb.connect(
 	host='localhost',
@@ -15,7 +11,6 @@ connection = mdb.connect(
 	charset='utf8'
 )
 cursor = connection.cursor(mdb.cursors.DictCursor)
-
 
 
 def updatePropertyTypes():
@@ -30,13 +25,12 @@ def updatePropertyTypes():
 				if propertyType == rental_type['name']:
 					print(propertyType)
 					cursor.execute("update rentals_rental set propertyType = %d where id = %d" %(rental_type['id'], result[0]))
-					db.commit()
+					connection.commit()
 		
 		except Exception as e:
 			print("hata")
 			pass
 
-# updatePropertyTypes()
 
 def updateLocation():
 	cursor.execute("SELECT * FROM rentals_rental where location = '' and longJSON <> ''")
@@ -47,7 +41,7 @@ def updateLocation():
 			json_data = json.loads(result[13])
 			location = (json_data['listing']['primaryLocation']['description'])
 			cursor.execute("update rentals_rental set location = '%s' where id = %d" %(location, result[0]))
-			db.commit()
+			connection.commit()
 			print(location)
 			
 		
@@ -68,16 +62,15 @@ def updateRateAndReviews():
 			rating = (json_data['averageRating'])
 			review = (json_data['reviewCount'])
 			cursor.execute("update rentals_rental set is_checked=1, averageRating = %s, reviewCount = %s where id = %d" %(rating, review, result[0]))
-			db.commit()
+			connection.commit()
 			print(rating, review)
 			
 		
 		except Exception as e:
 			print("hata")
 			cursor.execute("update rentals_rental set is_checked=0 where id = %d" % result[0])
-			db.commit()
+			connection.commit()
 			pass
-
 
 
 
@@ -97,15 +90,14 @@ def extractLocations():
 					response = cursor.execute("SELECT name FROM destinations_place WHERE name='%s'" % name)
 					if response != 1:
 						cursor.execute("INSERT INTO `destinations_place` (`name`, `slug`, `search_term`) VALUES ('%s', '%s', '%s')" % (name, slug, search_term))
-						db.commit()
+						connection.commit()
 						print(cursor.lastrowid)
 				except Exception as e:
 					print("hata", result[0])
 		except Exception as e:
 			print("Breadcrumb Yok", result[0])
 			cursor.execute("UPDATE rentals_rental SET is_checked=2 WHERE id = %s" % result[0])
-			db.commit()
-#extractLocations()
+			connection.commit()
 
 
 
@@ -133,8 +125,9 @@ def updateRelations():
 		except Exception as e:
 			print("Breadcrumb Yok", result[0])
 			cursor.execute("UPDATE rentals_rental SET is_checked=2 WHERE id = %s" % result[0])
-			db.commit()
-#updateRelations()
+			connection.commit()
+
+
 
 def updatePlaceCount():
 	cursor.execute("SELECT * FROM destinations_place")
@@ -145,9 +138,8 @@ def updatePlaceCount():
 		count = cursor.fetchone()[0]
 		cursor.execute("UPDATE destinations_place SET count = %s WHERE id = %s" % (count, place[0]))
 		print(place[0], count)
-	db.commit()
+	connection.commit()
 
-#updatePlaceCount()
 
 
 def generateSitemap():
@@ -196,4 +188,21 @@ def generateSitemap():
 	f.close()
 	print("Sitemap is OK!")
 
-generateSitemap()
+
+
+def updateSlugs():
+	cursor.execute("SELECT * FROM rentals_rental WHERE slug=''")
+	rentals = cursor.fetchall()
+
+	for rental in rentals:
+		try:
+			rental["longJSON"] = json.loads(rental["longJSON"])
+			slug = ("%s-villa" % slugify(rental["longJSON"]["listing"]["primaryLocation"]["description"]))
+			# slug = ("%s-villa" % slugify(rental["longJSON"]["listing"]["geography"]["description"]))
+			cursor.execute("UPDATE rentals_rental SET slug='%s' WHERE id=%d" % (slug, rental["id"]))
+			connection.commit()
+			print(slug)
+		except:
+			pass
+
+updateSlugs()

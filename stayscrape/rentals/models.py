@@ -5,6 +5,7 @@ from slugify import slugify
 
 class Rental(models.Model):
 	regionId = models.IntegerField(default=0)
+	slug = models.CharField(max_length=250, default="")
 	title_preffix = models.CharField(max_length=250, default="")
 	location = models.CharField(max_length=250, default="")
 	regionArray = models.CharField(max_length=250, default="")
