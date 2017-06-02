@@ -16,5 +16,6 @@ villas_urls = [
 
 villa_redirect_urls = [
     url(r'^(?P<id>[0-9]+)$', views.redirectRental),
+    url(r'^(?P<id>[0-9]+)/$', views.redirectRental),
     url(r'^(?P<id>[0-9]+)/(?P<slug>[-\w]+)$', views.redirectRental)
 ]

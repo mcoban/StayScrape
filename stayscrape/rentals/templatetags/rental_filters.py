@@ -52,3 +52,8 @@ def get_title(rental):
 			return "%s Villa #%d to Rent in %s %s" % (get_district(longJSON['listing']['primaryLocation']['description']), rental.id, longJSON['listing']['address']['city'], longJSON['listing']['address']['stateProvince'] )
 	except KeyError:
 		return "%s Villa #%d to Rent in %s" % (get_district(longJSON['listing']['address']['city']), rental.id, longJSON['listing']['address']['stateProvince'] )
+
+
+@register.filter
+def long_description(description):
+	return description.replace("\n", "<br>")
