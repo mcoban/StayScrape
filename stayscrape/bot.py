@@ -3,10 +3,17 @@ import pymysql as mdb
 from slugify import slugify
 
 
+# connection = mdb.connect(
+# 	host='localhost',
+# 	user='root',
+# 	password='condor',
+# 	db='stayscrape',
+# 	charset='utf8'
+# )
 connection = mdb.connect(
-	host='localhost',
-	user='root',
-	password='condor',
+	host='178.62.25.205',
+	user='remote',
+	password='@condord@',
 	db='stayscrape',
 	charset='utf8'
 )
@@ -197,12 +204,16 @@ def updateSlugs():
 	for rental in rentals:
 		try:
 			rental["longJSON"] = json.loads(rental["longJSON"])
-			slug = ("%s-villa" % slugify(rental["longJSON"]["listing"]["primaryLocation"]["description"]))
-			# slug = ("%s-villa" % slugify(rental["longJSON"]["listing"]["geography"]["description"]))
+			#slug = ("%s-villa" % slugify(rental["longJSON"]["listing"]["primaryLocation"]["description"]))
+			slug = ("%s-villa" % slugify(rental["longJSON"]["listing"]["geography"]["description"]))
 			cursor.execute("UPDATE rentals_rental SET slug='%s' WHERE id=%d" % (slug, rental["id"]))
 			connection.commit()
 			print(slug)
 		except:
 			pass
+
+	if rentals:
+		updateSlugs()
+
 
 updateSlugs()

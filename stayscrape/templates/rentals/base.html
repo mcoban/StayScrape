@@ -84,6 +84,7 @@
 						<div class="col-md-3 owner">
 							<a href="#" style="background-image: url({{ detail_json.listing.contact.ownerProfilePhoto }});"></a>
 							<p>{{ detail_json.listing.contact.name }}</p>
+							<p><strong>{{ detail_json.listing.contact.phone }}</strong></p>
 						</div>
 					</div>
 					<hr>
@@ -154,9 +155,10 @@
 					<div class="panel">
 						<div class="panel-heading"><span itemprop="priceRange">{{ rental.price }}</span> <small>per night</small></div>
 						<div class="panel-body">
-							<span class="contact-agent">Contact Agent</span>
+							<!-- <span class="contact-agent">Contact Agent</span> -->
+							<span class="contact-agent">BOOK NOW!</span>
 							<span class="telephone" itemprop="telephone">{{ detail_json.listing.contact.phones.0.phoneNumber }}</span>
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<input type="text" id="name" class="form-control" placeholder="Name">
 							</div>
 							<div class="form-group">
@@ -167,8 +169,8 @@
 							</div>
 							<div class="form-group">
 								<textarea name="message" id="message" rows="3">I am interested in {{ detail_json.listing.primaryLocation.description }} Holiday Villa #{{ rental.id }}.</textarea>
-							</div>
-							<a href="#" class="btn btn-block btn-primary">Send Short Message</a>
+							</div> -->
+							<a target="_blank" rel="nofollow" href="{{ rental.detailPageUrl }}" class="btn btn-block btn-danger">Book from Direct Owner</a>
 							<hr>
 {% for featured in featureds %}
 							<a href="{{ settings.SITE_URL }}/rental/{{ featured.longJSON.listing.primaryLocation.description|slug_this }}-villa-{{ featured.id }}" class="featured-villa">
