@@ -5,4 +5,5 @@ def home(request):
 	return render(request, "home.html")
 
 def messenger_callback(request):
+	print(request.POST)
 	return HttpResponse(request.GET.get('hub.challenge'))
