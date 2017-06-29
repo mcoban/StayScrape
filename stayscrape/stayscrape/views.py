@@ -15,7 +15,7 @@ def messenger_callback(request):
 	if request.body:
 		incomming_message = json.loads(request.body.decode('utf-8'))
 		for entry in incomming_message['entry']:
-			pprint(entry)
+			pprint.pprint(entry)
 
 	
 	return HttpResponse('ok')
