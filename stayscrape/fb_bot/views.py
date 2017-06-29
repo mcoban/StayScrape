@@ -1,0 +1,22 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+import json, pprint
+
+
+def messenger_callback(request):
+
+	if request.GET.get('hub.verify_token') == 'mcoban':
+		return HttpResponse(request.GET.get('hub.challenge'))
+
+	#pprint.pprint(request.body)
+
+	if request.body:
+		incomming_message = json.loads(request.body.decode('utf-8'))
+		for entry in incomming_message['entry']:
+			for message in entry['messaging']:
+				if 'message' in message:
+					pprint.pprint(message)
+
+	
+	return HttpResponse('ok')
+

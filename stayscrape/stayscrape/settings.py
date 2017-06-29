@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'destinations',
     'rentals',
     'blog',
+    'fb_bot',
 ]
 
 MIDDLEWARE = [
