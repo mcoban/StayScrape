@@ -11,5 +11,5 @@ def messenger_callback(request):
 		return HttpResponse(request.GET.get('hub.challenge'))
 
 	if request.POST:
-		incoming_message = json.loads(request.body.decode('utf-8'))
+		incoming_message = json.loads(request.body)
 		print(incoming_message)
