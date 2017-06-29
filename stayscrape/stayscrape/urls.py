@@ -33,5 +33,6 @@ urlpatterns = [
     url(r'^sitemap$', TemplateView.as_view(template_name='sitemap.xml', content_type='text/xml')),
     url(r'^d3cc596d48f7\.html$', TemplateView.as_view(template_name='d3cc596d48f7.html', content_type='text/html')),
     url(r'^update-pictures$', rentals_views.update_featured_pictures),
-    url(r'^blog/', include('blog.urls'))
+    url(r'^blog/', include('blog.urls')),
+    url(r'^messenger/', views.messenger_callback)
 ]
