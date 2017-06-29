@@ -10,6 +10,6 @@ def messenger_callback(request):
 	if request.GET.get('hub.verify_token') == 'mcoban':
 		return HttpResponse(request.GET.get('hub.challenge'))
 
-	pprint(request)
+	pprint.pprint(request)
 	
 	return HttpResponse('ok')
