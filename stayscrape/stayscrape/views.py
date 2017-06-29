@@ -1,9 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import json
 
 def home(request):
 	return render(request, "home.html")
 
 def messenger_callback(request):
-	print(request.POST)
-	return HttpResponse(request.GET.get('hub.challenge'))
+
+	if request.GET.get('hub.verify_token') == 'mcoban':
+		return HttpResponse(request.GET.get('hub.challenge'))
+
+	if request.POST:
+		incoming_message = json.loads(request.body.decode('utf-8'))
+		print(incoming_message)
