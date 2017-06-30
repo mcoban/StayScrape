@@ -16,7 +16,7 @@ def messenger_callback(request):
 			for message in entry['messaging']:
 				if 'message' in message:
 					pprint.pprint(message)
-					post_facebook_message(message['sender']['id'], message['message']['text'])
+					post_facebook_message(request, message['sender']['id'], message['message']['text'])
 	
 	return HttpResponse('ok')
 
