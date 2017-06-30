@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import generic
 import json, pprint
+import requests
 
 
 # class MessengerBotBiew(generic.View):
